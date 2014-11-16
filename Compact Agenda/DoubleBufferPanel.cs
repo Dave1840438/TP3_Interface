@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace DB_Demo
+namespace Compact_Agenda
 {
     public class DoubleBufferPanel : System.Windows.Forms.Panel
     {
@@ -23,5 +24,12 @@ namespace DB_Demo
 
         }
 
+        protected override void OnMouseWheel(System.Windows.Forms.MouseEventArgs e)
+        {
+            // Faire en sorte que le scroll se fasse aux heures
+            int delta = Event.HourToPixel(1, 0, this.VerticalScroll.Maximum);
+            MouseEventArgs ee = new MouseEventArgs(e.Button, e.Clicks, e.X, e.Y, (int)Math.Sign(e.Delta) * delta);
+            base.OnMouseWheel(ee);
+        }
     }
 }

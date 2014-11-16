@@ -6,9 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//Hello
-
-namespace DB_Demo
+namespace Compact_Agenda
 {
     public enum TargetPart { Top, Bottom, Inside, None};
     class Events
@@ -70,7 +68,7 @@ namespace DB_Demo
                                 _Event.ParentPanel.Cursor = Cursors.Hand;
                                 TargetEvent = _Event;
                                 TargetPart = TargetPart.Inside;
-
+                                break;
                             }
                             else
                                 _Event.ParentPanel.Cursor = Cursors.Arrow;

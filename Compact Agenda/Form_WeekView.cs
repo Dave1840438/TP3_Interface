@@ -22,14 +22,14 @@ using System.Windows.Forms;
 //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace DB_Demo
+namespace Compact_Agenda
 {
     public partial class Form_WeekView : Form
     {
         public string ConnexionString;
         private DateTime _CurrentWeek;
         private Events Events = new Events();
-       
+        private int minInterval = 5;
         public DateTime CurrentWeek
         {
             set 
@@ -48,14 +48,24 @@ namespace DB_Demo
             string DB_URL = System.IO.Path.GetFullPath(@"DB_AGENDA.MDF");
             ConnexionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='" + DB_URL + "';Integrated Security=True";
             CurrentWeek = DateTime.Now;
-            PN_Hours.Height = PN_Content.Height = 1500;
+            PN_Hours.Height = PN_Content.Height = 2400;
+
         }
         private void Form_WeekView_Load(object sender, EventArgs e)
         {
-            PN_Scroll.VerticalScroll.Value = Event.HourToPixel(DateTime.Now.Hour, 0, PN_Hours.Height);
-            GetWeekEvents();
+            PN_Scroll.Focus();
+            GotoCurrentWeek();
         }
 
+        private void PN_Scroll_MouseEnter(Object sender, EventArgs e)
+        {
+            // pour s'assurer que le mousewheel event sera intercepté
+            
+            PN_Scroll.Focus();
+
+        }
+
+      
         private void GetWeekEvents()
         {
             TableEvents tableEvents = new TableEvents(ConnexionString);
@@ -76,7 +86,6 @@ namespace DB_Demo
 
         private void Fill_Agenda(Graphics DC)
         {
-           
             Brush brush = new SolidBrush(Color.Black);
             Pen pen = new Pen(Color.LightGray, 1);
             for (int hour = 0; hour < 24; hour++)
@@ -84,11 +93,13 @@ namespace DB_Demo
                 DC.DrawLine(pen, 0, Event.HourToPixel(hour + 1, 0, PN_Hours.Height), PN_Content.Width, Event.HourToPixel(hour + 1, 0, PN_Hours.Height));
             }
             Events.Draw(DC);
+            PN_Scroll.Focus();
         }
 
         private void PN_Content_Paint(object sender, PaintEventArgs e)
         {
             Fill_Agenda(e.Graphics);
+            
         }
 
         private void Fill_Days_Header(Graphics DC)
@@ -112,22 +123,13 @@ namespace DB_Demo
         {
             Brush brush = new SolidBrush(Color.Black);
             Pen pen = new Pen(Color.LightGray, 1);
-            for (int hour = 0; hour < 24; hour++)
+            for (int hour = 0; hour <= 24; hour++)
             {
                 Point location = new Point(0, Event.HourToPixel(hour, 0, PN_Hours.Height));
                 String headerText = (hour < 10? "0": "") + hour.ToString() + ":00";
                 DC.DrawString(headerText, PN_DaysHeader.Font, brush, location); 
                 DC.DrawLine(pen, 0,Event.HourToPixel(hour + 1, 0, PN_Hours.Height), PN_Hours.Width, Event.HourToPixel(hour + 1, 0, PN_Hours.Height));
             }
-        }
-
-        private void Form_WeekView_Resize(object sender, EventArgs e)
-        {
-        }
-
-        private void PN_Scroll_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void PN_DaysHeader_Paint(object sender, PaintEventArgs e)
@@ -140,6 +142,12 @@ namespace DB_Demo
             Fill_Hours_Header(e.Graphics);
         }
 
+        private void AdjustMinInterval()
+        {
+            minInterval = 10;
+            while (Event.HourToPixel(0, minInterval, PN_Content.Height) < 10)
+                minInterval += 10;
+        }
         private void PN_Scroll_Resize(object sender, EventArgs e)
         {
             PN_Content.Width = PN_Scroll.Width - 70;
@@ -147,7 +155,6 @@ namespace DB_Demo
             PN_DaysHeader.Width = PN_Content.Width;
             PN_DaysHeader.Refresh();
             PN_Content.Refresh();
-
         }
 
         private void PN_Scroll_Scroll(object sender, ScrollEventArgs e)
@@ -159,32 +166,40 @@ namespace DB_Demo
 
         Point lastMouseLocation;
         Point firstMouseLocation; 
-        bool mousIsDown = false;
+        bool mouseIsDown = false;
         Pen pen = new Pen(Color.Blue, 2);
 
         private int RoundToMinutes(int pixel, int interval)
         {
-            int minutes = Event.PixelToMinutes(pixel + (int)Math.Round(interval/2f), PN_Content.Height);
-            minutes = (int)Math.Truncate((float)minutes / interval) * interval;
-            int hour = (int)Math.Truncate(minutes / 60f);
-            minutes = minutes - hour * 60;
-            return Event.HourToPixel(hour, minutes, PN_Content.Height); 
+            int pixel_interval = Event.HourToPixel(0, interval, PN_Content.Height);
+            if (pixel_interval > 5)
+            {
+                int half_interval = (int)Math.Round(pixel_interval / 2f);
+
+                int minutes = Event.PixelToMinutes(pixel + half_interval, PN_Content.Height);
+                minutes = (int)Math.Truncate((float)minutes / interval) * interval;
+                int hour = (int)Math.Truncate(minutes / 60f);
+                minutes = minutes - hour * 60;
+                return Event.HourToPixel(hour, minutes, PN_Content.Height);
+            }
+            else
+                return pixel;
         }
         private void PN_Content_MouseDown(object sender, MouseEventArgs e)
         {
-            mousIsDown = true;
+            mouseIsDown = true;
             firstMouseLocation = lastMouseLocation = e.Location;
             if (Events.TargetEvent != null)
             {
                 switch (Events.TargetPart)
                 {
                     case TargetPart.Top:
-                        firstMouseLocation.Y = 
-                        lastMouseLocation.Y = Event.HourToPixel(Events.TargetEvent.Starting.Hour, Events.TargetEvent.Starting.Minute, PN_Content.Height);
+                        firstMouseLocation.Y =
+                        lastMouseLocation.Y = RoundToMinutes(Event.HourToPixel(Events.TargetEvent.Starting.Hour, Events.TargetEvent.Starting.Minute, PN_Content.Height), minInterval);
                         break;
                     case TargetPart.Bottom:
-                        firstMouseLocation.Y = 
-                        lastMouseLocation.Y = Event.HourToPixel(Events.TargetEvent.Ending.Hour, Events.TargetEvent.Ending.Minute, PN_Content.Height);
+                        firstMouseLocation.Y =
+                        lastMouseLocation.Y = RoundToMinutes(Event.HourToPixel(Events.TargetEvent.Ending.Hour, Events.TargetEvent.Ending.Minute, PN_Content.Height), minInterval);
                         break;
                     default:  break;
                 }
@@ -216,15 +231,34 @@ namespace DB_Demo
             }
         }
 
+        private void AdjustScroll(int value)
+        {
+            int PN_Scroll_Mouse_Location = value - PN_Scroll.VerticalScroll.Value;
+            int hour_heigth = Event.HourToPixel(1, 0, PN_Scroll.Height);
+
+            if (PN_Scroll_Mouse_Location < 0)
+            {
+                Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y + hour_heigth);
+                if ((PN_Scroll.VerticalScroll.Value - hour_heigth) > hour_heigth)
+                    PN_Scroll.VerticalScroll.Value -= hour_heigth;
+            }
+            if (PN_Scroll_Mouse_Location > PN_Scroll.Height)
+            {
+                Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y - hour_heigth);
+                if ((PN_Scroll.VerticalScroll.Value + hour_heigth) < PN_Content.Height)
+                    PN_Scroll.VerticalScroll.Value += hour_heigth;
+            }
+        }
+
         private void PN_Content_MouseMove(object sender, MouseEventArgs e)
         {
             int day;
 
             day = (int)Math.Truncate(firstMouseLocation.X / (PN_Content.Width / 7F));
-            Point Bottom = new Point((day + 1) * (int)(PN_Content.Width / 7F), RoundToMinutes(e.Location.Y, 5));
-            if (mousIsDown)
+            Point Bottom = new Point((day + 1) * (int)(PN_Content.Width / 7F), RoundToMinutes(e.Location.Y, minInterval));
+            if (mouseIsDown)
             {
-                              
+                AdjustScroll(e.Location.Y);
                 if (Events.TargetEvent != null)
                 {
                     day = (int)Math.Truncate((e.Location.X - PN_Content.Width / 14F) / (PN_Content.Width / 7F));
@@ -232,14 +266,28 @@ namespace DB_Demo
                     {
                         case TargetPart.Top:
                             Events.TargetEvent.Starting = LocationToDateTime(Bottom);
+                            if (Events.TargetEvent.Starting > Events.TargetEvent.Ending)
+                            {
+                                Events.TargetPart = TargetPart.Bottom;
+                                DateTime d = Events.TargetEvent.Starting;
+                                Events.TargetEvent.Starting = Events.TargetEvent.Ending;
+                                Events.TargetEvent.Ending = d;
+                            }
                             break;
                         case TargetPart.Bottom:
                             Events.TargetEvent.Ending = LocationToDateTime(Bottom);
+                            if (Events.TargetEvent.Starting > Events.TargetEvent.Ending)
+                            {
+                                Events.TargetPart = TargetPart.Top;
+                                DateTime d = Events.TargetEvent.Starting;
+                                Events.TargetEvent.Starting = Events.TargetEvent.Ending;
+                                Events.TargetEvent.Ending = d;
+                            }
                             break;
                         case TargetPart.Inside:
-                            int deltaY = RoundToMinutes(e.Location.Y, 5) - RoundToMinutes(lastMouseLocation.Y, 5);
-                            Events.TargetEvent.Starting = LocationToDateTime(new Point(e.Location.X, Event.HourToPixel(Events.TargetEvent.Starting.Hour, Events.TargetEvent.Starting.Minute, PN_Content.Height) + deltaY));
-                            Events.TargetEvent.Ending = LocationToDateTime(new Point(e.Location.X, Event.HourToPixel(Events.TargetEvent.Ending.Hour, Events.TargetEvent.Ending.Minute, PN_Content.Height) + deltaY));
+                            int deltaY = RoundToMinutes(e.Location.Y, minInterval) - RoundToMinutes(lastMouseLocation.Y, minInterval);
+                            Events.TargetEvent.Starting = LocationToDateTime(new Point(e.Location.X, RoundToMinutes(Event.HourToPixel(Events.TargetEvent.Starting.Hour, Events.TargetEvent.Starting.Minute, PN_Content.Height) + deltaY, minInterval)));
+                            Events.TargetEvent.Ending = LocationToDateTime(new Point(e.Location.X, RoundToMinutes(Event.HourToPixel(Events.TargetEvent.Ending.Hour, Events.TargetEvent.Ending.Minute, PN_Content.Height) + deltaY, minInterval)));
                             AjustCurrentWeek();
                             break;
                         default: break;
@@ -249,8 +297,8 @@ namespace DB_Demo
                 else
                 {
                     PN_Content.Cursor = Cursors.Cross;
-                    Point top = new Point(day * (int)(PN_Content.Width / 7F), RoundToMinutes(firstMouseLocation.Y, 5));
-                    Rectangle border = new Rectangle(top.X, top.Y, Bottom.X - top.X, Bottom.Y - top.Y);
+                    Point top = new Point(day * (int)(PN_Content.Width / 7F), RoundToMinutes(firstMouseLocation.Y, minInterval));
+                    Rectangle border = new Rectangle(top.X, (int)Math.Min(top.Y, Bottom.Y), Bottom.X - top.X, (int)Math.Abs(Bottom.Y - top.Y));
                     PN_Content.Refresh();
                     PN_Content.CreateGraphics().DrawRectangle(pen, border);
                 }
@@ -267,20 +315,36 @@ namespace DB_Demo
             int days = (int)(Math.Truncate((location.X - adjust) / (PN_Content.Width / 7F)));
 
             date = date.AddDays(days);
-            int Minutes = Event.PixelToMinutes(RoundToMinutes(location.Y, 5), PN_Content.Height);
-            int Hours = (int)Math.Truncate(Minutes / 60f);
+            int Minutes = (int)Math.Max(Event.PixelToMinutes(RoundToMinutes(location.Y, minInterval), PN_Content.Height), 0);
+            int Hours = (int)Math.Min((int)Math.Truncate(Minutes / 60f), 23);
             Minutes = Minutes - Hours * 60;
-            return new DateTime(date.Year, date.Month, date.Day, Hours, Minutes, 0); ;
+            if (Minutes >= 60)
+                Minutes = 59;
+            return new DateTime(date.Year, date.Month, date.Day, Hours, Minutes, 0); 
         }
-
+         
         private void ConludeMouseEvent()
         {
-            if (mousIsDown)
+           
+            if (mouseIsDown)
             {
-                mousIsDown = false;
+                mouseIsDown = false;
 
                 if (Events.TargetEvent != null)
                 {
+                    if (Events.TargetEvent.Starting > Events.TargetEvent.Ending)
+                    {
+                        Events.TargetPart = TargetPart.Top;
+                        DateTime d = Events.TargetEvent.Starting;
+                        Events.TargetEvent.Starting = Events.TargetEvent.Ending;
+                        Events.TargetEvent.Ending = d;
+                    }
+
+                    TimeSpan delta = Events.TargetEvent.Ending.Subtract(Events.TargetEvent.Starting);
+                    if (delta.Minutes < 15 && delta.Hours == 0)
+                    {
+                        Events.TargetEvent.Ending = Events.TargetEvent.Starting + new TimeSpan(0, 15, 0);
+                    }
                     TableEvents tableEvents = new TableEvents(ConnexionString);
                     tableEvents.UpdateEventRecord(Events.TargetEvent);
                 }
@@ -289,8 +353,23 @@ namespace DB_Demo
                     DLG_Events dlg = new DLG_Events();
                     Event Event = new Event();
 
+
                     Event.Starting = LocationToDateTime(firstMouseLocation);
                     Event.Ending = LocationToDateTime(lastMouseLocation);
+
+                    if (Event.Starting > Event.Ending)
+                    {
+                        Events.TargetPart = TargetPart.Top;
+                        DateTime d = Event.Starting;
+                        Event.Starting = Event.Ending;
+                        Event.Ending = d;
+
+                    }
+                    TimeSpan delta = Event.Ending.Subtract(Event.Starting);
+                    if (delta.Minutes < 15 && delta.Hours == 0)
+                    {
+                         Event.Ending = Event.Starting + new TimeSpan(0, 15, 0);
+                    }
                     dlg.Event = Event.Klone();
                     if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
@@ -301,6 +380,7 @@ namespace DB_Demo
                 GetWeekEvents();
                 PN_Content.Refresh();
             }
+            
         }
 
         private void PN_Content_MouseUp(object sender, MouseEventArgs e)
@@ -321,6 +401,16 @@ namespace DB_Demo
             GetWeekEvents();
             PN_Content.Refresh();
             PN_DaysHeader.Refresh();
+        }
+
+        private void GotoCurrentWeek()
+        {
+            CurrentWeek = DateTime.Now;
+            GetWeekEvents();
+            PN_Content.Refresh();
+            PN_DaysHeader.Refresh();
+            PN_Scroll.VerticalScroll.Value = Event.HourToPixel(DateTime.Now.Hour - 3, 0, PN_Hours.Height);
+           
         }
 
         private void FBTN_DecrementWeek_Click(object sender, EventArgs e)
@@ -346,7 +436,7 @@ namespace DB_Demo
                         TableEvents tableEvents = new TableEvents(ConnexionString);
                         tableEvents.DeleteEvent(dlg.Event);
                         Events.TargetEvent = null;
-                        mousIsDown = false;
+                        mouseIsDown = false;
                     }
                     else
                     {
@@ -357,6 +447,74 @@ namespace DB_Demo
                     PN_Content.Refresh();
                 }
             }
+        }
+        private void PN_Content_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Down:
+                case Keys.Right:
+                    //action
+                    break;
+                case Keys.Up:
+                case Keys.Left:
+                    //action
+                    break;
+            }
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.Down: // Incrémenter d'un mois la semaine courrante
+
+                    // Fonction temporaire pour voir comment dézommer
+                    if (!mouseIsDown)
+                    {
+                        PN_Content.Height -= 200;
+                        PN_Hours.Height -= 200;
+                        PN_Content.Refresh();
+                        PN_Hours.Refresh();
+                    }
+                    break;
+                case Keys.Right: // Incrémenter d'une semaine la semaine courrante
+                    if(!mouseIsDown)
+                        Increment_Week();
+                   
+                   break;
+                case Keys.Up: // Décrémenter d'un mois la semaine courrante
+
+                    // Fonction temporaire pour voir comment zommer
+                   if (!mouseIsDown)
+                   {
+                       PN_Content.Height += 200;
+                       PN_Hours.Height += 200;
+                       PN_Content.Refresh();
+                       PN_Hours.Refresh();
+                   }
+                   break;
+                case Keys.Left:// Décrémenter d'une semaine la semaine courrante
+                   if (!mouseIsDown)
+                       Decrement_Week();
+                   
+                   break;
+
+                case Keys.Space :
+                   if (!mouseIsDown)
+                       GotoCurrentWeek();
+                   break;
+            }
+
+            
+            
+            bool result = base.ProcessCmdKey(ref msg, keyData);
+            PN_Scroll.Focus();
+            return result;
+        }
+
+        private void PN_Content_Resize(object sender, EventArgs e)
+        {
+            AdjustMinInterval();
         }
     }
 }

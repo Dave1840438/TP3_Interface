@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DB_Demo.Properties {
+namespace Compact_Agenda.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

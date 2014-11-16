@@ -1,4 +1,4 @@
-﻿namespace DB_Demo
+﻿namespace Compact_Agenda
 {
     partial class DLG_Events
     {

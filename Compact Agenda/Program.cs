@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DB_Demo
+namespace Compact_Agenda
 {
     static class Program
     {

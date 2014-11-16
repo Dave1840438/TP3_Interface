@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DB_Demo
+namespace Compact_Agenda
 {
     public partial class DLG_Events : Form
     {

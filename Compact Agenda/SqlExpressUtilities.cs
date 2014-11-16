@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Windows.Forms;
 
-namespace DB_Demo
+namespace Compact_Agenda
 {
 
     public class TextFilter

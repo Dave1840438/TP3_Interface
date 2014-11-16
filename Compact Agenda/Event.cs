@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DB_Demo
+namespace Compact_Agenda
 {
     public class Event
     {
@@ -85,11 +85,11 @@ namespace DB_Demo
         {
             if (ParentPanel != null)
             {
-                Point Location = new Point(DayOfWeekToPixel(Starting, ParentPanel.Width), HourToPixel(Starting, ParentPanel.Height));
+                Point Location = new Point(DayOfWeekToPixel(Starting, ParentPanel.Width)+2, HourToPixel(Starting, ParentPanel.Height));
                 int Height = HourToPixel(Ending, ParentPanel.Height) - HourToPixel(Starting, ParentPanel.Height);
                 int width = (int)Math.Round(ParentPanel.Width / 7F);
 
-                Rectangle border = new Rectangle(Location, new Size(width, Height));
+                Rectangle border = new Rectangle(Location, new Size(width-3, Height));
                 return border;
             }
             return new Rectangle();
