@@ -409,9 +409,11 @@ namespace Compact_Agenda
             GetWeekEvents();
             PN_Content.Refresh();
             PN_DaysHeader.Refresh();
-            PN_Scroll.VerticalScroll.Value = Event.HourToPixel(DateTime.Now.Hour - 3, 0, PN_Hours.Height);
-           
+            PN_Scroll.VerticalScroll.Value = Event.HourToPixel((int)Math.Max(DateTime.Now.Hour - 3, 0), 0, PN_Hours.Height);
+            // La ligne commentée suivante était la cause d'une exception fatale entre 12h00 et 03h00 du matin
+            // PN_Scroll.VerticalScroll.Value = Event.HourToPixel(DateTime.Now.Hour - 3, 0, PN_Hours.Height);
         }
+
 
         private void FBTN_DecrementWeek_Click(object sender, EventArgs e)
         {
