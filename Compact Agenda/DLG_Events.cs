@@ -25,7 +25,7 @@ namespace Compact_Agenda
             delete = false;
             EventToDLG();
         }
-
+        
         public static DateTime Klone(DateTime date)
         {
             return new DateTime(date.Year, date.Month, date.Day, date.Hour, date.Minute, 0);
@@ -111,6 +111,19 @@ namespace Compact_Agenda
                 this.DialogResult = System.Windows.Forms.DialogResult.OK;
                 delete = true;
                 this.Close();
+            }
+        }
+
+        private void BTN_Ok_Click(object sender, EventArgs e)
+        {
+            if (TBX_Title.Text != "")
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            {
+                if (TBX_Title.Text == "")
+                    errorProvider.SetError(TBX_Title, "Le champs est vide");
             }
         }
     }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.TBX_Title = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,6 +42,8 @@
             this.BTN_Ok = new System.Windows.Forms.Button();
             this.BTN_Cancel = new System.Windows.Forms.Button();
             this.BTN_Effacer = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // TBX_Title
@@ -135,13 +138,13 @@
             // 
             // BTN_Ok
             // 
-            this.BTN_Ok.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BTN_Ok.Location = new System.Drawing.Point(285, 180);
             this.BTN_Ok.Name = "BTN_Ok";
             this.BTN_Ok.Size = new System.Drawing.Size(75, 23);
             this.BTN_Ok.TabIndex = 6;
             this.BTN_Ok.Text = "Ok";
             this.BTN_Ok.UseVisualStyleBackColor = true;
+            this.BTN_Ok.Click += new System.EventHandler(this.BTN_Ok_Click);
             // 
             // BTN_Cancel
             // 
@@ -164,6 +167,10 @@
             this.BTN_Effacer.Text = "Effacer";
             this.BTN_Effacer.UseVisualStyleBackColor = true;
             this.BTN_Effacer.Click += new System.EventHandler(this.BTN_Effacer_Click);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // DLG_Events
             // 
@@ -190,6 +197,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "DLG_Events";
             this.Load += new System.EventHandler(this.DLG_Events_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,5 +218,6 @@
         private System.Windows.Forms.Button BTN_Ok;
         private System.Windows.Forms.Button BTN_Cancel;
         private System.Windows.Forms.Button BTN_Effacer;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

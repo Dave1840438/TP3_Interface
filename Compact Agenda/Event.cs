@@ -7,6 +7,23 @@ using System.Threading.Tasks;
 
 namespace Compact_Agenda
 {
+    public struct EventType
+    {
+        public enum choixEvents
+        {
+            Général, Travail, Loisir, Santé, Important, Autre
+        }
+
+        choixEvents type;
+
+        public string ToString()
+        {
+            Enum e = type;
+            return type.ToString();
+        }
+    }
+
+
     public class Event
     {
         public string Id { get; set; }
@@ -59,7 +76,7 @@ namespace Compact_Agenda
             return (int)Math.Round((Pixel / (float)Height) * totalMinutesInDay);
         }
 
-          
+
         public static int HourToPixel(int Hour, int Minute, int Height)
         {
             float minutes = Hour * 60F + Minute;
@@ -85,11 +102,11 @@ namespace Compact_Agenda
         {
             if (ParentPanel != null)
             {
-                Point Location = new Point(DayOfWeekToPixel(Starting, ParentPanel.Width)+2, HourToPixel(Starting, ParentPanel.Height));
+                Point Location = new Point(DayOfWeekToPixel(Starting, ParentPanel.Width) + 2, HourToPixel(Starting, ParentPanel.Height));
                 int Height = HourToPixel(Ending, ParentPanel.Height) - HourToPixel(Starting, ParentPanel.Height);
                 int width = (int)Math.Round(ParentPanel.Width / 7F);
 
-                Rectangle border = new Rectangle(Location, new Size(width-3, Height));
+                Rectangle border = new Rectangle(Location, new Size(width - 3, Height));
                 return border;
             }
             return new Rectangle();
