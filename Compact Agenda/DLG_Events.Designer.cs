@@ -35,14 +35,18 @@
             this.TBX_Description = new System.Windows.Forms.TextBox();
             this.DTP_Date = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.DTP_Starting = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.DTP_Ending = new System.Windows.Forms.DateTimePicker();
             this.BTN_Ok = new System.Windows.Forms.Button();
             this.BTN_Cancel = new System.Windows.Forms.Button();
-            this.BTN_Effacer = new System.Windows.Forms.Button();
+            this.CustomUserControl1 = new Compact_Agenda.CustomSelectControl();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.customSelectControl1 = new Compact_Agenda.CustomSelectControl();
+            this.customSelectControl2 = new Compact_Agenda.CustomSelectControl();
+            this.BTN_Effacer = new System.Windows.Forms.Button();
+            this.customSelectControl3 = new Compact_Agenda.CustomSelectControl();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,45 +104,27 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Date";
             // 
-            // DTP_Starting
-            // 
-            this.DTP_Starting.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.DTP_Starting.Location = new System.Drawing.Point(70, 155);
-            this.DTP_Starting.Name = "DTP_Starting";
-            this.DTP_Starting.Size = new System.Drawing.Size(81, 20);
-            this.DTP_Starting.TabIndex = 4;
-            this.DTP_Starting.ValueChanged += new System.EventHandler(this.DTP_Starting_ValueChanged);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 159);
+            this.label4.Location = new System.Drawing.Point(12, 205);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 13);
+            this.label4.Size = new System.Drawing.Size(42, 13);
             this.label4.TabIndex = 1;
-            this.label4.Text = "Début";
+            this.label4.Text = "Début :";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(51, 185);
+            this.label5.Location = new System.Drawing.Point(159, 205);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(21, 13);
+            this.label5.Size = new System.Drawing.Size(27, 13);
             this.label5.TabIndex = 1;
-            this.label5.Text = "Fin";
-            // 
-            // DTP_Ending
-            // 
-            this.DTP_Ending.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.DTP_Ending.Location = new System.Drawing.Point(70, 181);
-            this.DTP_Ending.Name = "DTP_Ending";
-            this.DTP_Ending.Size = new System.Drawing.Size(81, 20);
-            this.DTP_Ending.TabIndex = 45;
-            this.DTP_Ending.ValueChanged += new System.EventHandler(this.DTP_Ending_ValueChanged);
+            this.label5.Text = "Fin :";
             // 
             // BTN_Ok
             // 
-            this.BTN_Ok.Location = new System.Drawing.Point(285, 180);
+            this.BTN_Ok.Location = new System.Drawing.Point(171, 261);
             this.BTN_Ok.Name = "BTN_Ok";
             this.BTN_Ok.Size = new System.Drawing.Size(75, 23);
             this.BTN_Ok.TabIndex = 6;
@@ -149,7 +135,7 @@
             // BTN_Cancel
             // 
             this.BTN_Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BTN_Cancel.Location = new System.Drawing.Point(204, 180);
+            this.BTN_Cancel.Location = new System.Drawing.Point(70, 261);
             this.BTN_Cancel.Name = "BTN_Cancel";
             this.BTN_Cancel.Size = new System.Drawing.Size(75, 23);
             this.BTN_Cancel.TabIndex = 5;
@@ -157,10 +143,47 @@
             this.BTN_Cancel.Text = "Annuler";
             this.BTN_Cancel.UseVisualStyleBackColor = true;
             // 
+            // CustomUserControl1
+            // 
+            this.CustomUserControl1.Leap = 1;
+            this.CustomUserControl1.Location = new System.Drawing.Point(54, 172);
+            this.CustomUserControl1.MaximumValue = 23;
+            this.CustomUserControl1.MinimumValue = 0;
+            this.CustomUserControl1.Name = "CustomUserControl1";
+            this.CustomUserControl1.Size = new System.Drawing.Size(25, 77);
+            this.CustomUserControl1.StartValue = 0;
+            this.CustomUserControl1.TabIndex = 47;
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
+            // customSelectControl1
+            // 
+            this.customSelectControl1.Leap = 5;
+            this.customSelectControl1.Location = new System.Drawing.Point(104, 172);
+            this.customSelectControl1.MaximumValue = 59;
+            this.customSelectControl1.MinimumValue = 0;
+            this.customSelectControl1.Name = "customSelectControl1";
+            this.customSelectControl1.Size = new System.Drawing.Size(25, 77);
+            this.customSelectControl1.StartValue = 0;
+            this.customSelectControl1.TabIndex = 48;
+            // 
+            // customSelectControl2
+            // 
+            this.customSelectControl2.Leap = 1;
+            this.customSelectControl2.Location = new System.Drawing.Point(186, 172);
+            this.customSelectControl2.MaximumValue = 23;
+            this.customSelectControl2.MinimumValue = 0;
+            this.customSelectControl2.Name = "customSelectControl2";
+            this.customSelectControl2.Size = new System.Drawing.Size(25, 77);
+            this.customSelectControl2.StartValue = 0;
+            this.customSelectControl2.TabIndex = 49;
+            // 
             // BTN_Effacer
             // 
             this.BTN_Effacer.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BTN_Effacer.Location = new System.Drawing.Point(285, 151);
+            this.BTN_Effacer.Location = new System.Drawing.Point(286, 261);
             this.BTN_Effacer.Name = "BTN_Effacer";
             this.BTN_Effacer.Size = new System.Drawing.Size(74, 23);
             this.BTN_Effacer.TabIndex = 46;
@@ -168,9 +191,34 @@
             this.BTN_Effacer.UseVisualStyleBackColor = true;
             this.BTN_Effacer.Click += new System.EventHandler(this.BTN_Effacer_Click);
             // 
-            // errorProvider
+            // customSelectControl3
             // 
-            this.errorProvider.ContainerControl = this;
+            this.customSelectControl3.Leap = 5;
+            this.customSelectControl3.Location = new System.Drawing.Point(236, 172);
+            this.customSelectControl3.MaximumValue = 59;
+            this.customSelectControl3.MinimumValue = 0;
+            this.customSelectControl3.Name = "customSelectControl3";
+            this.customSelectControl3.Size = new System.Drawing.Size(25, 77);
+            this.customSelectControl3.StartValue = 0;
+            this.customSelectControl3.TabIndex = 50;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(217, 205);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(13, 13);
+            this.label6.TabIndex = 51;
+            this.label6.Text = "h";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(85, 205);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(13, 13);
+            this.label7.TabIndex = 52;
+            this.label7.Text = "h";
             // 
             // DLG_Events
             // 
@@ -178,12 +226,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BTN_Cancel;
-            this.ClientSize = new System.Drawing.Size(373, 215);
+            this.ClientSize = new System.Drawing.Size(373, 296);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.customSelectControl3);
+            this.Controls.Add(this.customSelectControl2);
+            this.Controls.Add(this.customSelectControl1);
             this.Controls.Add(this.BTN_Effacer);
             this.Controls.Add(this.BTN_Cancel);
             this.Controls.Add(this.BTN_Ok);
-            this.Controls.Add(this.DTP_Ending);
-            this.Controls.Add(this.DTP_Starting);
             this.Controls.Add(this.DTP_Date);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.TBX_Description);
@@ -192,6 +243,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TBX_Title);
+            this.Controls.Add(this.CustomUserControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "DLG_Events";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -211,13 +263,17 @@
         private System.Windows.Forms.TextBox TBX_Description;
         private System.Windows.Forms.DateTimePicker DTP_Date;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker DTP_Starting;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker DTP_Ending;
         private System.Windows.Forms.Button BTN_Ok;
         private System.Windows.Forms.Button BTN_Cancel;
-        private System.Windows.Forms.Button BTN_Effacer;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private Compact_Agenda.CustomSelectControl CustomUserControl1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private CustomSelectControl customSelectControl3;
+        private CustomSelectControl customSelectControl2;
+        private CustomSelectControl customSelectControl1;
+        private System.Windows.Forms.Button BTN_Effacer;
     }
 }
