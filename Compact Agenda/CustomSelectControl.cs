@@ -23,7 +23,7 @@ namespace Compact_Agenda
 
         int _currentValue;
 
-        public int Value { get { return Int32.Parse(textBox1.Text); } }
+        public int Value { get { return Int32.Parse(textBox1.Text); } set { textBox1.Text = value.ToString(); } }
 
         public CustomSelectControl()
         {
@@ -31,6 +31,12 @@ namespace Compact_Agenda
             InitializeComponent();
             _currentValue = (StartValue / _leap) * _leap;
             UpdateTextBoxValue();
+        }
+
+        public new event EventHandler ValueChanged
+        {
+            add { textBox1.TextChanged += value; }
+            remove { textBox1.TextChanged -= value; }
         }
 
         private void button2_Click(object sender, EventArgs e)

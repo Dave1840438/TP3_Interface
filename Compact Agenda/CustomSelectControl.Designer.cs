@@ -31,6 +31,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.flashButton1 = new FlashButton.FlashButton();
+            this.FBT_Up = new FlashButton.FlashButton();
             this.SuspendLayout();
             // 
             // textBox1
@@ -61,15 +63,45 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // flashButton1
+            // 
+            this.flashButton1.BackgroundImage = global::Compact_Agenda.Properties.Resources.ICON_Down_Neutral;
+            this.flashButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.flashButton1.ImageClick = global::Compact_Agenda.Properties.Resources.ICON_Down_Click;
+            this.flashButton1.ImageDisable = global::Compact_Agenda.Properties.Resources.ICON_Down_Disable;
+            this.flashButton1.ImageNeutral = global::Compact_Agenda.Properties.Resources.ICON_Down_Neutral;
+            this.flashButton1.ImageOver = global::Compact_Agenda.Properties.Resources.ICON_Down_Over;
+            this.flashButton1.Location = new System.Drawing.Point(30, 54);
+            this.flashButton1.Name = "flashButton1";
+            this.flashButton1.Size = new System.Drawing.Size(22, 22);
+            this.flashButton1.TabIndex = 4;
+            this.flashButton1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // FBT_Up
+            // 
+            this.FBT_Up.BackgroundImage = global::Compact_Agenda.Properties.Resources.ICON_Up_Neutral;
+            this.FBT_Up.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FBT_Up.ImageClick = global::Compact_Agenda.Properties.Resources.ICON_Up_Click;
+            this.FBT_Up.ImageDisable = global::Compact_Agenda.Properties.Resources.ICON_Up_Disable;
+            this.FBT_Up.ImageNeutral = global::Compact_Agenda.Properties.Resources.ICON_Up_Neutral;
+            this.FBT_Up.ImageOver = global::Compact_Agenda.Properties.Resources.ICON_Up_Over;
+            this.FBT_Up.Location = new System.Drawing.Point(30, 3);
+            this.FBT_Up.Name = "FBT_Up";
+            this.FBT_Up.Size = new System.Drawing.Size(22, 20);
+            this.FBT_Up.TabIndex = 3;
+            this.FBT_Up.Click += new System.EventHandler(this.button2_Click);
+            // 
             // CustomSelectControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.flashButton1);
+            this.Controls.Add(this.FBT_Up);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Name = "CustomSelectControl";
-            this.Size = new System.Drawing.Size(25, 77);
+            this.Size = new System.Drawing.Size(58, 77);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -80,5 +112,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private FlashButton.FlashButton FBT_Up;
+        private FlashButton.FlashButton flashButton1;
     }
 }

@@ -76,6 +76,12 @@
     </Compile>
     <Compile Include="Event.cs" />
     <Compile Include="Events.cs" />
+    <Compile Include="FormAide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAide.Designer.cs">
+      <DependentUpon>FormAide.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_WeekView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +169,65 @@
       <Project>{40c1d7bc-d569-43af-8c32-b0612d862f58}</Project>
       <Name>FlashButton</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\ICON_Accepter_Click.png" />
+    <Content Include="Resources\ICON_Accepter_Disable.png" />
+    <Content Include="Resources\ICON_Accepter_Neutral.png" />
+    <Content Include="Resources\ICON_Accepter_Over.png" />
+    <Content Include="Resources\ICON_Ajouter_Click.png" />
+    <Content Include="Resources\ICON_Ajouter_Disable.png" />
+    <Content Include="Resources\ICON_Ajouter_Neutral.png" />
+    <Content Include="Resources\ICON_Ajouter_Over.png" />
+    <Content Include="Resources\ICON_Annuler_Click.png" />
+    <Content Include="Resources\ICON_Annuler_Disable.png" />
+    <Content Include="Resources\ICON_Annuler_Neutral.png" />
+    <Content Include="Resources\ICON_Annuler_Over.png" />
+    <None Include="Resources\ICON_Up_Over.png" />
+    <None Include="Resources\ICON_Up_Neutral.png" />
+    <None Include="Resources\ICON_Up_Disable.png" />
+    <None Include="Resources\ICON_Up_Click.png" />
+    <None Include="Resources\ICON_Down_Over.png" />
+    <None Include="Resources\ICON_Down_Neutral.png" />
+    <None Include="Resources\ICON_Down_Disable.png" />
+    <None Include="Resources\ICON_Down_Click.png" />
+    <Content Include="Resources\ICON_Editer_Click.png" />
+    <Content Include="Resources\ICON_Editer_Disable.png" />
+    <Content Include="Resources\ICON_Editer_Neutre.png" />
+    <Content Include="Resources\ICON_Editer_Survol.png" />
+    <Content Include="Resources\ICON_Effacer_Click.png" />
+    <Content Include="Resources\ICON_Effacer_Disable.png" />
+    <Content Include="Resources\ICON_Effacer_Neutral.png" />
+    <Content Include="Resources\ICON_Effacer_Over.png" />
+    <Content Include="Resources\ICON_Nouveau_Click.png" />
+    <Content Include="Resources\ICON_Nouveau_Disable.png" />
+    <Content Include="Resources\ICON_Nouveau_Neutral.png" />
+    <Content Include="Resources\ICON_Nouveau_Over.png" />
+    <Content Include="Resources\ICON_Open_Click.png" />
+    <Content Include="Resources\ICON_Open_Disable.png" />
+    <Content Include="Resources\ICON_Open_Neutral.png" />
+    <Content Include="Resources\ICON_Open_Over.png" />
+    <Content Include="Resources\ICON_Save_As_Click.png" />
+    <Content Include="Resources\ICON_Save_As_Disable.png" />
+    <Content Include="Resources\ICON_Save_As_Neutral.png" />
+    <Content Include="Resources\ICON_Save_As_Over.png" />
+    <Content Include="Resources\ICON_Save_Click.png" />
+    <Content Include="Resources\ICON_Save_Disable.png" />
+    <Content Include="Resources\ICON_Save_Neutral.png" />
+    <Content Include="Resources\ICON_Save_Over.png" />
+    <Content Include="Resources\ICON_Setting_Click.png" />
+    <Content Include="Resources\ICON_Setting_Hover.png" />
+    <Content Include="Resources\ICON_Setting_Neutral.png" />
+    <Content Include="Resources\ICON_Trier-Ascendant_Click.png" />
+    <Content Include="Resources\ICON_Trier-Ascendant_Disable.png" />
+    <Content Include="Resources\ICON_Trier-Ascendant_Neutral.png" />
+    <Content Include="Resources\ICON_Trier-Ascendant_Over.png" />
+    <Content Include="Resources\ICON_Trier-Descendant_Click.png" />
+    <Content Include="Resources\ICON_Trier-Descendant_Disable.png" />
+    <Content Include="Resources\ICON_Trier-Descendant_Neutral.png" />
+    <Content Include="Resources\ICON_Trier-Descendant_Over.png" />
+    <Content Include="Resources\Logo.png" />
+    <Content Include="Resources\LogoEtiquette.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

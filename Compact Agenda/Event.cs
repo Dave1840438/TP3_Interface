@@ -11,12 +11,12 @@ namespace Compact_Agenda
     {
         public enum choixEvents
         {
-            Général, Travail, Loisir, Santé, Important, Autre
+            Général = 0, Travail, Loisir, Santé, Important, Autre
         }
 
         choixEvents type;
 
-        public string ToString()
+        public override string ToString()
         {
             Enum e = type;
             return type.ToString();

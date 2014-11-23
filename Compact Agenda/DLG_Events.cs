@@ -18,6 +18,15 @@ namespace Compact_Agenda
         public DLG_Events()
         {
             InitializeComponent();
+
+            foreach (Enum e in Enum.GetValues(typeof(EventType.choixEvents)))
+                CB_ChoixEvent.Items.Add(e);
+            CB_ChoixEvent.SelectedItem = CB_ChoixEvent.Items[0];
+        }
+
+        private void lel(object sender, EventArgs e)
+        {
+            MessageBox.Show("lel");
         }
 
         private void DLG_Events_Load(object sender, EventArgs e)
@@ -25,7 +34,7 @@ namespace Compact_Agenda
             delete = false;
             EventToDLG();
         }
-        
+
         public static DateTime Klone(DateTime date)
         {
             return new DateTime(date.Year, date.Month, date.Day, date.Hour, date.Minute, 0);
@@ -39,8 +48,10 @@ namespace Compact_Agenda
                 TBX_Description.Text = Event.Description;
                 blockUpdate = true;
                 DTP_Date.Value = Klone(Event.Starting);
-                DTP_Starting.Value = Klone(Event.Starting);
-                DTP_Ending.Value = Klone(Event.Ending);
+                CSC_StartingHour.Value = Klone(Event.Starting).Hour;
+                CSC_StartingMinutes.Value = Klone(Event.Starting).Minute;
+                CSC_FinishingHour.Value = Klone(Event.Ending).Hour;
+                CSC_FinishingMinutes.Value = Klone(Event.Ending).Minute;
                 blockUpdate = false;
             }
             else
@@ -64,15 +75,15 @@ namespace Compact_Agenda
                 Event.Starting = new DateTime(DTP_Date.Value.Year,
                                                 DTP_Date.Value.Month,
                                                 DTP_Date.Value.Day,
-                                                DTP_Starting.Value.Hour,
-                                                DTP_Starting.Value.Minute,
+                                                CSC_StartingHour.Value,
+                                                CSC_StartingMinutes.Value,
                                                 0);
 
                 Event.Ending = new DateTime(DTP_Date.Value.Year,
                                             DTP_Date.Value.Month,
                                             DTP_Date.Value.Day,
-                                            DTP_Ending.Value.Hour,
-                                            DTP_Ending.Value.Minute,
+                                            CSC_FinishingHour.Value,
+                                            CSC_FinishingMinutes.Value,
                                             0);
             }
         }
@@ -84,8 +95,8 @@ namespace Compact_Agenda
                 Event.Starting = new DateTime(DTP_Date.Value.Year,
                                                  DTP_Date.Value.Month,
                                                  DTP_Date.Value.Day,
-                                                 DTP_Starting.Value.Hour,
-                                                 DTP_Starting.Value.Minute,
+                                                 CSC_StartingHour.Value,
+                                                 CSC_StartingMinutes.Value,
                                                  0);
             }
         }
@@ -98,8 +109,8 @@ namespace Compact_Agenda
                 Event.Ending = new DateTime(DTP_Date.Value.Year,
                                             DTP_Date.Value.Month,
                                             DTP_Date.Value.Day,
-                                            DTP_Ending.Value.Hour,
-                                            DTP_Ending.Value.Minute,
+                                            CSC_FinishingHour.Value,
+                                            CSC_FinishingMinutes.Value,
                                             0);
             }
         }
@@ -116,15 +127,25 @@ namespace Compact_Agenda
 
         private void BTN_Ok_Click(object sender, EventArgs e)
         {
-            if (TBX_Title.Text != "")
+            if (CSC_FinishingHour.Value < CSC_StartingHour.Value ||
+                (CSC_StartingHour.Value == CSC_FinishingHour.Value &&
+                CSC_FinishingMinutes.Value <= CSC_StartingMinutes.Value))
+                errorProvider.SetError(CSC_FinishingMinutes, "Heures incohérentes");
+            else if (TBX_Title.Text == "")
+                errorProvider.SetError(TBX_Title, "Le champs est vide");
+            else if (TBX_Description.Text == "")
+                errorProvider.SetError(TBX_Description, "Le champs est vide");
+            else
             {
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
-            {
-                if (TBX_Title.Text == "")
-                    errorProvider.SetError(TBX_Title, "Le champs est vide");
-            }
+        }
+
+        private void flashButton1_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

@@ -37,16 +37,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.BTN_Ok = new System.Windows.Forms.Button();
-            this.BTN_Cancel = new System.Windows.Forms.Button();
-            this.CustomUserControl1 = new Compact_Agenda.CustomSelectControl();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.customSelectControl1 = new Compact_Agenda.CustomSelectControl();
-            this.customSelectControl2 = new Compact_Agenda.CustomSelectControl();
             this.BTN_Effacer = new System.Windows.Forms.Button();
-            this.customSelectControl3 = new Compact_Agenda.CustomSelectControl();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.FBT_Accepter = new FlashButton.FlashButton();
+            this.flashButton1 = new FlashButton.FlashButton();
+            this.CB_ChoixEvent = new System.Windows.Forms.ComboBox();
+            this.customSelectControl1 = new Compact_Agenda.CustomSelectControl();
+            this.CSC_FinishingMinutes = new Compact_Agenda.CustomSelectControl();
+            this.CSC_FinishingHour = new Compact_Agenda.CustomSelectControl();
+            this.CSC_StartingMinutes = new Compact_Agenda.CustomSelectControl();
+            this.CSC_StartingHour = new Compact_Agenda.CustomSelectControl();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,63 +124,9 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "Fin :";
             // 
-            // BTN_Ok
-            // 
-            this.BTN_Ok.Location = new System.Drawing.Point(171, 261);
-            this.BTN_Ok.Name = "BTN_Ok";
-            this.BTN_Ok.Size = new System.Drawing.Size(75, 23);
-            this.BTN_Ok.TabIndex = 6;
-            this.BTN_Ok.Text = "Ok";
-            this.BTN_Ok.UseVisualStyleBackColor = true;
-            this.BTN_Ok.Click += new System.EventHandler(this.BTN_Ok_Click);
-            // 
-            // BTN_Cancel
-            // 
-            this.BTN_Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BTN_Cancel.Location = new System.Drawing.Point(70, 261);
-            this.BTN_Cancel.Name = "BTN_Cancel";
-            this.BTN_Cancel.Size = new System.Drawing.Size(75, 23);
-            this.BTN_Cancel.TabIndex = 5;
-            this.BTN_Cancel.TabStop = false;
-            this.BTN_Cancel.Text = "Annuler";
-            this.BTN_Cancel.UseVisualStyleBackColor = true;
-            // 
-            // CustomUserControl1
-            // 
-            this.CustomUserControl1.Leap = 1;
-            this.CustomUserControl1.Location = new System.Drawing.Point(54, 172);
-            this.CustomUserControl1.MaximumValue = 23;
-            this.CustomUserControl1.MinimumValue = 0;
-            this.CustomUserControl1.Name = "CustomUserControl1";
-            this.CustomUserControl1.Size = new System.Drawing.Size(25, 77);
-            this.CustomUserControl1.StartValue = 0;
-            this.CustomUserControl1.TabIndex = 47;
-            // 
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
-            // 
-            // customSelectControl1
-            // 
-            this.customSelectControl1.Leap = 5;
-            this.customSelectControl1.Location = new System.Drawing.Point(104, 172);
-            this.customSelectControl1.MaximumValue = 59;
-            this.customSelectControl1.MinimumValue = 0;
-            this.customSelectControl1.Name = "customSelectControl1";
-            this.customSelectControl1.Size = new System.Drawing.Size(25, 77);
-            this.customSelectControl1.StartValue = 0;
-            this.customSelectControl1.TabIndex = 48;
-            // 
-            // customSelectControl2
-            // 
-            this.customSelectControl2.Leap = 1;
-            this.customSelectControl2.Location = new System.Drawing.Point(186, 172);
-            this.customSelectControl2.MaximumValue = 23;
-            this.customSelectControl2.MinimumValue = 0;
-            this.customSelectControl2.Name = "customSelectControl2";
-            this.customSelectControl2.Size = new System.Drawing.Size(25, 77);
-            this.customSelectControl2.StartValue = 0;
-            this.customSelectControl2.TabIndex = 49;
             // 
             // BTN_Effacer
             // 
@@ -190,17 +138,6 @@
             this.BTN_Effacer.Text = "Effacer";
             this.BTN_Effacer.UseVisualStyleBackColor = true;
             this.BTN_Effacer.Click += new System.EventHandler(this.BTN_Effacer_Click);
-            // 
-            // customSelectControl3
-            // 
-            this.customSelectControl3.Leap = 5;
-            this.customSelectControl3.Location = new System.Drawing.Point(236, 172);
-            this.customSelectControl3.MaximumValue = 59;
-            this.customSelectControl3.MinimumValue = 0;
-            this.customSelectControl3.Name = "customSelectControl3";
-            this.customSelectControl3.Size = new System.Drawing.Size(25, 77);
-            this.customSelectControl3.StartValue = 0;
-            this.customSelectControl3.TabIndex = 50;
             // 
             // label6
             // 
@@ -220,21 +157,121 @@
             this.label7.TabIndex = 52;
             this.label7.Text = "h";
             // 
+            // FBT_Accepter
+            // 
+            this.FBT_Accepter.BackgroundImage = global::Compact_Agenda.Properties.Resources.ICON_Accepter_Neutral;
+            this.FBT_Accepter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FBT_Accepter.ImageClick = global::Compact_Agenda.Properties.Resources.ICON_Accepter_Click;
+            this.FBT_Accepter.ImageDisable = global::Compact_Agenda.Properties.Resources.ICON_Accepter_Disable;
+            this.FBT_Accepter.ImageNeutral = global::Compact_Agenda.Properties.Resources.ICON_Accepter_Neutral;
+            this.FBT_Accepter.ImageOver = global::Compact_Agenda.Properties.Resources.ICON_Accepter_Over;
+            this.FBT_Accepter.Location = new System.Drawing.Point(208, 255);
+            this.FBT_Accepter.Name = "FBT_Accepter";
+            this.FBT_Accepter.Size = new System.Drawing.Size(35, 29);
+            this.FBT_Accepter.TabIndex = 53;
+            this.FBT_Accepter.Click += new System.EventHandler(this.BTN_Ok_Click);
+            // 
+            // flashButton1
+            // 
+            this.flashButton1.BackgroundImage = global::Compact_Agenda.Properties.Resources.ICON_Annuler_Neutral;
+            this.flashButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.flashButton1.ImageClick = global::Compact_Agenda.Properties.Resources.ICON_Annuler_Click;
+            this.flashButton1.ImageDisable = global::Compact_Agenda.Properties.Resources.ICON_Annuler_Disable;
+            this.flashButton1.ImageNeutral = global::Compact_Agenda.Properties.Resources.ICON_Annuler_Neutral;
+            this.flashButton1.ImageOver = global::Compact_Agenda.Properties.Resources.ICON_Annuler_Over;
+            this.flashButton1.Location = new System.Drawing.Point(137, 253);
+            this.flashButton1.Name = "flashButton1";
+            this.flashButton1.Size = new System.Drawing.Size(33, 31);
+            this.flashButton1.TabIndex = 54;
+            this.flashButton1.Click += new System.EventHandler(this.flashButton1_Click);
+            // 
+            // CB_ChoixEvent
+            // 
+            this.CB_ChoixEvent.FormattingEnabled = true;
+            this.CB_ChoixEvent.Location = new System.Drawing.Point(12, 76);
+            this.CB_ChoixEvent.Name = "CB_ChoixEvent";
+            this.CB_ChoixEvent.Size = new System.Drawing.Size(51, 21);
+            this.CB_ChoixEvent.TabIndex = 56;
+            // 
+            // customSelectControl1
+            // 
+            this.customSelectControl1.Leap = 2;
+            this.customSelectControl1.Location = new System.Drawing.Point(277, 141);
+            this.customSelectControl1.MaximumValue = 23;
+            this.customSelectControl1.MinimumValue = 0;
+            this.customSelectControl1.Name = "customSelectControl1";
+            this.customSelectControl1.Size = new System.Drawing.Size(58, 77);
+            this.customSelectControl1.StartValue = 3;
+            this.customSelectControl1.TabIndex = 55;
+            this.customSelectControl1.Value = 0;
+            // 
+            // CSC_FinishingMinutes
+            // 
+            this.CSC_FinishingMinutes.Leap = 5;
+            this.CSC_FinishingMinutes.Location = new System.Drawing.Point(236, 172);
+            this.CSC_FinishingMinutes.MaximumValue = 59;
+            this.CSC_FinishingMinutes.MinimumValue = 0;
+            this.CSC_FinishingMinutes.Name = "CSC_FinishingMinutes";
+            this.CSC_FinishingMinutes.Size = new System.Drawing.Size(25, 77);
+            this.CSC_FinishingMinutes.StartValue = 0;
+            this.CSC_FinishingMinutes.TabIndex = 50;
+            this.CSC_FinishingMinutes.Value = 0;
+            this.CSC_FinishingMinutes.ValueChanged += new System.EventHandler(this.DTP_Ending_ValueChanged);
+            // 
+            // CSC_FinishingHour
+            // 
+            this.CSC_FinishingHour.Leap = 1;
+            this.CSC_FinishingHour.Location = new System.Drawing.Point(186, 172);
+            this.CSC_FinishingHour.MaximumValue = 23;
+            this.CSC_FinishingHour.MinimumValue = 0;
+            this.CSC_FinishingHour.Name = "CSC_FinishingHour";
+            this.CSC_FinishingHour.Size = new System.Drawing.Size(25, 77);
+            this.CSC_FinishingHour.StartValue = 0;
+            this.CSC_FinishingHour.TabIndex = 49;
+            this.CSC_FinishingHour.Value = 0;
+            this.CSC_FinishingHour.ValueChanged += new System.EventHandler(this.DTP_Ending_ValueChanged);
+            // 
+            // CSC_StartingMinutes
+            // 
+            this.CSC_StartingMinutes.Leap = 5;
+            this.CSC_StartingMinutes.Location = new System.Drawing.Point(104, 172);
+            this.CSC_StartingMinutes.MaximumValue = 59;
+            this.CSC_StartingMinutes.MinimumValue = 0;
+            this.CSC_StartingMinutes.Name = "CSC_StartingMinutes";
+            this.CSC_StartingMinutes.Size = new System.Drawing.Size(25, 77);
+            this.CSC_StartingMinutes.StartValue = 0;
+            this.CSC_StartingMinutes.TabIndex = 48;
+            this.CSC_StartingMinutes.Value = 0;
+            this.CSC_StartingMinutes.ValueChanged += new System.EventHandler(this.DTP_Starting_ValueChanged);
+            // 
+            // CSC_StartingHour
+            // 
+            this.CSC_StartingHour.Leap = 1;
+            this.CSC_StartingHour.Location = new System.Drawing.Point(54, 172);
+            this.CSC_StartingHour.MaximumValue = 23;
+            this.CSC_StartingHour.MinimumValue = 0;
+            this.CSC_StartingHour.Name = "CSC_StartingHour";
+            this.CSC_StartingHour.Size = new System.Drawing.Size(25, 77);
+            this.CSC_StartingHour.StartValue = 0;
+            this.CSC_StartingHour.TabIndex = 47;
+            this.CSC_StartingHour.Value = 0;
+            this.CSC_StartingHour.ValueChanged += new System.EventHandler(this.DTP_Starting_ValueChanged);
+            // 
             // DLG_Events
             // 
-            this.AcceptButton = this.BTN_Ok;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.BTN_Cancel;
             this.ClientSize = new System.Drawing.Size(373, 296);
+            this.Controls.Add(this.CB_ChoixEvent);
+            this.Controls.Add(this.customSelectControl1);
+            this.Controls.Add(this.flashButton1);
+            this.Controls.Add(this.FBT_Accepter);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.customSelectControl3);
-            this.Controls.Add(this.customSelectControl2);
-            this.Controls.Add(this.customSelectControl1);
+            this.Controls.Add(this.CSC_FinishingMinutes);
+            this.Controls.Add(this.CSC_FinishingHour);
+            this.Controls.Add(this.CSC_StartingMinutes);
             this.Controls.Add(this.BTN_Effacer);
-            this.Controls.Add(this.BTN_Cancel);
-            this.Controls.Add(this.BTN_Ok);
             this.Controls.Add(this.DTP_Date);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.TBX_Description);
@@ -243,7 +280,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TBX_Title);
-            this.Controls.Add(this.CustomUserControl1);
+            this.Controls.Add(this.CSC_StartingHour);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "DLG_Events";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -265,15 +302,17 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button BTN_Ok;
-        private System.Windows.Forms.Button BTN_Cancel;
         private System.Windows.Forms.ErrorProvider errorProvider;
-        private Compact_Agenda.CustomSelectControl CustomUserControl1;
+        private Compact_Agenda.CustomSelectControl CSC_StartingHour;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private CustomSelectControl customSelectControl3;
-        private CustomSelectControl customSelectControl2;
-        private CustomSelectControl customSelectControl1;
+        private CustomSelectControl CSC_FinishingMinutes;
+        private CustomSelectControl CSC_FinishingHour;
+        private CustomSelectControl CSC_StartingMinutes;
         private System.Windows.Forms.Button BTN_Effacer;
+        private FlashButton.FlashButton FBT_Accepter;
+        private FlashButton.FlashButton flashButton1;
+        private CustomSelectControl customSelectControl1;
+        private System.Windows.Forms.ComboBox CB_ChoixEvent;
     }
 }
