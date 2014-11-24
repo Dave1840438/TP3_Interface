@@ -89,11 +89,22 @@ namespace Compact_Agenda
         private void Fill_Agenda(Graphics DC)
         {
             Brush brush = new SolidBrush(Color.Black);
-            Pen pen = new Pen(Color.LightGray, 1);
+            Pen pen1 = new Pen(Color.LightGray, 1);
+            Pen pen2 = new Pen(Color.LightGray, 1);
+            pen2.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
             for (int hour = 0; hour < 24; hour++)
             {
-                DC.DrawLine(pen, 0, Event.HourToPixel(hour + 1, 0, PN_Hours.Height), PN_Content.Width, Event.HourToPixel(hour + 1, 0, PN_Hours.Height));
+                DC.DrawLine(pen1, 0, Event.HourToPixel(hour + 1, 0, PN_Hours.Height), PN_Content.Width, Event.HourToPixel(hour + 1, 0, PN_Hours.Height));
+                DC.DrawLine(pen2, 0, Event.HourToPixel(hour + 1, 30, PN_Hours.Height), PN_Content.Width, Event.HourToPixel(hour + 1, 30, PN_Hours.Height));
             }
+            Point location;
+            for (int dayNum = 0; dayNum < 7; dayNum++)
+            {
+                location = new Point((int)Math.Round(PN_DaysHeader.Width / 7f * dayNum), 0);
+                DC.DrawLine(pen1, location.X, 0, location.X, PN_Content.Height);
+            }
+            location = new Point((int)Math.Round(PN_DaysHeader.Width / 7f * 7), 0);
+            DC.DrawLine(pen1, location.X - 1, 0, location.X - 1, PN_Content.Height);
             Events.Draw(DC);
             PN_Scroll.Focus();
         }

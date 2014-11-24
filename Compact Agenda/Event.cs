@@ -111,11 +111,40 @@ namespace Compact_Agenda
             }
             return new Rectangle();
         }
+
+        public static string TwoDigits(int n)
+        {
+            return (n < 10 ? "0" : "") + n.ToString();
+        }
+        public static string TimeToString(DateTime date)
+        {
+            return TwoDigits(date.Hour) + ":" + TwoDigits(date.Minute);
+        }
         public void Draw(Graphics DC)
         {
             DC.FillRectangle(new SolidBrush(Color.LightBlue), GetBorder());
             DC.DrawRectangle(new Pen(Color.Black, 1), GetBorder());
-            DC.DrawString(Title, new Font("Arial", 10f), new SolidBrush(Color.Black), GetBorder().Location);
+            string time = TimeToString(Starting) + "-" + TimeToString(Ending);
+
+            int fontSize = 8;
+            using (Font font = new Font("Arial", fontSize - 1, FontStyle.Regular, GraphicsUnit.Point))
+            {
+                using (Font font2 = new Font("Arial", fontSize + 1, FontStyle.Bold, GraphicsUnit.Point))
+                {
+                    System.Windows.Forms.TextFormatFlags flags = System.Windows.Forms.TextFormatFlags.WordEllipsis | System.Windows.Forms.TextFormatFlags.HorizontalCenter;
+                    Rectangle border = GetBorder();
+                    fontSize += 6;
+
+                    System.Windows.Forms.TextRenderer.DrawText(DC, time, font, border, Color.Black, flags);
+                    border = new Rectangle(border.Location.X, border.Location.Y + fontSize, border.Width, border.Height - fontSize);
+
+                    System.Windows.Forms.TextRenderer.DrawText(DC, Title, font2, border, Color.Black, flags);
+                    border = new Rectangle(border.Location.X, border.Location.Y + fontSize, border.Width, border.Height - fontSize);
+
+                    flags = System.Windows.Forms.TextFormatFlags.WordBreak;
+                    System.Windows.Forms.TextRenderer.DrawText(DC, Description, font, border, Color.Black, flags);
+                }
+            }
         }
     }
 }
