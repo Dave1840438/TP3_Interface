@@ -4,5 +4,6 @@
     [Title] NVARCHAR(50) NULL, 
     [Description] NVARCHAR(MAX) NULL, 
     [Start] DATETIME NULL, 
-    [End] DATETIME NULL
+    [End] DATETIME NULL,
+	[eventType] INT NULL
 )
