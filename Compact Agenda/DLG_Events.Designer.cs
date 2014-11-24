@@ -192,6 +192,7 @@
             this.CB_ChoixEvent.Name = "CB_ChoixEvent";
             this.CB_ChoixEvent.Size = new System.Drawing.Size(51, 21);
             this.CB_ChoixEvent.TabIndex = 56;
+            this.CB_ChoixEvent.SelectedValueChanged += new System.EventHandler(this.CB_ChoixEvent_SelectedValueChanged);
             // 
             // customSelectControl1
             // 

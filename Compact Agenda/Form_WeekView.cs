@@ -49,9 +49,6 @@ namespace Compact_Agenda
             ConnexionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='" + DB_URL + "';Integrated Security=True";
             CurrentWeek = DateTime.Now;
             PN_Hours.Height = PN_Content.Height = 2400;
-
-
-            
         }
         private void Form_WeekView_Load(object sender, EventArgs e)
         {
@@ -123,6 +120,13 @@ namespace Compact_Agenda
             for (int dayNum = 0; dayNum < 7; dayNum++)
             {
                 Point location = new Point((int)Math.Round(PN_DaysHeader.Width / 7f * dayNum), 0);
+
+                if (date.ToShortDateString() == DateTime.Now.ToShortDateString())
+                {
+                    Pen leGrosPen = new Pen(Color.Red, 64);
+                    DC.DrawLine(leGrosPen, location, new Point(location.X + (int)(PN_DaysHeader.Width / 7f), location.Y));
+                }
+
                 String headerText = dayNames[dayNum];
                 String headerDate = date.ToShortDateString();
 
@@ -139,6 +143,14 @@ namespace Compact_Agenda
             for (int hour = 0; hour <= 24; hour++)
             {
                 Point location = new Point(0, Event.HourToPixel(hour, 0, PN_Hours.Height));
+
+                if (hour == DateTime.Now.Hour)
+                {
+                    int Decalage = PN_Hours.Height / 24 / 2;
+                    Pen leGrosPen = new Pen(Color.Red,  PN_Hours.Height / 24);
+                    DC.DrawLine(leGrosPen, new Point(location.X, location.Y + Decalage), new Point(location.X + PN_Hours.Width, location.Y + Decalage));
+                }
+
                 String headerText = (hour < 10 ? "0" : "") + hour.ToString() + ":00";
                 DC.DrawString(headerText, PN_DaysHeader.Font, brush, location);
                 DC.DrawLine(pen, 0, Event.HourToPixel(hour + 1, 0, PN_Hours.Height), PN_Hours.Width, Event.HourToPixel(hour + 1, 0, PN_Hours.Height));
@@ -423,8 +435,6 @@ namespace Compact_Agenda
             PN_Content.Refresh();
             PN_DaysHeader.Refresh();
             PN_Scroll.VerticalScroll.Value = Event.HourToPixel((int)Math.Max(DateTime.Now.Hour - 3, 0), 0, PN_Hours.Height);
-            // La ligne commentée suivante était la cause d'une exception fatale entre 12h00 et 03h00 du matin
-            // PN_Scroll.VerticalScroll.Value = Event.HourToPixel(DateTime.Now.Hour - 3, 0, PN_Hours.Height);
         }
 
 
@@ -474,10 +484,13 @@ namespace Compact_Agenda
                     // Fonction temporaire pour voir comment dézommer
                     if (!mouseIsDown)
                     {
-                        PN_Content.Height -= 200;
-                        PN_Hours.Height -= 200;
-                        PN_Content.Refresh();
-                        PN_Hours.Refresh();
+                        if (PN_Content.Height > 600)
+                        {
+                            PN_Content.Height -= 200;
+                            PN_Hours.Height -= 200;
+                            PN_Content.Refresh();
+                            PN_Hours.Refresh();
+                        }
                     }
                     break;
                 case Keys.Right: // Incrémenter d'une semaine la semaine courrante
@@ -490,10 +503,13 @@ namespace Compact_Agenda
                     // Fonction temporaire pour voir comment zommer
                     if (!mouseIsDown)
                     {
-                        PN_Content.Height += 200;
-                        PN_Hours.Height += 200;
-                        PN_Content.Refresh();
-                        PN_Hours.Refresh();
+                        if (PN_Content.Height < 4800)
+                        {
+                            PN_Content.Height += 200;
+                            PN_Hours.Height += 200;
+                            PN_Content.Refresh();
+                            PN_Hours.Refresh();
+                        }
                     }
                     break;
 
@@ -522,8 +538,7 @@ namespace Compact_Agenda
                     ctrlIsDown = true;
                     break;
                 case Keys.F1:
-                    FormAide fa = new FormAide();
-                    fa.Show();
+                    new FormAide().ShowDialog();
                     break;
             }
 

@@ -7,21 +7,10 @@ using System.Threading.Tasks;
 
 namespace Compact_Agenda
 {
-    public struct EventType
-    {
         public enum choixEvents
         {
             Général = 0, Travail, Loisir, Santé, Important, Autre
         }
-
-        choixEvents type;
-
-        public override string ToString()
-        {
-            Enum e = type;
-            return type.ToString();
-        }
-    }
 
 
     public class Event
@@ -33,10 +22,13 @@ namespace Compact_Agenda
         public DateTime Ending { get; set; }
         public System.Windows.Forms.Panel ParentPanel { get; set; }
 
+        public choixEvents typeEvent;
+
         public Event()
         {
             Starting = DateTime.Now;
             Ending = DateTime.Now;
+            typeEvent = choixEvents.Général;
         }
         public Event(string Id, string Title, string Description, DateTime Starting, DateTime Ending)
         {
@@ -63,6 +55,7 @@ namespace Compact_Agenda
             Starting = copy.Starting;
             Ending = copy.Ending;
             ParentPanel = copy.ParentPanel;
+            typeEvent = copy.typeEvent;
         }
         public Event Klone()
         {
@@ -122,7 +115,34 @@ namespace Compact_Agenda
         }
         public void Draw(Graphics DC)
         {
-            DC.FillRectangle(new SolidBrush(Color.LightBlue), GetBorder());
+            Color couleur = Color.Black;
+
+            switch (typeEvent)
+            {
+                case choixEvents.Général:
+                    couleur = Color.LightBlue;
+                    break;
+                case choixEvents.Important:
+                    couleur = Color.PaleVioletRed;
+                    break;
+                case choixEvents.Autre:
+                    couleur = Color.Pink;
+                    break;
+                case choixEvents.Loisir:
+                    couleur = Color.Peru;
+                    break;
+                case choixEvents.Santé:
+                    couleur = Color.PaleTurquoise;
+                    break;
+                case choixEvents.Travail:
+                    couleur = Color.Gold;
+                    break;
+                default:
+                    couleur = Color.Black;
+                    break;
+            }
+
+            DC.FillRectangle(new SolidBrush(couleur), GetBorder());
             DC.DrawRectangle(new Pen(Color.Black, 1), GetBorder());
             string time = TimeToString(Starting) + "-" + TimeToString(Ending);
 

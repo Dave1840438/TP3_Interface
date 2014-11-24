@@ -97,6 +97,9 @@
     <EmbeddedResource Include="DLG_Events.resx">
       <DependentUpon>DLG_Events.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAide.resx">
+      <DependentUpon>FormAide.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_WeekView.resx">
       <DependentUpon>Form_WeekView.cs</DependentUpon>
     </EmbeddedResource>

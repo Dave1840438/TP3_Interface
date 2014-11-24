@@ -19,9 +19,7 @@ namespace Compact_Agenda
         {
             InitializeComponent();
 
-            foreach (Enum e in Enum.GetValues(typeof(EventType.choixEvents)))
-                CB_ChoixEvent.Items.Add(e);
-            CB_ChoixEvent.SelectedItem = CB_ChoixEvent.Items[0];
+            
         }
 
         private void lel(object sender, EventArgs e)
@@ -33,6 +31,10 @@ namespace Compact_Agenda
         {
             delete = false;
             EventToDLG();
+
+            foreach (Enum ev in Enum.GetValues(typeof(choixEvents)))
+                CB_ChoixEvent.Items.Add(ev);
+            CB_ChoixEvent.SelectedItem = CB_ChoixEvent.Items[0];
         }
 
         public static DateTime Klone(DateTime date)
@@ -146,6 +148,11 @@ namespace Compact_Agenda
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void CB_ChoixEvent_SelectedValueChanged(object sender, EventArgs e)
+        {
+            Event.typeEvent = (choixEvents)CB_ChoixEvent.SelectedItem;
         }
     }
 }
