@@ -262,7 +262,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(6)))), ((int)(((byte)(179)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(83)))), ((int)(((byte)(236)))));
             this.ClientSize = new System.Drawing.Size(375, 316);
             this.Controls.Add(this.FlashButton_Effacer);
             this.Controls.Add(this.FlashButton_Ok);
