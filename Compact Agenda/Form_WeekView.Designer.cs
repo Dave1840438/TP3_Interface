@@ -28,52 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.FBTN_IncrementWeek = new FlashButton.FlashButton();
-            this.FBTN_DecrementWeek = new FlashButton.FlashButton();
+            this.components = new System.ComponentModel.Container();
             this.PN_Frame = new System.Windows.Forms.Panel();
+            this.FBTN_DecrementWeek = new FlashButton.FlashButton();
+            this.FBTN_IncrementWeek = new FlashButton.FlashButton();
             this.PN_Scroll = new Compact_Agenda.DoubleBufferPanel();
             this.PN_Content = new Compact_Agenda.DoubleBufferPanel();
             this.PN_Hours = new Compact_Agenda.DoubleBufferPanel();
             this.PN_DaysHeader = new Compact_Agenda.DoubleBufferPanel();
+            this.CMENU_Semaine_courante = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.changerLaCouleurDuFondToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changerLaCouleurDesLignesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.policeEtCouleurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PN_Frame.SuspendLayout();
             this.PN_Scroll.SuspendLayout();
+            this.CMENU_Semaine_courante.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // FBTN_IncrementWeek
-            // 
-            this.FBTN_IncrementWeek.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FBTN_IncrementWeek.BackgroundImage = global::Compact_Agenda.Properties.Resources.ICON_Right_Neutral;
-            this.FBTN_IncrementWeek.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FBTN_IncrementWeek.ImageClick = global::Compact_Agenda.Properties.Resources.ICON_Right_Click;
-            this.FBTN_IncrementWeek.ImageDisable = global::Compact_Agenda.Properties.Resources.ICON_Right_Disable;
-            this.FBTN_IncrementWeek.ImageNeutral = global::Compact_Agenda.Properties.Resources.ICON_Right_Neutral;
-            this.FBTN_IncrementWeek.ImageOver = global::Compact_Agenda.Properties.Resources.ICON_Right_Over;
-            this.FBTN_IncrementWeek.Location = new System.Drawing.Point(708, 2);
-            this.FBTN_IncrementWeek.Name = "FBTN_IncrementWeek";
-            this.FBTN_IncrementWeek.Size = new System.Drawing.Size(32, 32);
-            this.FBTN_IncrementWeek.TabIndex = 3;
-            this.FBTN_IncrementWeek.Click += new System.EventHandler(this.FBTN_IncrementWeek_Click);
-            // 
-            // FBTN_DecrementWeek
-            // 
-            this.FBTN_DecrementWeek.BackgroundImage = global::Compact_Agenda.Properties.Resources.ICON_Left_Neutral;
-            this.FBTN_DecrementWeek.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FBTN_DecrementWeek.ImageClick = global::Compact_Agenda.Properties.Resources.ICON_Left_Neutral;
-            this.FBTN_DecrementWeek.ImageDisable = global::Compact_Agenda.Properties.Resources.ICON_Left_Disable;
-            this.FBTN_DecrementWeek.ImageNeutral = global::Compact_Agenda.Properties.Resources.ICON_Left_Neutral;
-            this.FBTN_DecrementWeek.ImageOver = global::Compact_Agenda.Properties.Resources.ICON_Left_Over;
-            this.FBTN_DecrementWeek.Location = new System.Drawing.Point(3, 2);
-            this.FBTN_DecrementWeek.Name = "FBTN_DecrementWeek";
-            this.FBTN_DecrementWeek.Size = new System.Drawing.Size(32, 32);
-            this.FBTN_DecrementWeek.TabIndex = 2;
-            this.FBTN_DecrementWeek.Click += new System.EventHandler(this.FBTN_DecrementWeek_Click);
             // 
             // PN_Frame
             // 
             this.PN_Frame.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.PN_Frame.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.PN_Frame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(6)))), ((int)(((byte)(179)))));
             this.PN_Frame.Controls.Add(this.PN_Scroll);
             this.PN_Frame.Controls.Add(this.FBTN_DecrementWeek);
             this.PN_Frame.Controls.Add(this.FBTN_IncrementWeek);
@@ -82,6 +59,35 @@
             this.PN_Frame.Name = "PN_Frame";
             this.PN_Frame.Size = new System.Drawing.Size(743, 589);
             this.PN_Frame.TabIndex = 4;
+            // 
+            // FBTN_DecrementWeek
+            // 
+            this.FBTN_DecrementWeek.BackgroundImage = global::Compact_Agenda.Properties.Resources.ARROW_Neutre1;
+            this.FBTN_DecrementWeek.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FBTN_DecrementWeek.ImageClick = global::Compact_Agenda.Properties.Resources.ARROW_CLICK_2;
+            this.FBTN_DecrementWeek.ImageDisable = global::Compact_Agenda.Properties.Resources.ICON_Left_Disable;
+            this.FBTN_DecrementWeek.ImageNeutral = global::Compact_Agenda.Properties.Resources.ARROW_Neutre1;
+            this.FBTN_DecrementWeek.ImageOver = global::Compact_Agenda.Properties.Resources.ARROW_OVER_2;
+            this.FBTN_DecrementWeek.Location = new System.Drawing.Point(3, 2);
+            this.FBTN_DecrementWeek.Name = "FBTN_DecrementWeek";
+            this.FBTN_DecrementWeek.Size = new System.Drawing.Size(32, 32);
+            this.FBTN_DecrementWeek.TabIndex = 2;
+            this.FBTN_DecrementWeek.Click += new System.EventHandler(this.FBTN_DecrementWeek_Click);
+            // 
+            // FBTN_IncrementWeek
+            // 
+            this.FBTN_IncrementWeek.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FBTN_IncrementWeek.BackgroundImage = global::Compact_Agenda.Properties.Resources.ARROW_Neutre2;
+            this.FBTN_IncrementWeek.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FBTN_IncrementWeek.ImageClick = global::Compact_Agenda.Properties.Resources.ARROW_CLICK;
+            this.FBTN_IncrementWeek.ImageDisable = global::Compact_Agenda.Properties.Resources.ICON_Right_Disable;
+            this.FBTN_IncrementWeek.ImageNeutral = global::Compact_Agenda.Properties.Resources.ARROW_Neutre2;
+            this.FBTN_IncrementWeek.ImageOver = global::Compact_Agenda.Properties.Resources.ARROW_OVER;
+            this.FBTN_IncrementWeek.Location = new System.Drawing.Point(708, 2);
+            this.FBTN_IncrementWeek.Name = "FBTN_IncrementWeek";
+            this.FBTN_IncrementWeek.Size = new System.Drawing.Size(32, 32);
+            this.FBTN_IncrementWeek.TabIndex = 3;
+            this.FBTN_IncrementWeek.Click += new System.EventHandler(this.FBTN_IncrementWeek_Click);
             // 
             // PN_Scroll
             // 
@@ -102,6 +108,7 @@
             // 
             // PN_Content
             // 
+            this.PN_Content.ContextMenuStrip = this.CMENU_Semaine_courante;
             this.PN_Content.Location = new System.Drawing.Point(35, -1);
             this.PN_Content.Name = "PN_Content";
             this.PN_Content.Size = new System.Drawing.Size(628, 522);
@@ -124,13 +131,40 @@
             // 
             // PN_DaysHeader
             // 
-            this.PN_DaysHeader.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.PN_DaysHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(6)))), ((int)(((byte)(179)))));
             this.PN_DaysHeader.Location = new System.Drawing.Point(38, 2);
             this.PN_DaysHeader.Margin = new System.Windows.Forms.Padding(0);
             this.PN_DaysHeader.Name = "PN_DaysHeader";
             this.PN_DaysHeader.Size = new System.Drawing.Size(628, 32);
             this.PN_DaysHeader.TabIndex = 0;
             this.PN_DaysHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.PN_DaysHeader_Paint);
+            // 
+            // CMENU_Semaine_courante
+            // 
+            this.CMENU_Semaine_courante.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.changerLaCouleurDuFondToolStripMenuItem,
+            this.changerLaCouleurDesLignesToolStripMenuItem,
+            this.policeEtCouleurToolStripMenuItem});
+            this.CMENU_Semaine_courante.Name = "CMENU_Semaine_courante";
+            this.CMENU_Semaine_courante.Size = new System.Drawing.Size(239, 70);
+            // 
+            // changerLaCouleurDuFondToolStripMenuItem
+            // 
+            this.changerLaCouleurDuFondToolStripMenuItem.Name = "changerLaCouleurDuFondToolStripMenuItem";
+            this.changerLaCouleurDuFondToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
+            this.changerLaCouleurDuFondToolStripMenuItem.Text = "Changer la couleur du fond...";
+            // 
+            // changerLaCouleurDesLignesToolStripMenuItem
+            // 
+            this.changerLaCouleurDesLignesToolStripMenuItem.Name = "changerLaCouleurDesLignesToolStripMenuItem";
+            this.changerLaCouleurDesLignesToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
+            this.changerLaCouleurDesLignesToolStripMenuItem.Text = "Changer la couleur des lignes...";
+            // 
+            // policeEtCouleurToolStripMenuItem
+            // 
+            this.policeEtCouleurToolStripMenuItem.Name = "policeEtCouleurToolStripMenuItem";
+            this.policeEtCouleurToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
+            this.policeEtCouleurToolStripMenuItem.Text = "Police et Couleur...";
             // 
             // Form_WeekView
             // 
@@ -147,6 +181,7 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form_WeekView_KeyUp);
             this.PN_Frame.ResumeLayout(false);
             this.PN_Scroll.ResumeLayout(false);
+            this.CMENU_Semaine_courante.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -160,6 +195,10 @@
         private FlashButton.FlashButton FBTN_DecrementWeek;
         private FlashButton.FlashButton FBTN_IncrementWeek;
         private System.Windows.Forms.Panel PN_Frame;
+        private System.Windows.Forms.ContextMenuStrip CMENU_Semaine_courante;
+        private System.Windows.Forms.ToolStripMenuItem changerLaCouleurDuFondToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changerLaCouleurDesLignesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem policeEtCouleurToolStripMenuItem;
 
     }
 }

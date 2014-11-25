@@ -118,95 +118,68 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ICON_Accepter_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Accepter_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Accepter_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Accepter_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Accepter_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Accepter_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Accepter_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Accepter_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Ajouter_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Ajouter_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Ajouter_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Ajouter_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Ajouter_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Ajouter_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Ajouter_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Ajouter_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Annuler_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Annuler_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Annuler_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Annuler_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Annuler_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Annuler_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Annuler_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Annuler_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Down_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Down_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Down_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Down_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ICON_Trier_Descendant_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Trier-Descendant_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ICON_Down_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ICON_Down_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ICON_Down_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Down_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ICON_Editer_Survol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Editer_Survol.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ICON_Editer_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Editer_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ICON_Accepter_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Accepter_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ARROW_Neutre2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\ARROW_Neutre2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Right_Click1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Right_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ICON_Editer_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ICON_Editer_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ICON_Editer_Neutre" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Editer_Neutre.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ARROW_CLICK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\ARROW_CLICK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ICON_Editer_Survol" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Editer_Survol.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ICON_Open_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Open_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ICON_Effacer_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Effacer_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ARROW_OVER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\ARROW_OVER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ICON_Effacer_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Effacer_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ICON_Trier_Ascendant_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Trier-Ascendant_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ICON_Effacer_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Effacer_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ICON_Accepter_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Accepter_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ICON_Effacer_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Effacer_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ARROW_Neutre" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\ARROW_Neutre.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ICON_Left_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Left_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ICON_Nouveau_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Nouveau_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ICON_Left_Click1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Left_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ICON_Trier_Ascendant_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Trier-Ascendant_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ICON_Left_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Left_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ICON_Nouveau_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Nouveau_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ICON_Left_Disable1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Left_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ICON_Save_As_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Save_As_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ICON_Left_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Left_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ICON_Save_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Save_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ICON_Left_Neutral1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Left_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ICON_Editer_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Editer_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Save_As_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Save_As_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ICON_Left_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ICON_Left_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,127 +187,175 @@
   <data name="ICON_Left_Over1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ICON_Left_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ICON_Nouveau_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Nouveau_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Nouveau_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Nouveau_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Nouveau_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Nouveau_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ICON_Right_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Right_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ICON_Nouveau_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ICON_Nouveau_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ICON_Open_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Open_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ICON_Open_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ICON_Open_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ICON_Open_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Open_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Open_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Open_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Right_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Right_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Right_Click1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Right_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Right_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Right_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Right_Disable1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Right_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Right_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Right_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Right_Neutral1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Right_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Right_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Right_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Right_Over1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Right_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Save_As_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Save_As_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Save_As_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Save_As_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Save_As_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Save_As_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Save_As_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Save_As_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Save_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Save_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Save_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Save_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Save_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Save_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Save_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Save_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Setting_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Setting_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Setting_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Setting_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Setting_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Setting_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Trier_Ascendant_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Trier-Ascendant_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Trier_Ascendant_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Trier-Ascendant_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Trier_Ascendant_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Trier-Ascendant_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Trier_Ascendant_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Trier-Ascendant_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ICON_Accepter_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Accepter_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ICON_Trier_Descendant_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ICON_Trier-Descendant_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ICON_Trier_Descendant_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Trier-Descendant_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ICON_Ajouter_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Ajouter_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ICON_Trier_Descendant_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Trier-Descendant_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ICON_Left_Neutral1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Left_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Save_As_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Save_As_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ICON_Trier_Descendant_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ICON_Trier-Descendant_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ICON_Up_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Up_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ICON_Right_Neutral1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Right_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Save_As_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Save_As_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Right_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Right_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Annuler_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Annuler_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Save_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Save_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ICON_Up_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ICON_Up_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ICON_Up_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Up_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ARROW_Neutre1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\ARROW_Neutre.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Trier_Ascendant_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Trier-Ascendant_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Left_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Left_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Effacer_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Effacer_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Ajouter_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Ajouter_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Down_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Down_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Effacer_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Effacer_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Right_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Right_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Editer_Neutre" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Editer_Neutre.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Annuler_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Annuler_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Annuler_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Annuler_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Left_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Left_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Setting_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Setting_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Save_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Save_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Setting_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Setting_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Save_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Save_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Down_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Down_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Setting_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Setting_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Left_Disable1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Left_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Open_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Open_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LogoEtiquette" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LogoEtiquette.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Annuler_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Annuler_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Ajouter_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Ajouter_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Accepter_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Accepter_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Left_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Left_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ARROW_CLICK_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\ARROW_CLICK_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Right_Disable1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Right_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Effacer_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Effacer_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Effacer_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Effacer_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Right_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Right_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ICON_Up_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ICON_Up_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ICON_Ajouter_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Ajouter_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LogoEtiquette" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LogoEtiquette.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ICON_Trier_Ascendant_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Trier-Ascendant_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Left_Click1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Left_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Open_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Open_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Up_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Up_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Right_Over1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Right_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Trier_Descendant_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Trier-Descendant_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Nouveau_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Nouveau_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Down_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Down_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Up_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Up_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ARROW_OVER_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\ARROW_OVER_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
