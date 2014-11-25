@@ -133,6 +133,66 @@ namespace Compact_Agenda.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Effacer_DLG {
+            get {
+                object obj = ResourceManager.GetObject("Effacer_DLG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Effacer_DLG_Click {
+            get {
+                object obj = ResourceManager.GetObject("Effacer_DLG_Click", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Effacer_DLG_Neutre {
+            get {
+                object obj = ResourceManager.GetObject("Effacer_DLG_Neutre", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Exite_Click {
+            get {
+                object obj = ResourceManager.GetObject("Exite_Click", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Exite_Neutral_ {
+            get {
+                object obj = ResourceManager.GetObject("Exite_Neutral_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Exite_over {
+            get {
+                object obj = ResourceManager.GetObject("Exite_over", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ICON_Accepter_Click {
             get {
                 object obj = ResourceManager.GetObject("ICON_Accepter_Click", resourceCulture);
@@ -856,6 +916,76 @@ namespace Compact_Agenda.Properties {
         internal static System.Drawing.Bitmap LogoEtiquette {
             get {
                 object obj = ResourceManager.GetObject("LogoEtiquette", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ok_DLG {
+            get {
+                object obj = ResourceManager.GetObject("Ok_DLG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ok_DLG_Click {
+            get {
+                object obj = ResourceManager.GetObject("Ok_DLG_Click", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ok_DLG_Click_2 {
+            get {
+                object obj = ResourceManager.GetObject("Ok_DLG_Click_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ok_DLG_Neutral_2 {
+            get {
+                object obj = ResourceManager.GetObject("Ok_DLG_Neutral_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ok_DLG_Over {
+            get {
+                object obj = ResourceManager.GetObject("Ok_DLG_Over", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ok_DLG_Over_2 {
+            get {
+                object obj = ResourceManager.GetObject("Ok_DLG_Over_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ok_DLG_Over1 {
+            get {
+                object obj = ResourceManager.GetObject("Ok_DLG_Over1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

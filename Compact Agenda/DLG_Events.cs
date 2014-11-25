@@ -19,6 +19,18 @@ namespace Compact_Agenda
         {
             InitializeComponent();
         }
+        protected override void WndProc(ref Message m)
+        {
+            switch (m.Msg)
+            {
+                case 0x84:
+                    base.WndProc(ref m);
+                    if ((int)m.Result == 0x1)
+                        m.Result = (IntPtr)0x2;
+                    return;
+            }
+            base.WndProc(ref m);
+        }
 
         private void lel(object sender, EventArgs e)
         {
@@ -155,6 +167,39 @@ namespace Compact_Agenda
         private void CB_ChoixEvent_SelectedValueChanged(object sender, EventArgs e)
         {
             Event.typeEvent = (choixEvents)CB_ChoixEvent.SelectedItem;
+        }
+
+        private void FBTN_IncrementWeek_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void FlashButton_Ok_Click(object sender, EventArgs e)
+        {
+            if (CSC_FinishingHour.Value < CSC_StartingHour.Value ||
+                (CSC_StartingHour.Value == CSC_FinishingHour.Value &&
+                CSC_FinishingMinutes.Value <= CSC_StartingMinutes.Value))
+                errorProvider.SetError(CSC_FinishingMinutes, "Heures incohérentes");
+            else if (TBX_Title.Text == "")
+                errorProvider.SetError(TBX_Title, "Le champs est vide");
+            else if (TBX_Description.Text == "")
+                errorProvider.SetError(TBX_Description, "Le champs est vide");
+            else
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+        }
+
+        private void FlashButton_Effacer_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Voulez vous vraiment effacer cet événement ?") == System.Windows.Forms.DialogResult.OK)
+            {
+                this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                delete = true;
+                this.Close();
+            }
         }
     }
 }
