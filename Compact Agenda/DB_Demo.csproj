@@ -192,6 +192,7 @@
     <None Include="images\Ok_DLG_Neutral_2.png" />
     <None Include="images\Ok_DLG_Click_2.png" />
     <None Include="images\Ok_DLG_Over_2.png" />
+    <None Include="images\Calendar_icon.png" />
     <Content Include="Resources\ICON_Accepter_Click.png" />
     <Content Include="Resources\ICON_Accepter_Disable.png" />
     <Content Include="Resources\ICON_Accepter_Neutral.png" />

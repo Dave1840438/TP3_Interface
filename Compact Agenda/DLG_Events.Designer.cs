@@ -170,7 +170,7 @@
             this.FlashButton_Effacer.ImageDisable = global::Compact_Agenda.Properties.Resources.ICON_Right_Disable;
             this.FlashButton_Effacer.ImageNeutral = global::Compact_Agenda.Properties.Resources.Effacer_DLG_Neutre;
             this.FlashButton_Effacer.ImageOver = global::Compact_Agenda.Properties.Resources.Effacer_DLG;
-            this.FlashButton_Effacer.Location = new System.Drawing.Point(187, 281);
+            this.FlashButton_Effacer.Location = new System.Drawing.Point(189, 281);
             this.FlashButton_Effacer.Name = "FlashButton_Effacer";
             this.FlashButton_Effacer.Size = new System.Drawing.Size(80, 25);
             this.FlashButton_Effacer.TabIndex = 60;
@@ -185,7 +185,7 @@
             this.FlashButton_Ok.ImageDisable = global::Compact_Agenda.Properties.Resources.ICON_Right_Disable;
             this.FlashButton_Ok.ImageNeutral = global::Compact_Agenda.Properties.Resources.Ok_DLG_Neutral_2;
             this.FlashButton_Ok.ImageOver = global::Compact_Agenda.Properties.Resources.Ok_DLG_Over_2;
-            this.FlashButton_Ok.Location = new System.Drawing.Point(281, 281);
+            this.FlashButton_Ok.Location = new System.Drawing.Point(283, 281);
             this.FlashButton_Ok.Name = "FlashButton_Ok";
             this.FlashButton_Ok.Size = new System.Drawing.Size(80, 25);
             this.FlashButton_Ok.TabIndex = 59;
@@ -200,7 +200,7 @@
             this.FBTN_IncrementWeek.ImageDisable = global::Compact_Agenda.Properties.Resources.ICON_Right_Disable;
             this.FBTN_IncrementWeek.ImageNeutral = global::Compact_Agenda.Properties.Resources.Exite_Neutral_;
             this.FBTN_IncrementWeek.ImageOver = global::Compact_Agenda.Properties.Resources.Exite_over;
-            this.FBTN_IncrementWeek.Location = new System.Drawing.Point(351, 0);
+            this.FBTN_IncrementWeek.Location = new System.Drawing.Point(353, 0);
             this.FBTN_IncrementWeek.Name = "FBTN_IncrementWeek";
             this.FBTN_IncrementWeek.Size = new System.Drawing.Size(22, 22);
             this.FBTN_IncrementWeek.TabIndex = 57;
@@ -263,7 +263,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(6)))), ((int)(((byte)(179)))));
-            this.ClientSize = new System.Drawing.Size(373, 316);
+            this.ClientSize = new System.Drawing.Size(375, 316);
             this.Controls.Add(this.FlashButton_Effacer);
             this.Controls.Add(this.FlashButton_Ok);
             this.Controls.Add(this.FBTN_IncrementWeek);

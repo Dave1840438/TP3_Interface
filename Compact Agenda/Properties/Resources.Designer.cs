@@ -133,6 +133,16 @@ namespace Compact_Agenda.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Calendar_icon {
+            get {
+                object obj = ResourceManager.GetObject("Calendar_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Effacer_DLG {
             get {
                 object obj = ResourceManager.GetObject("Effacer_DLG", resourceCulture);
