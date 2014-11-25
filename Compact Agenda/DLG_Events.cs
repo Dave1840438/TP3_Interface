@@ -18,8 +18,6 @@ namespace Compact_Agenda
         public DLG_Events()
         {
             InitializeComponent();
-
-            
         }
 
         private void lel(object sender, EventArgs e)
@@ -30,11 +28,11 @@ namespace Compact_Agenda
         private void DLG_Events_Load(object sender, EventArgs e)
         {
             delete = false;
-            EventToDLG();
 
             foreach (Enum ev in Enum.GetValues(typeof(choixEvents)))
                 CB_ChoixEvent.Items.Add(ev);
-            CB_ChoixEvent.SelectedItem = CB_ChoixEvent.Items[0];
+
+            EventToDLG();
         }
 
         public static DateTime Klone(DateTime date)
@@ -54,10 +52,14 @@ namespace Compact_Agenda
                 CSC_StartingMinutes.Value = Klone(Event.Starting).Minute;
                 CSC_FinishingHour.Value = Klone(Event.Ending).Hour;
                 CSC_FinishingMinutes.Value = Klone(Event.Ending).Minute;
+                CB_ChoixEvent.SelectedItem = CB_ChoixEvent.Items[(int)Event.typeEvent];
                 blockUpdate = false;
             }
             else
+            {
+                CB_ChoixEvent.SelectedItem = CB_ChoixEvent.Items[0];
                 Event = new Event();
+            }
         }
 
         private void TBX_Title_TextChanged(object sender, EventArgs e)

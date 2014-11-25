@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.PN_Frame = new System.Windows.Forms.Panel();
-            this.FBTN_DecrementWeek = new FlashButton.FlashButton();
-            this.FBTN_IncrementWeek = new FlashButton.FlashButton();
             this.CMENU_Semaine_courante = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.changerLaCouleurDuFondToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changerLaCouleurDesLignesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.policeEtCouleurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FBTN_DecrementWeek = new FlashButton.FlashButton();
+            this.FBTN_IncrementWeek = new FlashButton.FlashButton();
             this.CMENU_Jour = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.choisirLaJourneeCouranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.couleurDeFondToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,6 +65,33 @@
             this.PN_Frame.Size = new System.Drawing.Size(743, 589);
             this.PN_Frame.TabIndex = 4;
             // 
+            // CMENU_Semaine_courante
+            // 
+            this.CMENU_Semaine_courante.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.changerLaCouleurDuFondToolStripMenuItem,
+            this.changerLaCouleurDesLignesToolStripMenuItem,
+            this.policeEtCouleurToolStripMenuItem});
+            this.CMENU_Semaine_courante.Name = "CMENU_Semaine_courante";
+            this.CMENU_Semaine_courante.Size = new System.Drawing.Size(239, 92);
+            // 
+            // changerLaCouleurDuFondToolStripMenuItem
+            // 
+            this.changerLaCouleurDuFondToolStripMenuItem.Name = "changerLaCouleurDuFondToolStripMenuItem";
+            this.changerLaCouleurDuFondToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
+            this.changerLaCouleurDuFondToolStripMenuItem.Text = "Changer la couleur du fond...";
+            // 
+            // changerLaCouleurDesLignesToolStripMenuItem
+            // 
+            this.changerLaCouleurDesLignesToolStripMenuItem.Name = "changerLaCouleurDesLignesToolStripMenuItem";
+            this.changerLaCouleurDesLignesToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
+            this.changerLaCouleurDesLignesToolStripMenuItem.Text = "Changer la couleur des lignes...";
+            // 
+            // policeEtCouleurToolStripMenuItem
+            // 
+            this.policeEtCouleurToolStripMenuItem.Name = "policeEtCouleurToolStripMenuItem";
+            this.policeEtCouleurToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
+            this.policeEtCouleurToolStripMenuItem.Text = "Police et Couleur...";
+            // 
             // FBTN_DecrementWeek
             // 
             this.FBTN_DecrementWeek.BackgroundImage = global::Compact_Agenda.Properties.Resources.ARROW_Neutre1;
@@ -93,33 +120,6 @@
             this.FBTN_IncrementWeek.Size = new System.Drawing.Size(32, 32);
             this.FBTN_IncrementWeek.TabIndex = 3;
             this.FBTN_IncrementWeek.Click += new System.EventHandler(this.FBTN_IncrementWeek_Click);
-            // 
-            // CMENU_Semaine_courante
-            // 
-            this.CMENU_Semaine_courante.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.changerLaCouleurDuFondToolStripMenuItem,
-            this.changerLaCouleurDesLignesToolStripMenuItem,
-            this.policeEtCouleurToolStripMenuItem});
-            this.CMENU_Semaine_courante.Name = "CMENU_Semaine_courante";
-            this.CMENU_Semaine_courante.Size = new System.Drawing.Size(239, 70);
-            // 
-            // changerLaCouleurDuFondToolStripMenuItem
-            // 
-            this.changerLaCouleurDuFondToolStripMenuItem.Name = "changerLaCouleurDuFondToolStripMenuItem";
-            this.changerLaCouleurDuFondToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
-            this.changerLaCouleurDuFondToolStripMenuItem.Text = "Changer la couleur du fond...";
-            // 
-            // changerLaCouleurDesLignesToolStripMenuItem
-            // 
-            this.changerLaCouleurDesLignesToolStripMenuItem.Name = "changerLaCouleurDesLignesToolStripMenuItem";
-            this.changerLaCouleurDesLignesToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
-            this.changerLaCouleurDesLignesToolStripMenuItem.Text = "Changer la couleur des lignes...";
-            // 
-            // policeEtCouleurToolStripMenuItem
-            // 
-            this.policeEtCouleurToolStripMenuItem.Name = "policeEtCouleurToolStripMenuItem";
-            this.policeEtCouleurToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
-            this.policeEtCouleurToolStripMenuItem.Text = "Police et Couleur...";
             // 
             // CMENU_Jour
             // 

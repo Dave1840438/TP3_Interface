@@ -21,8 +21,7 @@ namespace Compact_Agenda
         public DateTime Starting { get; set; }
         public DateTime Ending { get; set; }
         public System.Windows.Forms.Panel ParentPanel { get; set; }
-
-        public choixEvents typeEvent;
+        public choixEvents typeEvent {get; set;}
 
         public Event()
         {
@@ -30,21 +29,23 @@ namespace Compact_Agenda
             Ending = DateTime.Now;
             typeEvent = choixEvents.Général;
         }
-        public Event(string Id, string Title, string Description, DateTime Starting, DateTime Ending)
+        public Event(string Id, string Title, string Description, DateTime Starting, DateTime Ending, int eventType)
         {
             this.Id = Id;
             this.Title = Title;
             this.Description = Description;
             this.Starting = Starting;
             this.Ending = Ending;
+            this.typeEvent = (choixEvents)eventType;
         }
-        public Event(string Id, string Title, string Description, string Starting, string Ending)
+        public Event(string Id, string Title, string Description, string Starting, string Ending, string eventType)
         {
             this.Id = Id;
             this.Title = TextFilter.FromSql(Title);
             this.Description = TextFilter.FromSql(Description);
             this.Starting = DateTime.Parse(Starting);
             this.Ending = DateTime.Parse(Ending);
+            this.typeEvent = (choixEvents)Enum.Parse(typeof(choixEvents), eventType);
         }
 
         public Event(Event copy)

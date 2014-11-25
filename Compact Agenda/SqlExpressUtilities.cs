@@ -40,7 +40,7 @@ namespace Compact_Agenda
         SqlConnection connection;
         // chaine de connection
         string connexionString;
-        
+
 
         // Liste des valeur des champs lors de la lecture de la requête
         public List<string> fieldsValues = new List<string>();
@@ -64,14 +64,14 @@ namespace Compact_Agenda
             return s;
 
         }
-        
+
         public static string DateSQLFormat(DateTime date)
         {
-            return  date.Year + "-" + 
-                    TwoDigit(date.Month) + "-" + 
-                    TwoDigit(date.Day) + " " + 
+            return date.Year + "-" +
+                    TwoDigit(date.Month) + "-" +
+                    TwoDigit(date.Day) + " " +
                     TwoDigit(date.Hour) + ":" +
-                    TwoDigit(date.Minute) + ":" + 
+                    TwoDigit(date.Minute) + ":" +
                     TwoDigit(date.Second) + ".000";
         }
 
@@ -138,7 +138,7 @@ namespace Compact_Agenda
             {
                 connection.Open();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
@@ -148,7 +148,7 @@ namespace Compact_Agenda
             // Saisir les noms des champs de la table impliquée dans la requête
             GetFieldsName();
             // retourner le nombre d'enregistrements générés
-           
+
             return reader.FieldCount;
 
         }
@@ -193,7 +193,14 @@ namespace Compact_Agenda
             for (int fieldNum = 1; fieldNum < nb_fields; fieldNum++)
             {
                 SQL += "[" + FieldsNames[fieldNum] + "] = ";
-                SQL += "'" + fieldsValues[fieldNum] + "'";
+                if (fieldNum == 5)
+                {
+                    SQL += ((int)((choixEvents)Enum.Parse(typeof(choixEvents), fieldsValues[fieldNum]))).ToString();
+                }
+                else
+                {
+                    SQL += "'" + fieldsValues[fieldNum] + "'";
+                }
                 if (fieldNum < (nb_fields - 1)) SQL += ", ";
             }
             SQL += " WHERE [" + FieldsNames[0] + "] = " + "'" + fieldsValues[0] + "'";
@@ -216,10 +223,12 @@ namespace Compact_Agenda
 
         public void AddEvent(Event Event)
         {
-            NonQuerySQL("INSERT INTO Events (Title, Description, Starting, Ending) VALUES ('" + TextFilter.PrepareForSql(Event.Title) + "','" +
+            NonQuerySQL("INSERT INTO Events (Title, Description, Starting, Ending, eventType) VALUES ('" + TextFilter.PrepareForSql(Event.Title) + "','" +
                                                                                                 TextFilter.PrepareForSql(Event.Description) + "','" +
                                                                                                 DateSQLFormat(Event.Starting) + "','" +
-                                                                                                DateSQLFormat(Event.Ending) + "');");
+                                                                                                DateSQLFormat(Event.Ending) + "', " +
+                                                                                                (int)Event.typeEvent + ");");
+        
         }
 
         public Event GetEventByID(string Id)
@@ -231,11 +240,12 @@ namespace Compact_Agenda
             if (fieldCount > 0)
             {
                 NextRecord();
-                return new Event(   this["Id"], 
-                                    this["Title"], 
-                                    this["Description"], 
-                                    this["Starting"],  
-                                    this["Ending"]);
+                return new Event(this["Id"],
+                                    this["Title"],
+                                    this["Description"],
+                                    this["Starting"],
+                                    this["Ending"],
+                                    this["eventType"]);
             }
             else
                 return null;
@@ -246,11 +256,12 @@ namespace Compact_Agenda
             bool more = NextRecord();
             if (more)
             {
-                currentEventRecord = new Event( this["Id"],
+                currentEventRecord = new Event(this["Id"],
                                                 this["Title"],
                                                 this["Description"],
                                                 this["Starting"],
-                                                this["Ending"]);
+                                                this["Ending"],
+                                                this["eventType"]);
             }
             return more;
         }
@@ -279,6 +290,7 @@ namespace Compact_Agenda
             fieldsValues[2] = TextFilter.PrepareForSql(Event.Description);
             fieldsValues[3] = DateSQLFormat(Event.Starting);
             fieldsValues[4] = DateSQLFormat(Event.Ending);
+            fieldsValues[5] = Event.typeEvent.ToString();
 
             UpdateRecord("Events");
         }
