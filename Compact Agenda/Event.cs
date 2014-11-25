@@ -121,22 +121,22 @@ namespace Compact_Agenda
             switch (typeEvent)
             {
                 case choixEvents.Général:
-                    couleur = Color.LightBlue;
+                    couleur = Color.FromArgb(107,184,230);
                     break;
                 case choixEvents.Important:
-                    couleur = Color.PaleVioletRed;
+                    couleur = Color.FromArgb(236, 87, 83);
                     break;
                 case choixEvents.Autre:
-                    couleur = Color.Pink;
+                    couleur = Color.FromArgb(243, 167, 91);
                     break;
                 case choixEvents.Loisir:
-                    couleur = Color.Peru;
+                    couleur = Color.FromArgb(139, 197, 61);
                     break;
                 case choixEvents.Santé:
-                    couleur = Color.PaleTurquoise;
+                    couleur = Color.FromArgb(243, 116, 202);
                     break;
                 case choixEvents.Travail:
-                    couleur = Color.Gold;
+                    couleur = Color.FromArgb(243, 231, 61);
                     break;
                 default:
                     couleur = Color.Black;
