@@ -123,7 +123,7 @@ namespace Compact_Agenda
 
                 if (date.ToShortDateString() == DateTime.Now.ToShortDateString())
                 {
-                    Pen leGrosPen = new Pen(Color.Red, 64);
+                    Pen leGrosPen = new Pen(Color.FromArgb(179,6,144), 64);
                     DC.DrawLine(leGrosPen, location, new Point(location.X + (int)(PN_DaysHeader.Width / 7f), location.Y));
                 }
 
@@ -147,7 +147,7 @@ namespace Compact_Agenda
                 if (hour == DateTime.Now.Hour)
                 {
                     int Decalage = PN_Hours.Height / 24 / 2;
-                    Pen leGrosPen = new Pen(Color.Red,  PN_Hours.Height / 24);
+                    Pen leGrosPen = new Pen(Color.FromArgb(179, 6, 144), PN_Hours.Height / 24);
                     DC.DrawLine(leGrosPen, new Point(location.X, location.Y + Decalage), new Point(location.X + PN_Hours.Width, location.Y + Decalage));
                 }
 

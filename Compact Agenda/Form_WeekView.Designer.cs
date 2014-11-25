@@ -32,17 +32,22 @@
             this.PN_Frame = new System.Windows.Forms.Panel();
             this.FBTN_DecrementWeek = new FlashButton.FlashButton();
             this.FBTN_IncrementWeek = new FlashButton.FlashButton();
-            this.PN_Scroll = new Compact_Agenda.DoubleBufferPanel();
-            this.PN_Content = new Compact_Agenda.DoubleBufferPanel();
-            this.PN_Hours = new Compact_Agenda.DoubleBufferPanel();
-            this.PN_DaysHeader = new Compact_Agenda.DoubleBufferPanel();
             this.CMENU_Semaine_courante = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.changerLaCouleurDuFondToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changerLaCouleurDesLignesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.policeEtCouleurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CMENU_Jour = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.choisirLaJourneeCouranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.couleurDeFondToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.policeEtCouleurToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.PN_Scroll = new Compact_Agenda.DoubleBufferPanel();
+            this.PN_Content = new Compact_Agenda.DoubleBufferPanel();
+            this.PN_Hours = new Compact_Agenda.DoubleBufferPanel();
+            this.PN_DaysHeader = new Compact_Agenda.DoubleBufferPanel();
             this.PN_Frame.SuspendLayout();
-            this.PN_Scroll.SuspendLayout();
             this.CMENU_Semaine_courante.SuspendLayout();
+            this.CMENU_Jour.SuspendLayout();
+            this.PN_Scroll.SuspendLayout();
             this.SuspendLayout();
             // 
             // PN_Frame
@@ -89,6 +94,60 @@
             this.FBTN_IncrementWeek.TabIndex = 3;
             this.FBTN_IncrementWeek.Click += new System.EventHandler(this.FBTN_IncrementWeek_Click);
             // 
+            // CMENU_Semaine_courante
+            // 
+            this.CMENU_Semaine_courante.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.changerLaCouleurDuFondToolStripMenuItem,
+            this.changerLaCouleurDesLignesToolStripMenuItem,
+            this.policeEtCouleurToolStripMenuItem});
+            this.CMENU_Semaine_courante.Name = "CMENU_Semaine_courante";
+            this.CMENU_Semaine_courante.Size = new System.Drawing.Size(239, 70);
+            // 
+            // changerLaCouleurDuFondToolStripMenuItem
+            // 
+            this.changerLaCouleurDuFondToolStripMenuItem.Name = "changerLaCouleurDuFondToolStripMenuItem";
+            this.changerLaCouleurDuFondToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
+            this.changerLaCouleurDuFondToolStripMenuItem.Text = "Changer la couleur du fond...";
+            // 
+            // changerLaCouleurDesLignesToolStripMenuItem
+            // 
+            this.changerLaCouleurDesLignesToolStripMenuItem.Name = "changerLaCouleurDesLignesToolStripMenuItem";
+            this.changerLaCouleurDesLignesToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
+            this.changerLaCouleurDesLignesToolStripMenuItem.Text = "Changer la couleur des lignes...";
+            // 
+            // policeEtCouleurToolStripMenuItem
+            // 
+            this.policeEtCouleurToolStripMenuItem.Name = "policeEtCouleurToolStripMenuItem";
+            this.policeEtCouleurToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
+            this.policeEtCouleurToolStripMenuItem.Text = "Police et Couleur...";
+            // 
+            // CMENU_Jour
+            // 
+            this.CMENU_Jour.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.choisirLaJourneeCouranteToolStripMenuItem,
+            this.couleurDeFondToolStripMenuItem,
+            this.policeEtCouleurToolStripMenuItem1});
+            this.CMENU_Jour.Name = "CMENU_Jour";
+            this.CMENU_Jour.Size = new System.Drawing.Size(230, 70);
+            // 
+            // choisirLaJourneeCouranteToolStripMenuItem
+            // 
+            this.choisirLaJourneeCouranteToolStripMenuItem.Name = "choisirLaJourneeCouranteToolStripMenuItem";
+            this.choisirLaJourneeCouranteToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.choisirLaJourneeCouranteToolStripMenuItem.Text = "Choisir la semaine courante...";
+            // 
+            // couleurDeFondToolStripMenuItem
+            // 
+            this.couleurDeFondToolStripMenuItem.Name = "couleurDeFondToolStripMenuItem";
+            this.couleurDeFondToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.couleurDeFondToolStripMenuItem.Text = "Couleur de fond...";
+            // 
+            // policeEtCouleurToolStripMenuItem1
+            // 
+            this.policeEtCouleurToolStripMenuItem1.Name = "policeEtCouleurToolStripMenuItem1";
+            this.policeEtCouleurToolStripMenuItem1.Size = new System.Drawing.Size(229, 22);
+            this.policeEtCouleurToolStripMenuItem1.Text = "Police et couleur...";
+            // 
             // PN_Scroll
             // 
             this.PN_Scroll.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -132,39 +191,13 @@
             // PN_DaysHeader
             // 
             this.PN_DaysHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(6)))), ((int)(((byte)(179)))));
+            this.PN_DaysHeader.ContextMenuStrip = this.CMENU_Jour;
             this.PN_DaysHeader.Location = new System.Drawing.Point(38, 2);
             this.PN_DaysHeader.Margin = new System.Windows.Forms.Padding(0);
             this.PN_DaysHeader.Name = "PN_DaysHeader";
             this.PN_DaysHeader.Size = new System.Drawing.Size(628, 32);
             this.PN_DaysHeader.TabIndex = 0;
             this.PN_DaysHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.PN_DaysHeader_Paint);
-            // 
-            // CMENU_Semaine_courante
-            // 
-            this.CMENU_Semaine_courante.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.changerLaCouleurDuFondToolStripMenuItem,
-            this.changerLaCouleurDesLignesToolStripMenuItem,
-            this.policeEtCouleurToolStripMenuItem});
-            this.CMENU_Semaine_courante.Name = "CMENU_Semaine_courante";
-            this.CMENU_Semaine_courante.Size = new System.Drawing.Size(239, 70);
-            // 
-            // changerLaCouleurDuFondToolStripMenuItem
-            // 
-            this.changerLaCouleurDuFondToolStripMenuItem.Name = "changerLaCouleurDuFondToolStripMenuItem";
-            this.changerLaCouleurDuFondToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
-            this.changerLaCouleurDuFondToolStripMenuItem.Text = "Changer la couleur du fond...";
-            // 
-            // changerLaCouleurDesLignesToolStripMenuItem
-            // 
-            this.changerLaCouleurDesLignesToolStripMenuItem.Name = "changerLaCouleurDesLignesToolStripMenuItem";
-            this.changerLaCouleurDesLignesToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
-            this.changerLaCouleurDesLignesToolStripMenuItem.Text = "Changer la couleur des lignes...";
-            // 
-            // policeEtCouleurToolStripMenuItem
-            // 
-            this.policeEtCouleurToolStripMenuItem.Name = "policeEtCouleurToolStripMenuItem";
-            this.policeEtCouleurToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
-            this.policeEtCouleurToolStripMenuItem.Text = "Police et Couleur...";
             // 
             // Form_WeekView
             // 
@@ -180,8 +213,9 @@
             this.Load += new System.EventHandler(this.Form_WeekView_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form_WeekView_KeyUp);
             this.PN_Frame.ResumeLayout(false);
-            this.PN_Scroll.ResumeLayout(false);
             this.CMENU_Semaine_courante.ResumeLayout(false);
+            this.CMENU_Jour.ResumeLayout(false);
+            this.PN_Scroll.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -199,6 +233,10 @@
         private System.Windows.Forms.ToolStripMenuItem changerLaCouleurDuFondToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changerLaCouleurDesLignesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem policeEtCouleurToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip CMENU_Jour;
+        private System.Windows.Forms.ToolStripMenuItem choisirLaJourneeCouranteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem couleurDeFondToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem policeEtCouleurToolStripMenuItem1;
 
     }
 }
