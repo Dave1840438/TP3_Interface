@@ -913,6 +913,56 @@ namespace Compact_Agenda.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap KeyBoard_Down_2 {
+            get {
+                object obj = ResourceManager.GetObject("KeyBoard_Down_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap KeyBoard_Droite_2 {
+            get {
+                object obj = ResourceManager.GetObject("KeyBoard_Droite_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap KeyBoard_Gauche_2 {
+            get {
+                object obj = ResourceManager.GetObject("KeyBoard_Gauche_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap KeyBoard_Space_Bar_2 {
+            get {
+                object obj = ResourceManager.GetObject("KeyBoard_Space_Bar_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap KeyBoard_Up_2 {
+            get {
+                object obj = ResourceManager.GetObject("KeyBoard_Up_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logo {
             get {
                 object obj = ResourceManager.GetObject("Logo", resourceCulture);
@@ -926,6 +976,16 @@ namespace Compact_Agenda.Properties {
         internal static System.Drawing.Bitmap LogoEtiquette {
             get {
                 object obj = ResourceManager.GetObject("LogoEtiquette", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Loupe_Neutre {
+            get {
+                object obj = ResourceManager.GetObject("Loupe_Neutre", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
