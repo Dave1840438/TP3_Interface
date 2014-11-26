@@ -1,5 +1,5 @@
 ﻿using System.Windows.Forms;
-namespace PasswordKeeper
+namespace Compact_Agenda
 {
  
     partial class DLG_HLSColorPicker
@@ -44,9 +44,9 @@ namespace PasswordKeeper
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.PN_RecentColors = new System.Windows.Forms.Panel();
-            this.PN_Saturation = new PasswordKeeper.DoubleBufferPanel();
-            this.PN_Lightness = new PasswordKeeper.DoubleBufferPanel();
-            this.PN_Hue = new PasswordKeeper.DoubleBufferPanel();
+            this.PN_Saturation = new DoubleBufferPanel();
+            this.PN_Lightness = new DoubleBufferPanel();
+            this.PN_Hue = new DoubleBufferPanel();
             ((System.ComponentModel.ISupportInitialize)(this.TKBR_Hue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TKBR_Luminosity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TKBR_Saturation)).BeginInit();

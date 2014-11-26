@@ -16,6 +16,8 @@ namespace Compact_Agenda
         {
             InitializeComponent();
         }
+
+        //MAGIC, DO NO TOUCH
         protected override void WndProc(ref Message m)
         {
             switch (m.Msg)
@@ -32,16 +34,6 @@ namespace Compact_Agenda
         private void FBTN_IncrementWeek_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void FormAide_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

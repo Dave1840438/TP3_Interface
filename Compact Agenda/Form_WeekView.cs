@@ -30,6 +30,11 @@ namespace Compact_Agenda
         private DateTime _CurrentWeek;
         private Events Events = new Events();
         private int minInterval = 5;
+
+        #region PRÉFÉRENCES
+        //Met tes préférences ici si t'en met
+        #endregion
+
         public DateTime CurrentWeek
         {
             set
@@ -48,7 +53,11 @@ namespace Compact_Agenda
             string DB_URL = System.IO.Path.GetFullPath(@"DB_AGENDA.MDF");
             ConnexionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='" + DB_URL + "';Integrated Security=True";
             CurrentWeek = DateTime.Now;
+            uC_Slider1.Minimum = 600;
+            uC_Slider1.Maximum = 4600;
+            uC_Slider1.Value =
             PN_Hours.Height = PN_Content.Height = 2400;
+            uC_Slider1.Hide();
         }
         private void Form_WeekView_Load(object sender, EventArgs e)
         {
@@ -92,7 +101,7 @@ namespace Compact_Agenda
             for (int hour = 0; hour < 24; hour++)
             {
                 DC.DrawLine(pen1, 0, Event.HourToPixel(hour + 1, 0, PN_Hours.Height), PN_Content.Width, Event.HourToPixel(hour + 1, 0, PN_Hours.Height));
-                DC.DrawLine(pen2, 0, Event.HourToPixel(hour + 1, 30, PN_Hours.Height), PN_Content.Width, Event.HourToPixel(hour + 1, 30, PN_Hours.Height));
+                DC.DrawLine(pen2, 0, Event.HourToPixel(hour, 30, PN_Hours.Height), PN_Content.Width, Event.HourToPixel(hour, 30, PN_Hours.Height));
             }
             Point location;
             for (int dayNum = 0; dayNum < 7; dayNum++)
@@ -109,7 +118,6 @@ namespace Compact_Agenda
         private void PN_Content_Paint(object sender, PaintEventArgs e)
         {
             Fill_Agenda(e.Graphics);
-
         }
 
         private void Fill_Days_Header(Graphics DC)
@@ -123,7 +131,7 @@ namespace Compact_Agenda
 
                 if (date.ToShortDateString() == DateTime.Now.ToShortDateString())
                 {
-                    Pen leGrosPen = new Pen(Color.FromArgb(179,6,144), 64);
+                    Pen leGrosPen = new Pen(Color.FromArgb(179, 6, 144), 64);
                     DC.DrawLine(leGrosPen, location, new Point(location.X + (int)(PN_DaysHeader.Width / 7f), location.Y));
                 }
 
@@ -487,6 +495,7 @@ namespace Compact_Agenda
                         {
                             PN_Content.Height -= 200;
                             PN_Hours.Height -= 200;
+                            uC_Slider1.Value = PN_Content.Height;
                             PN_Content.Refresh();
                             PN_Hours.Refresh();
                         }
@@ -506,6 +515,7 @@ namespace Compact_Agenda
                         {
                             PN_Content.Height += 200;
                             PN_Hours.Height += 200;
+                            uC_Slider1.Value = PN_Content.Height;
                             PN_Content.Refresh();
                             PN_Hours.Refresh();
                         }
@@ -547,6 +557,46 @@ namespace Compact_Agenda
         private void PN_Content_Resize(object sender, EventArgs e)
         {
             AdjustMinInterval();
+        }
+
+        private void updateSliderZoom()
+        {
+            PN_Content.Height = uC_Slider1.Value;
+            PN_Hours.Height = uC_Slider1.Value;
+            PN_Content.Refresh();
+            PN_Hours.Refresh();
+        }
+
+        private void uC_Slider1_MouseMove(object sender, MouseEventArgs e)
+        {
+            updateSliderZoom();
+        }
+
+        private void uC_Slider1_MouseLeave(object sender, EventArgs e)
+        {
+            uC_Slider1.Hide();
+            pictureBox1.Visible = true;
+        }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            uC_Slider1.Show();
+            pictureBox1.Visible = false;
+            uC_Slider1.Focus();
+        }
+
+        private void ChoisirCouleur(ref Color couleur)
+        {
+            DLG_HLSColorPicker dlg = new DLG_HLSColorPicker();
+            if (dlg.ShowDialog() == DialogResult.OK)
+                couleur = dlg.color;
+        }
+
+        private void ChoisirFont(Font font)
+        {
+            FontDialog dlg = new FontDialog();
+            if (dlg.ShowDialog() == DialogResult.OK)
+                font = dlg.Font; 
         }
     }
 }
