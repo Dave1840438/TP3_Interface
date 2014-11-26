@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_WeekView));
             this.PN_Frame = new System.Windows.Forms.Panel();
             this.CMENU_Semaine_courante = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.changerLaCouleurDuFondToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,6 +41,7 @@
             this.policeEtCouleurToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.FBTN_DecrementWeek = new FlashButton.FlashButton();
             this.FBTN_IncrementWeek = new FlashButton.FlashButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PN_Scroll = new Compact_Agenda.DoubleBufferPanel();
             this.PN_Content = new Compact_Agenda.DoubleBufferPanel();
             this.PN_Hours = new Compact_Agenda.DoubleBufferPanel();
@@ -47,6 +49,7 @@
             this.PN_Frame.SuspendLayout();
             this.CMENU_Semaine_courante.SuspendLayout();
             this.CMENU_Jour.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PN_Scroll.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -148,6 +151,16 @@
             this.FBTN_IncrementWeek.TabIndex = 3;
             this.FBTN_IncrementWeek.Click += new System.EventHandler(this.FBTN_IncrementWeek_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(87)))), ((int)(((byte)(83)))));
+            this.pictureBox1.BackgroundImage = global::Compact_Agenda.Properties.Resources.Loupe_Neutre;
+            this.pictureBox1.Location = new System.Drawing.Point(678, 34);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(26, 26);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // PN_Scroll
             // 
             this.PN_Scroll.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -204,8 +217,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(743, 589);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.PN_Frame);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(600, 500);
             this.Name = "Form_WeekView";
@@ -214,6 +229,7 @@
             this.PN_Frame.ResumeLayout(false);
             this.CMENU_Semaine_courante.ResumeLayout(false);
             this.CMENU_Jour.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PN_Scroll.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -236,6 +252,7 @@
         private System.Windows.Forms.ToolStripMenuItem choisirLaJourneeCouranteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem couleurDeFondToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem policeEtCouleurToolStripMenuItem1;
+        private System.Windows.Forms.PictureBox pictureBox1;
 
     }
 }

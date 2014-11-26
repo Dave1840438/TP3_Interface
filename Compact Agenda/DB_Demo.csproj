@@ -193,6 +193,12 @@
     <None Include="images\Ok_DLG_Click_2.png" />
     <None Include="images\Ok_DLG_Over_2.png" />
     <None Include="images\Calendar_icon.png" />
+    <None Include="images\KeyBoard_Up_2.png" />
+    <None Include="images\KeyBoard_Down_2.png" />
+    <None Include="images\KeyBoard_Gauche_2.png" />
+    <None Include="images\KeyBoard_Droite_2.png" />
+    <None Include="images\KeyBoard_Space_Bar_2.png" />
+    <None Include="images\Loupe_Neutre.png" />
     <Content Include="Resources\ICON_Accepter_Click.png" />
     <Content Include="Resources\ICON_Accepter_Disable.png" />
     <Content Include="Resources\ICON_Accepter_Neutral.png" />
