@@ -35,12 +35,12 @@
             this.changerLaCouleurDuFondToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changerLaCouleurDesLignesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.policeEtCouleurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FBTN_DecrementWeek = new FlashButton.FlashButton();
+            this.FBTN_IncrementWeek = new FlashButton.FlashButton();
             this.CMENU_Jour = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.choisirLaJourneeCouranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.couleurDeFondToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.policeEtCouleurToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.FBTN_DecrementWeek = new FlashButton.FlashButton();
-            this.FBTN_IncrementWeek = new FlashButton.FlashButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PN_Scroll = new Compact_Agenda.DoubleBufferPanel();
             this.PN_Content = new Compact_Agenda.DoubleBufferPanel();
@@ -95,33 +95,6 @@
             this.policeEtCouleurToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
             this.policeEtCouleurToolStripMenuItem.Text = "Police et Couleur...";
             // 
-            // CMENU_Jour
-            // 
-            this.CMENU_Jour.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.choisirLaJourneeCouranteToolStripMenuItem,
-            this.couleurDeFondToolStripMenuItem,
-            this.policeEtCouleurToolStripMenuItem1});
-            this.CMENU_Jour.Name = "CMENU_Jour";
-            this.CMENU_Jour.Size = new System.Drawing.Size(230, 70);
-            // 
-            // choisirLaJourneeCouranteToolStripMenuItem
-            // 
-            this.choisirLaJourneeCouranteToolStripMenuItem.Name = "choisirLaJourneeCouranteToolStripMenuItem";
-            this.choisirLaJourneeCouranteToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
-            this.choisirLaJourneeCouranteToolStripMenuItem.Text = "Choisir la semaine courante...";
-            // 
-            // couleurDeFondToolStripMenuItem
-            // 
-            this.couleurDeFondToolStripMenuItem.Name = "couleurDeFondToolStripMenuItem";
-            this.couleurDeFondToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
-            this.couleurDeFondToolStripMenuItem.Text = "Couleur de fond...";
-            // 
-            // policeEtCouleurToolStripMenuItem1
-            // 
-            this.policeEtCouleurToolStripMenuItem1.Name = "policeEtCouleurToolStripMenuItem1";
-            this.policeEtCouleurToolStripMenuItem1.Size = new System.Drawing.Size(229, 22);
-            this.policeEtCouleurToolStripMenuItem1.Text = "Police et couleur...";
-            // 
             // FBTN_DecrementWeek
             // 
             this.FBTN_DecrementWeek.BackgroundImage = global::Compact_Agenda.Properties.Resources.ARROW_Neutre1;
@@ -151,11 +124,38 @@
             this.FBTN_IncrementWeek.TabIndex = 3;
             this.FBTN_IncrementWeek.Click += new System.EventHandler(this.FBTN_IncrementWeek_Click);
             // 
+            // CMENU_Jour
+            // 
+            this.CMENU_Jour.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.choisirLaJourneeCouranteToolStripMenuItem,
+            this.couleurDeFondToolStripMenuItem,
+            this.policeEtCouleurToolStripMenuItem1});
+            this.CMENU_Jour.Name = "CMENU_Jour";
+            this.CMENU_Jour.Size = new System.Drawing.Size(230, 70);
+            // 
+            // choisirLaJourneeCouranteToolStripMenuItem
+            // 
+            this.choisirLaJourneeCouranteToolStripMenuItem.Name = "choisirLaJourneeCouranteToolStripMenuItem";
+            this.choisirLaJourneeCouranteToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.choisirLaJourneeCouranteToolStripMenuItem.Text = "Choisir la semaine courante...";
+            // 
+            // couleurDeFondToolStripMenuItem
+            // 
+            this.couleurDeFondToolStripMenuItem.Name = "couleurDeFondToolStripMenuItem";
+            this.couleurDeFondToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.couleurDeFondToolStripMenuItem.Text = "Couleur de fond...";
+            // 
+            // policeEtCouleurToolStripMenuItem1
+            // 
+            this.policeEtCouleurToolStripMenuItem1.Name = "policeEtCouleurToolStripMenuItem1";
+            this.policeEtCouleurToolStripMenuItem1.Size = new System.Drawing.Size(229, 22);
+            this.policeEtCouleurToolStripMenuItem1.Text = "Police et couleur...";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(87)))), ((int)(((byte)(83)))));
             this.pictureBox1.BackgroundImage = global::Compact_Agenda.Properties.Resources.Loupe_Neutre;
-            this.pictureBox1.Location = new System.Drawing.Point(678, 34);
+            this.pictureBox1.Location = new System.Drawing.Point(696, 34);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(26, 26);
             this.pictureBox1.TabIndex = 0;
