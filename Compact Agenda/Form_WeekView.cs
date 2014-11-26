@@ -474,7 +474,6 @@ namespace Compact_Agenda
             }
         }
 
-        bool ctrlIsDown = false;
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             switch (keyData)
@@ -524,30 +523,21 @@ namespace Compact_Agenda
                         Decrement_Week();
                     break;
                 case Keys.Down:
-                    int month = CurrentWeek.Month;
-                    Increment_Week();
-                    DateTime dt;
-                    while (month == (dt = CurrentWeek).AddDays(6).Month)
+                    int month = CurrentWeek.AddDays(6).Month;
+                    while (month == CurrentWeek.AddDays(6).Month)
                         Increment_Week();
                     break;
                 case Keys.Space:
                     if (!mouseIsDown)
                         GotoCurrentWeek();
                     break;
-                case Keys.LControlKey:
-                    ctrlIsDown = true;
-                    break;
                 case Keys.F1:
                     new FormAide().ShowDialog();
                     break;
-            }
-
-            if (keyData.HasFlag(Keys.ControlKey))
-                ctrlIsDown = true;
-
-            if (keyData.HasFlag(Keys.Q))
-                if (ctrlIsDown)
+                case (Keys.Control | Keys.Q):
                     this.Close();
+                    break;
+            }
 
             bool result = base.ProcessCmdKey(ref msg, keyData);
             PN_Scroll.Focus();
@@ -557,12 +547,6 @@ namespace Compact_Agenda
         private void PN_Content_Resize(object sender, EventArgs e)
         {
             AdjustMinInterval();
-        }
-
-        private void Form_WeekView_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData.HasFlag(Keys.ControlKey))
-                ctrlIsDown = false;
         }
     }
 }

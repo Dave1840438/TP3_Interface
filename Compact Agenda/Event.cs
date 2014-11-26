@@ -146,24 +146,35 @@ namespace Compact_Agenda
             DC.FillRectangle(new SolidBrush(couleur), GetBorder());
             DC.DrawRectangle(new Pen(Color.Black, 1), GetBorder());
             string time = TimeToString(Starting) + "-" + TimeToString(Ending);
+            Pen lignePointillee = new Pen(Color.Red, 40);
+            lignePointillee.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
 
             int fontSize = 8;
             using (Font font = new Font("Arial", fontSize - 1, FontStyle.Regular, GraphicsUnit.Point))
             {
                 using (Font font2 = new Font("Arial", fontSize + 1, FontStyle.Bold, GraphicsUnit.Point))
                 {
-                    System.Windows.Forms.TextFormatFlags flags = System.Windows.Forms.TextFormatFlags.WordEllipsis | System.Windows.Forms.TextFormatFlags.HorizontalCenter;
+                    System.Windows.Forms.TextFormatFlags flags = System.Windows.Forms.TextFormatFlags.WordEllipsis | System.Windows.Forms.TextFormatFlags.HorizontalCenter | 
+                        System.Windows.Forms.TextFormatFlags.WordBreak;
                     Rectangle border = GetBorder();
                     fontSize += 6;
 
                     System.Windows.Forms.TextRenderer.DrawText(DC, time, font, border, Color.Black, flags);
                     border = new Rectangle(border.Location.X, border.Location.Y + fontSize, border.Width, border.Height - fontSize);
 
-                    System.Windows.Forms.TextRenderer.DrawText(DC, Title, font2, border, Color.Black, flags);
+                    System.Windows.Forms.TextRenderer.DrawText(DC, "---------------------", font2, border, Color.Black, flags);
                     border = new Rectangle(border.Location.X, border.Location.Y + fontSize, border.Width, border.Height - fontSize);
+
+                    System.Windows.Forms.TextRenderer.DrawText(DC, Title, font2, border, Color.Black, flags);
+                    border = new Rectangle(border.Location.X, border.Location.Y + (fontSize), border.Width, border.Height - fontSize);
+
+                    System.Windows.Forms.TextRenderer.DrawText(DC, "---------------------", font2, border, Color.Black, flags);
+                    border = new Rectangle(border.Location.X, border.Location.Y + (fontSize), border.Width, border.Height - fontSize);
 
                     flags = System.Windows.Forms.TextFormatFlags.WordBreak;
                     System.Windows.Forms.TextRenderer.DrawText(DC, Description, font, border, Color.Black, flags);
+
+            
                 }
             }
         }

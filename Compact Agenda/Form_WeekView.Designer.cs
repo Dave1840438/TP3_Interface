@@ -211,7 +211,6 @@
             this.Name = "Form_WeekView";
             this.Text = "Agenda compacte...";
             this.Load += new System.EventHandler(this.Form_WeekView_Load);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form_WeekView_KeyUp);
             this.PN_Frame.ResumeLayout(false);
             this.CMENU_Semaine_courante.ResumeLayout(false);
             this.CMENU_Jour.ResumeLayout(false);
