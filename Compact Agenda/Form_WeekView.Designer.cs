@@ -35,23 +35,31 @@
             this.changerLaCouleurDuFondToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changerLaCouleurDesLignesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.policeEtCouleurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.FBTN_DecrementWeek = new FlashButton.FlashButton();
-            this.FBTN_IncrementWeek = new FlashButton.FlashButton();
             this.CMENU_Jour = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.choisirLaJourneeCouranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.couleurDeFondToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.policeEtCouleurToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.uC_Slider1 = new UC_Slider.UC_Slider();
             this.PN_Scroll = new Compact_Agenda.DoubleBufferPanel();
             this.PN_Content = new Compact_Agenda.DoubleBufferPanel();
             this.PN_Hours = new Compact_Agenda.DoubleBufferPanel();
             this.PN_DaysHeader = new Compact_Agenda.DoubleBufferPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.uC_Slider1 = new UC_Slider.UC_Slider();
+            this.FBTN_DecrementWeek = new FlashButton.FlashButton();
+            this.FBTN_IncrementWeek = new FlashButton.FlashButton();
+            this.couleurDeFondToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.policeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.couleurDePoliceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CMENU_Heure = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.paramettreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.couleurDeFonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.policeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.couleurDePoliceToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.PN_Frame.SuspendLayout();
             this.CMENU_Semaine_courante.SuspendLayout();
             this.CMENU_Jour.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PN_Scroll.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.CMENU_Heure.SuspendLayout();
             this.SuspendLayout();
             // 
             // PN_Frame
@@ -96,43 +104,13 @@
             this.policeEtCouleurToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
             this.policeEtCouleurToolStripMenuItem.Text = "Police et Couleur...";
             // 
-            // FBTN_DecrementWeek
-            // 
-            this.FBTN_DecrementWeek.BackgroundImage = global::Compact_Agenda.Properties.Resources.ARROW_Neutre1;
-            this.FBTN_DecrementWeek.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FBTN_DecrementWeek.ImageClick = global::Compact_Agenda.Properties.Resources.ARROW_CLICK_2;
-            this.FBTN_DecrementWeek.ImageDisable = global::Compact_Agenda.Properties.Resources.ICON_Left_Disable;
-            this.FBTN_DecrementWeek.ImageNeutral = global::Compact_Agenda.Properties.Resources.ARROW_Neutre1;
-            this.FBTN_DecrementWeek.ImageOver = global::Compact_Agenda.Properties.Resources.ARROW_OVER_2;
-            this.FBTN_DecrementWeek.Location = new System.Drawing.Point(3, 2);
-            this.FBTN_DecrementWeek.Name = "FBTN_DecrementWeek";
-            this.FBTN_DecrementWeek.Size = new System.Drawing.Size(32, 32);
-            this.FBTN_DecrementWeek.TabIndex = 2;
-            this.FBTN_DecrementWeek.Click += new System.EventHandler(this.FBTN_DecrementWeek_Click);
-            // 
-            // FBTN_IncrementWeek
-            // 
-            this.FBTN_IncrementWeek.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FBTN_IncrementWeek.BackgroundImage = global::Compact_Agenda.Properties.Resources.ARROW_Neutre2;
-            this.FBTN_IncrementWeek.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FBTN_IncrementWeek.ImageClick = global::Compact_Agenda.Properties.Resources.ARROW_CLICK;
-            this.FBTN_IncrementWeek.ImageDisable = global::Compact_Agenda.Properties.Resources.ICON_Right_Disable;
-            this.FBTN_IncrementWeek.ImageNeutral = global::Compact_Agenda.Properties.Resources.ARROW_Neutre2;
-            this.FBTN_IncrementWeek.ImageOver = global::Compact_Agenda.Properties.Resources.ARROW_OVER;
-            this.FBTN_IncrementWeek.Location = new System.Drawing.Point(708, 2);
-            this.FBTN_IncrementWeek.Name = "FBTN_IncrementWeek";
-            this.FBTN_IncrementWeek.Size = new System.Drawing.Size(32, 32);
-            this.FBTN_IncrementWeek.TabIndex = 3;
-            this.FBTN_IncrementWeek.Click += new System.EventHandler(this.FBTN_IncrementWeek_Click);
-            // 
             // CMENU_Jour
             // 
             this.CMENU_Jour.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.choisirLaJourneeCouranteToolStripMenuItem,
-            this.couleurDeFondToolStripMenuItem,
-            this.policeEtCouleurToolStripMenuItem1});
+            this.couleurDeFondToolStripMenuItem});
             this.CMENU_Jour.Name = "CMENU_Jour";
-            this.CMENU_Jour.Size = new System.Drawing.Size(230, 70);
+            this.CMENU_Jour.Size = new System.Drawing.Size(230, 48);
             // 
             // choisirLaJourneeCouranteToolStripMenuItem
             // 
@@ -142,47 +120,14 @@
             // 
             // couleurDeFondToolStripMenuItem
             // 
+            this.couleurDeFondToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.couleurDeFondToolStripMenuItem1,
+            this.policeToolStripMenuItem,
+            this.couleurDePoliceToolStripMenuItem});
             this.couleurDeFondToolStripMenuItem.Name = "couleurDeFondToolStripMenuItem";
             this.couleurDeFondToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
-            this.couleurDeFondToolStripMenuItem.Text = "Couleur de fond...";
-            // 
-            // policeEtCouleurToolStripMenuItem1
-            // 
-            this.policeEtCouleurToolStripMenuItem1.Name = "policeEtCouleurToolStripMenuItem1";
-            this.policeEtCouleurToolStripMenuItem1.Size = new System.Drawing.Size(229, 22);
-            this.policeEtCouleurToolStripMenuItem1.Text = "Police et couleur...";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(87)))), ((int)(((byte)(83)))));
-            this.pictureBox1.BackgroundImage = global::Compact_Agenda.Properties.Resources.Loupe_Neutre;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(705, 33);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
-            // 
-            // uC_Slider1
-            // 
-            this.uC_Slider1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.uC_Slider1.BarDisableImage = ((System.Drawing.Image)(resources.GetObject("uC_Slider1.BarDisableImage")));
-            this.uC_Slider1.BarEnableImage = ((System.Drawing.Image)(resources.GetObject("uC_Slider1.BarEnableImage")));
-            this.uC_Slider1.CursorDisableImage = ((System.Drawing.Image)(resources.GetObject("uC_Slider1.CursorDisableImage")));
-            this.uC_Slider1.CursorEnableImage = ((System.Drawing.Image)(resources.GetObject("uC_Slider1.CursorEnableImage")));
-            this.uC_Slider1.CursorOverImage = ((System.Drawing.Image)(resources.GetObject("uC_Slider1.CursorOverImage")));
-            this.uC_Slider1.Location = new System.Drawing.Point(705, 34);
-            this.uC_Slider1.Maximum = 100;
-            this.uC_Slider1.Minimum = -100;
-            this.uC_Slider1.Name = "uC_Slider1";
-            this.uC_Slider1.Size = new System.Drawing.Size(20, 296);
-            this.uC_Slider1.TabIndex = 2;
-            this.uC_Slider1.Value = 100;
-            this.uC_Slider1.Load += new System.EventHandler(this.uC_Slider1_Load);
-            this.uC_Slider1.MouseLeave += new System.EventHandler(this.uC_Slider1_MouseLeave);
-            this.uC_Slider1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.uC_Slider1_MouseMove);
+            this.couleurDeFondToolStripMenuItem.Text = "Paramettre...";
+            this.couleurDeFondToolStripMenuItem.Click += new System.EventHandler(this.couleurDeFondToolStripMenuItem_Click);
             // 
             // PN_Scroll
             // 
@@ -218,6 +163,7 @@
             // 
             // PN_Hours
             // 
+            this.PN_Hours.ContextMenuStrip = this.CMENU_Heure;
             this.PN_Hours.Location = new System.Drawing.Point(0, -1);
             this.PN_Hours.Name = "PN_Hours";
             this.PN_Hours.Size = new System.Drawing.Size(36, 518);
@@ -234,6 +180,120 @@
             this.PN_DaysHeader.Size = new System.Drawing.Size(628, 32);
             this.PN_DaysHeader.TabIndex = 0;
             this.PN_DaysHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.PN_DaysHeader_Paint);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(87)))), ((int)(((byte)(83)))));
+            this.pictureBox1.BackgroundImage = global::Compact_Agenda.Properties.Resources.Loupe_Neutre;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(705, 33);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            // 
+            // uC_Slider1
+            // 
+            this.uC_Slider1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.uC_Slider1.BarDisableImage = ((System.Drawing.Image)(resources.GetObject("uC_Slider1.BarDisableImage")));
+            this.uC_Slider1.BarEnableImage = ((System.Drawing.Image)(resources.GetObject("uC_Slider1.BarEnableImage")));
+            this.uC_Slider1.CursorDisableImage = ((System.Drawing.Image)(resources.GetObject("uC_Slider1.CursorDisableImage")));
+            this.uC_Slider1.CursorEnableImage = ((System.Drawing.Image)(resources.GetObject("uC_Slider1.CursorEnableImage")));
+            this.uC_Slider1.CursorOverImage = ((System.Drawing.Image)(resources.GetObject("uC_Slider1.CursorOverImage")));
+            this.uC_Slider1.Location = new System.Drawing.Point(705, 34);
+            this.uC_Slider1.Maximum = 100;
+            this.uC_Slider1.Minimum = -100;
+            this.uC_Slider1.Name = "uC_Slider1";
+            this.uC_Slider1.Size = new System.Drawing.Size(20, 296);
+            this.uC_Slider1.TabIndex = 2;
+            this.uC_Slider1.Value = 100;
+            this.uC_Slider1.Load += new System.EventHandler(this.uC_Slider1_Load);
+            this.uC_Slider1.MouseLeave += new System.EventHandler(this.uC_Slider1_MouseLeave);
+            this.uC_Slider1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.uC_Slider1_MouseMove);
+            // 
+            // FBTN_DecrementWeek
+            // 
+            this.FBTN_DecrementWeek.BackgroundImage = global::Compact_Agenda.Properties.Resources.ARROW_Neutre1;
+            this.FBTN_DecrementWeek.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FBTN_DecrementWeek.ImageClick = global::Compact_Agenda.Properties.Resources.ARROW_CLICK_2;
+            this.FBTN_DecrementWeek.ImageDisable = global::Compact_Agenda.Properties.Resources.ICON_Left_Disable;
+            this.FBTN_DecrementWeek.ImageNeutral = global::Compact_Agenda.Properties.Resources.ARROW_Neutre1;
+            this.FBTN_DecrementWeek.ImageOver = global::Compact_Agenda.Properties.Resources.ARROW_OVER_2;
+            this.FBTN_DecrementWeek.Location = new System.Drawing.Point(3, 2);
+            this.FBTN_DecrementWeek.Name = "FBTN_DecrementWeek";
+            this.FBTN_DecrementWeek.Size = new System.Drawing.Size(32, 32);
+            this.FBTN_DecrementWeek.TabIndex = 2;
+            this.FBTN_DecrementWeek.Click += new System.EventHandler(this.FBTN_DecrementWeek_Click);
+            // 
+            // FBTN_IncrementWeek
+            // 
+            this.FBTN_IncrementWeek.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FBTN_IncrementWeek.BackgroundImage = global::Compact_Agenda.Properties.Resources.ARROW_Neutre2;
+            this.FBTN_IncrementWeek.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FBTN_IncrementWeek.ImageClick = global::Compact_Agenda.Properties.Resources.ARROW_CLICK;
+            this.FBTN_IncrementWeek.ImageDisable = global::Compact_Agenda.Properties.Resources.ICON_Right_Disable;
+            this.FBTN_IncrementWeek.ImageNeutral = global::Compact_Agenda.Properties.Resources.ARROW_Neutre2;
+            this.FBTN_IncrementWeek.ImageOver = global::Compact_Agenda.Properties.Resources.ARROW_OVER;
+            this.FBTN_IncrementWeek.Location = new System.Drawing.Point(708, 2);
+            this.FBTN_IncrementWeek.Name = "FBTN_IncrementWeek";
+            this.FBTN_IncrementWeek.Size = new System.Drawing.Size(32, 32);
+            this.FBTN_IncrementWeek.TabIndex = 3;
+            this.FBTN_IncrementWeek.Click += new System.EventHandler(this.FBTN_IncrementWeek_Click);
+            // 
+            // couleurDeFondToolStripMenuItem1
+            // 
+            this.couleurDeFondToolStripMenuItem1.Name = "couleurDeFondToolStripMenuItem1";
+            this.couleurDeFondToolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
+            this.couleurDeFondToolStripMenuItem1.Text = "Couleur de Fond...";
+            // 
+            // policeToolStripMenuItem
+            // 
+            this.policeToolStripMenuItem.Name = "policeToolStripMenuItem";
+            this.policeToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.policeToolStripMenuItem.Text = "Police...";
+            // 
+            // couleurDePoliceToolStripMenuItem
+            // 
+            this.couleurDePoliceToolStripMenuItem.Name = "couleurDePoliceToolStripMenuItem";
+            this.couleurDePoliceToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.couleurDePoliceToolStripMenuItem.Text = "Couleur de police...";
+            // 
+            // CMENU_Heure
+            // 
+            this.CMENU_Heure.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.paramettreToolStripMenuItem});
+            this.CMENU_Heure.Name = "CMENU_Heure";
+            this.CMENU_Heure.Size = new System.Drawing.Size(142, 26);
+            // 
+            // paramettreToolStripMenuItem
+            // 
+            this.paramettreToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.couleurDeFonToolStripMenuItem,
+            this.policeToolStripMenuItem1,
+            this.couleurDePoliceToolStripMenuItem1});
+            this.paramettreToolStripMenuItem.Name = "paramettreToolStripMenuItem";
+            this.paramettreToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.paramettreToolStripMenuItem.Text = "Paramettre...";
+            // 
+            // couleurDeFonToolStripMenuItem
+            // 
+            this.couleurDeFonToolStripMenuItem.Name = "couleurDeFonToolStripMenuItem";
+            this.couleurDeFonToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.couleurDeFonToolStripMenuItem.Text = "Couleur de fond...";
+            // 
+            // policeToolStripMenuItem1
+            // 
+            this.policeToolStripMenuItem1.Name = "policeToolStripMenuItem1";
+            this.policeToolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
+            this.policeToolStripMenuItem1.Text = "Police...";
+            // 
+            // couleurDePoliceToolStripMenuItem1
+            // 
+            this.couleurDePoliceToolStripMenuItem1.Name = "couleurDePoliceToolStripMenuItem1";
+            this.couleurDePoliceToolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
+            this.couleurDePoliceToolStripMenuItem1.Text = "Couleur de police...";
             // 
             // Form_WeekView
             // 
@@ -252,8 +312,9 @@
             this.PN_Frame.ResumeLayout(false);
             this.CMENU_Semaine_courante.ResumeLayout(false);
             this.CMENU_Jour.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PN_Scroll.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.CMENU_Heure.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -274,9 +335,16 @@
         private System.Windows.Forms.ContextMenuStrip CMENU_Jour;
         private System.Windows.Forms.ToolStripMenuItem choisirLaJourneeCouranteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem couleurDeFondToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem policeEtCouleurToolStripMenuItem1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private UC_Slider.UC_Slider uC_Slider1;
+        private System.Windows.Forms.ContextMenuStrip CMENU_Heure;
+        private System.Windows.Forms.ToolStripMenuItem paramettreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem couleurDeFonToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem policeToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem couleurDePoliceToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem couleurDeFondToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem policeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem couleurDePoliceToolStripMenuItem;
 
     }
 }

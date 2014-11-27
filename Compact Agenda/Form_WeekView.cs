@@ -62,11 +62,6 @@ namespace Compact_Agenda
         }
         private void Form_WeekView_Load(object sender, EventArgs e)
         {
-            //////
-            Form_Choisir_Date form = new Form_Choisir_Date();
-            form.ShowDialog();
-            //////
-
             PN_Scroll.Focus();
             GotoCurrentWeek();
         }
@@ -606,6 +601,11 @@ namespace Compact_Agenda
         }
 
         private void uC_Slider1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void couleurDeFondToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

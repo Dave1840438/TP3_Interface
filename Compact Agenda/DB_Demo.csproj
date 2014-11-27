@@ -100,6 +100,12 @@
     <Compile Include="Form_Choisir_Date.Designer.cs">
       <DependentUpon>Form_Choisir_Date.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Duplication_Evenement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Duplication_Evenement.Designer.cs">
+      <DependentUpon>Form_Duplication_Evenement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_WeekView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Choisir_Date.resx">
       <DependentUpon>Form_Choisir_Date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Duplication_Evenement.resx">
+      <DependentUpon>Form_Duplication_Evenement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_WeekView.resx">
       <DependentUpon>Form_WeekView.cs</DependentUpon>
