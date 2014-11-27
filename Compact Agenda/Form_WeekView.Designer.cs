@@ -158,9 +158,9 @@
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(87)))), ((int)(((byte)(83)))));
             this.pictureBox1.BackgroundImage = global::Compact_Agenda.Properties.Resources.Loupe_Neutre;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(708, 33);
+            this.pictureBox1.Location = new System.Drawing.Point(705, 33);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(13, 19);
+            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
@@ -173,13 +173,14 @@
             this.uC_Slider1.CursorDisableImage = ((System.Drawing.Image)(resources.GetObject("uC_Slider1.CursorDisableImage")));
             this.uC_Slider1.CursorEnableImage = ((System.Drawing.Image)(resources.GetObject("uC_Slider1.CursorEnableImage")));
             this.uC_Slider1.CursorOverImage = ((System.Drawing.Image)(resources.GetObject("uC_Slider1.CursorOverImage")));
-            this.uC_Slider1.Location = new System.Drawing.Point(708, 34);
+            this.uC_Slider1.Location = new System.Drawing.Point(705, 34);
             this.uC_Slider1.Maximum = 100;
             this.uC_Slider1.Minimum = -100;
             this.uC_Slider1.Name = "uC_Slider1";
-            this.uC_Slider1.Size = new System.Drawing.Size(13, 296);
+            this.uC_Slider1.Size = new System.Drawing.Size(20, 296);
             this.uC_Slider1.TabIndex = 2;
             this.uC_Slider1.Value = 100;
+            this.uC_Slider1.Load += new System.EventHandler(this.uC_Slider1_Load);
             this.uC_Slider1.MouseLeave += new System.EventHandler(this.uC_Slider1_MouseLeave);
             this.uC_Slider1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.uC_Slider1_MouseMove);
             // 

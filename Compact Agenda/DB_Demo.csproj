@@ -94,6 +94,12 @@
     <Compile Include="FormAide.Designer.cs">
       <DependentUpon>FormAide.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Choisir_Date.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Choisir_Date.Designer.cs">
+      <DependentUpon>Form_Choisir_Date.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_WeekView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAide.resx">
       <DependentUpon>FormAide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Choisir_Date.resx">
+      <DependentUpon>Form_Choisir_Date.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_WeekView.resx">
       <DependentUpon>Form_WeekView.cs</DependentUpon>

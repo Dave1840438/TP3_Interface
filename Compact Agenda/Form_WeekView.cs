@@ -45,6 +45,7 @@ namespace Compact_Agenda
             get { return _CurrentWeek; }
         }
 
+
         public Form_WeekView()
         {
             InitializeComponent();
@@ -61,6 +62,11 @@ namespace Compact_Agenda
         }
         private void Form_WeekView_Load(object sender, EventArgs e)
         {
+            //////
+            Form_Choisir_Date form = new Form_Choisir_Date();
+            form.ShowDialog();
+            //////
+
             PN_Scroll.Focus();
             GotoCurrentWeek();
         }
@@ -597,6 +603,11 @@ namespace Compact_Agenda
             FontDialog dlg = new FontDialog();
             if (dlg.ShowDialog() == DialogResult.OK)
                 font = dlg.Font; 
+        }
+
+        private void uC_Slider1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
