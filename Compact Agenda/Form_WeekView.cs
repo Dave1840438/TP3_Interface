@@ -70,10 +70,10 @@ namespace Compact_Agenda
             string DB_URL = System.IO.Path.GetFullPath(@"DB_AGENDA.MDF");
             ConnexionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='" + DB_URL + "';Integrated Security=True";
             CurrentWeek = DateTime.Now;
-            uC_Slider1.Minimum = 600; /*DS/DC*/
-            uC_Slider1.Maximum = 4600;
-            uC_Slider1.Value =
-            PN_Hours.Height = PN_Content.Height = 2400;
+            uC_Slider1.Minimum = 0; /*DS/DC*/
+            uC_Slider1.Maximum = 300;
+            uC_Slider1.Value = 0;
+            PN_Hours.Height = PN_Content.Height = 600;
             uC_Slider1.Hide();
         }
         private void Form_WeekView_Load(object sender, EventArgs e)
@@ -252,16 +252,6 @@ namespace Compact_Agenda
             minInterval = 10;
             while (Event.HourToPixel(0, minInterval, PN_Content.Height) < 10)
                 minInterval += 10;
-        }
-        
-        //Resize les panels en conséquences du zoom
-        private void PN_Scroll_Resize(object sender, EventArgs e)/*DS/DC*/
-        {
-            PN_Content.Width = PN_Scroll.Width - 70;
-            PN_DaysHeader.Width = PN_Content.Width;
-            PN_DaysHeader.Width = PN_Content.Width;
-            PN_DaysHeader.Refresh();
-            PN_Content.Refresh();
         }
 
         private void PN_Scroll_Scroll(object sender, ScrollEventArgs e)
@@ -583,19 +573,7 @@ namespace Compact_Agenda
                     //Gère le zoom négatif
                     if (!mouseIsDown)
                     {
-                        if (PN_Content.Height > 600)
-                        {
-                            PN_Content.Height -= 200;
-                            PN_Hours.Height -= 200;
-                            if (PN_Content.Height < 600)
-                            {
-                                PN_Content.Height = 600;
-                                PN_Hours.Height = 600;
-                            }
-                            uC_Slider1.Value = PN_Content.Height;
-                            PN_Content.Refresh();
-                            PN_Hours.Refresh();
-                        }
+                        
                     }
                     break;
                 case Keys.Right:
@@ -608,14 +586,7 @@ namespace Compact_Agenda
                     // Gère le zoom positif
                     if (!mouseIsDown)
                     {
-                        if (PN_Content.Height < 4800)
-                        {
-                            PN_Content.Height += 200;
-                            PN_Hours.Height += 200;
-                            uC_Slider1.Value = PN_Content.Height;
-                            PN_Content.Refresh();
-                            PN_Hours.Refresh();
-                        }
+                        
                     }
                     break;
 
@@ -654,15 +625,14 @@ namespace Compact_Agenda
         private void PN_Content_Resize(object sender, EventArgs e)
         {
             AdjustMinInterval();
+            
         }
 
         //Update la position du slider
         private void updateSliderZoom() /*DS/DC*/
         {
-            PN_Content.Height = uC_Slider1.Value;
-            PN_Hours.Height = uC_Slider1.Value;
-            PN_Content.Refresh();
-            PN_Hours.Refresh();
+            PN_Content.Height = PN_Hours.Height = (int)(PN_Scroll.Height * (1 + ((double)uC_Slider1.Value / 100.0)));
+            this.Refresh();
         }
 
         //Update le slider
@@ -866,18 +836,26 @@ namespace Compact_Agenda
             ChoisirCouleur(ref couleurSurlignementJours);
             this.Refresh();
         }
-        
-        //Ajuste les panels en fonction du zoom
-        private void PN_Scroll_SizeChanged(object sender, EventArgs e)
+
+        //Resize les panels en conséquences du zoom
+        private void PN_Scroll_Resize(object sender, EventArgs e)/*DS/DC*/
         {
-            if (PN_Scroll.Height > PN_Content.Height)
-            {
-                PN_Content.Height = PN_Scroll.Height;
-                PN_Hours.Height = PN_Scroll.Height;
-                uC_Slider1.Value = PN_Scroll.Height;
-                PN_Content.Refresh();
-                PN_Hours.Refresh();
-            }
+            PN_Content.Width = PN_Scroll.Width - 70;
+            PN_DaysHeader.Width = PN_Content.Width;
+            PN_DaysHeader.Width = PN_Content.Width;
+            PN_DaysHeader.Refresh();
+            PN_Content.Refresh();
         }
+
+        //UpdateZoom /*DS/DC*/
+        private void Form_WeekView_Resize(object sender, EventArgs e)
+        {
+            if (uC_Slider1.Value == 0)
+            {
+                PN_Content.Height = PN_Hours.Height = PN_Scroll.Height;
+            }
+            updateSliderZoom();
+        }
+        
     }
 }

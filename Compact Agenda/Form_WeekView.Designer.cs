@@ -42,6 +42,7 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.deLaCouleurDeSurlignementToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.FBTN_DecrementWeek = new FlashButton.FlashButton();
             this.FBTN_IncrementWeek = new FlashButton.FlashButton();
@@ -50,6 +51,7 @@
             this.couleurDeFondToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.couleurDeFondToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.couleurDePoliceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deLaCouleurDeSurlignementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changerLaPoliceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.uC_Slider1 = new UC_Slider.UC_Slider();
@@ -58,8 +60,6 @@
             this.effacerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporterDuneSemaineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dupliquerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deLaCouleurDeSurlignementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deLaCouleurDeSurlignementToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.PN_Scroll = new Compact_Agenda.DoubleBufferPanel();
             this.PN_Content = new Compact_Agenda.DoubleBufferPanel();
             this.PN_Hours = new Compact_Agenda.DoubleBufferPanel();
@@ -174,6 +174,13 @@
             this.toolStripMenuItem4.Text = "De la police...";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
+            // deLaCouleurDeSurlignementToolStripMenuItem1
+            // 
+            this.deLaCouleurDeSurlignementToolStripMenuItem1.Name = "deLaCouleurDeSurlignementToolStripMenuItem1";
+            this.deLaCouleurDeSurlignementToolStripMenuItem1.Size = new System.Drawing.Size(241, 22);
+            this.deLaCouleurDeSurlignementToolStripMenuItem1.Text = "De la couleur de surlignement...";
+            this.deLaCouleurDeSurlignementToolStripMenuItem1.Click += new System.EventHandler(this.deLaCouleurDeSurlignementToolStripMenuItem1_Click);
+            // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
@@ -249,6 +256,13 @@
             this.couleurDePoliceToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
             this.couleurDePoliceToolStripMenuItem.Text = "De la police...";
             this.couleurDePoliceToolStripMenuItem.Click += new System.EventHandler(this.couleurDePoliceToolStripMenuItem_Click);
+            // 
+            // deLaCouleurDeSurlignementToolStripMenuItem
+            // 
+            this.deLaCouleurDeSurlignementToolStripMenuItem.Name = "deLaCouleurDeSurlignementToolStripMenuItem";
+            this.deLaCouleurDeSurlignementToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
+            this.deLaCouleurDeSurlignementToolStripMenuItem.Text = "De la couleur de surlignement...";
+            this.deLaCouleurDeSurlignementToolStripMenuItem.Click += new System.EventHandler(this.deLaCouleurDeSurlignementToolStripMenuItem_Click);
             // 
             // changerLaPoliceToolStripMenuItem
             // 
@@ -326,20 +340,6 @@
             this.dupliquerToolStripMenuItem.Text = "Dupliquer...";
             this.dupliquerToolStripMenuItem.Click += new System.EventHandler(this.dupliquerToolStripMenuItem_Click);
             // 
-            // deLaCouleurDeSurlignementToolStripMenuItem
-            // 
-            this.deLaCouleurDeSurlignementToolStripMenuItem.Name = "deLaCouleurDeSurlignementToolStripMenuItem";
-            this.deLaCouleurDeSurlignementToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
-            this.deLaCouleurDeSurlignementToolStripMenuItem.Text = "De la couleur de surlignement...";
-            this.deLaCouleurDeSurlignementToolStripMenuItem.Click += new System.EventHandler(this.deLaCouleurDeSurlignementToolStripMenuItem_Click);
-            // 
-            // deLaCouleurDeSurlignementToolStripMenuItem1
-            // 
-            this.deLaCouleurDeSurlignementToolStripMenuItem1.Name = "deLaCouleurDeSurlignementToolStripMenuItem1";
-            this.deLaCouleurDeSurlignementToolStripMenuItem1.Size = new System.Drawing.Size(241, 22);
-            this.deLaCouleurDeSurlignementToolStripMenuItem1.Text = "De la couleur de surlignement...";
-            this.deLaCouleurDeSurlignementToolStripMenuItem1.Click += new System.EventHandler(this.deLaCouleurDeSurlignementToolStripMenuItem1_Click);
-            // 
             // PN_Scroll
             // 
             this.PN_Scroll.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -355,7 +355,6 @@
             this.PN_Scroll.Size = new System.Drawing.Size(737, 552);
             this.PN_Scroll.TabIndex = 1;
             this.PN_Scroll.Scroll += new System.Windows.Forms.ScrollEventHandler(this.PN_Scroll_Scroll);
-            this.PN_Scroll.SizeChanged += new System.EventHandler(this.PN_Scroll_SizeChanged);
             this.PN_Scroll.Resize += new System.EventHandler(this.PN_Scroll_Resize);
             // 
             // PN_Content
@@ -409,6 +408,7 @@
             this.Text = "Agenda compacte...";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_WeekView_FormClosing);
             this.Load += new System.EventHandler(this.Form_WeekView_Load);
+            this.Resize += new System.EventHandler(this.Form_WeekView_Resize);
             this.PN_Frame.ResumeLayout(false);
             this.CMENU_Semaine_courante.ResumeLayout(false);
             this.CMENU_Heures.ResumeLayout(false);
