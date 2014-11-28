@@ -33,15 +33,21 @@ namespace Compact_Agenda
 
         }
 
+        //Cette fonction s'occupe de fermer l'application de choix de semaine
         private void FBTN_IncrementWeek_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        //Cette fonction s'occupe d'enregistrer les modifications
         private void FlashButton_Ok_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+        public DateTime GetDateTime()
+        {
+            return DATE_Choisir_Date_Courante.Value;
         }
     }
 }

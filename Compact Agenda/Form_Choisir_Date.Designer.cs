@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Choisir_Date));
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DATE_Choisir_Date_Courante = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.FlashButton_Ok = new FlashButton.FlashButton();
             this.FBTN_IncrementWeek = new FlashButton.FlashButton();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // DATE_Choisir_Date_Courante
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(37, 81);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 0;
+            this.DATE_Choisir_Date_Courante.Location = new System.Drawing.Point(37, 81);
+            this.DATE_Choisir_Date_Courante.Name = "DATE_Choisir_Date_Courante";
+            this.DATE_Choisir_Date_Courante.Size = new System.Drawing.Size(200, 20);
+            this.DATE_Choisir_Date_Courante.TabIndex = 0;
             // 
             // label1
             // 
@@ -92,7 +92,7 @@
             this.Controls.Add(this.FlashButton_Ok);
             this.Controls.Add(this.FBTN_IncrementWeek);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.DATE_Choisir_Date_Courante);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Choisir_Date";
@@ -105,7 +105,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker DATE_Choisir_Date_Courante;
         private System.Windows.Forms.Label label1;
         private FlashButton.FlashButton FBTN_IncrementWeek;
         private FlashButton.FlashButton FlashButton_Ok;
