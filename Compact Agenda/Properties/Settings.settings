@@ -44,5 +44,11 @@
     <Setting Name="Location" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">0, 0</Value>
     </Setting>
+    <Setting Name="couleurSurlignementJours" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">179, 6, 144</Value>
+    </Setting>
+    <Setting Name="couleurSurlignementHeures" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">179, 6, 144</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -58,6 +58,8 @@
             this.effacerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporterDuneSemaineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dupliquerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deLaCouleurDeSurlignementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deLaCouleurDeSurlignementToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.PN_Scroll = new Compact_Agenda.DoubleBufferPanel();
             this.PN_Content = new Compact_Agenda.DoubleBufferPanel();
             this.PN_Hours = new Compact_Agenda.DoubleBufferPanel();
@@ -152,7 +154,8 @@
             // 
             this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem3,
-            this.toolStripMenuItem4});
+            this.toolStripMenuItem4,
+            this.deLaCouleurDeSurlignementToolStripMenuItem1});
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(174, 22);
             this.toolStripMenuItem2.Text = "Changer la couleur";
@@ -160,14 +163,14 @@
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(144, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(241, 22);
             this.toolStripMenuItem3.Text = "De Fond...";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(144, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(241, 22);
             this.toolStripMenuItem4.Text = "De la police...";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
@@ -227,7 +230,8 @@
             // 
             this.couleurDeFondToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.couleurDeFondToolStripMenuItem1,
-            this.couleurDePoliceToolStripMenuItem});
+            this.couleurDePoliceToolStripMenuItem,
+            this.deLaCouleurDeSurlignementToolStripMenuItem});
             this.couleurDeFondToolStripMenuItem.Name = "couleurDeFondToolStripMenuItem";
             this.couleurDeFondToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.couleurDeFondToolStripMenuItem.Text = "Changer la couleur";
@@ -236,14 +240,14 @@
             // couleurDeFondToolStripMenuItem1
             // 
             this.couleurDeFondToolStripMenuItem1.Name = "couleurDeFondToolStripMenuItem1";
-            this.couleurDeFondToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
+            this.couleurDeFondToolStripMenuItem1.Size = new System.Drawing.Size(241, 22);
             this.couleurDeFondToolStripMenuItem1.Text = "De Fond...";
             this.couleurDeFondToolStripMenuItem1.Click += new System.EventHandler(this.couleurDeFondToolStripMenuItem1_Click);
             // 
             // couleurDePoliceToolStripMenuItem
             // 
             this.couleurDePoliceToolStripMenuItem.Name = "couleurDePoliceToolStripMenuItem";
-            this.couleurDePoliceToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.couleurDePoliceToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
             this.couleurDePoliceToolStripMenuItem.Text = "De la police...";
             this.couleurDePoliceToolStripMenuItem.Click += new System.EventHandler(this.couleurDePoliceToolStripMenuItem_Click);
             // 
@@ -324,6 +328,20 @@
             this.dupliquerToolStripMenuItem.Text = "Dupliquer...";
             this.dupliquerToolStripMenuItem.Click += new System.EventHandler(this.dupliquerToolStripMenuItem_Click);
             // 
+            // deLaCouleurDeSurlignementToolStripMenuItem
+            // 
+            this.deLaCouleurDeSurlignementToolStripMenuItem.Name = "deLaCouleurDeSurlignementToolStripMenuItem";
+            this.deLaCouleurDeSurlignementToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
+            this.deLaCouleurDeSurlignementToolStripMenuItem.Text = "De la couleur de surlignement...";
+            this.deLaCouleurDeSurlignementToolStripMenuItem.Click += new System.EventHandler(this.deLaCouleurDeSurlignementToolStripMenuItem_Click);
+            // 
+            // deLaCouleurDeSurlignementToolStripMenuItem1
+            // 
+            this.deLaCouleurDeSurlignementToolStripMenuItem1.Name = "deLaCouleurDeSurlignementToolStripMenuItem1";
+            this.deLaCouleurDeSurlignementToolStripMenuItem1.Size = new System.Drawing.Size(241, 22);
+            this.deLaCouleurDeSurlignementToolStripMenuItem1.Text = "De la couleur de surlignement...";
+            this.deLaCouleurDeSurlignementToolStripMenuItem1.Click += new System.EventHandler(this.deLaCouleurDeSurlignementToolStripMenuItem1_Click);
+            // 
             // PN_Scroll
             // 
             this.PN_Scroll.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -339,6 +357,7 @@
             this.PN_Scroll.Size = new System.Drawing.Size(737, 552);
             this.PN_Scroll.TabIndex = 1;
             this.PN_Scroll.Scroll += new System.Windows.Forms.ScrollEventHandler(this.PN_Scroll_Scroll);
+            this.PN_Scroll.SizeChanged += new System.EventHandler(this.PN_Scroll_SizeChanged);
             this.PN_Scroll.Resize += new System.EventHandler(this.PN_Scroll_Resize);
             // 
             // PN_Content
@@ -348,6 +367,7 @@
             this.PN_Content.Name = "PN_Content";
             this.PN_Content.Size = new System.Drawing.Size(628, 522);
             this.PN_Content.TabIndex = 0;
+            this.PN_Content.SizeChanged += new System.EventHandler(this.PN_Content_SizeChanged);
             this.PN_Content.Paint += new System.Windows.Forms.PaintEventHandler(this.PN_Content_Paint);
             this.PN_Content.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PN_Content_MouseDoubleClick);
             this.PN_Content.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PN_Content_MouseDown);
@@ -437,6 +457,8 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem deLaCouleurDeSurlignementToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem deLaCouleurDeSurlignementToolStripMenuItem;
 
     }
 }

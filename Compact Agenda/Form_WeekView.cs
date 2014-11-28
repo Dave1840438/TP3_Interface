@@ -202,7 +202,7 @@ namespace Compact_Agenda
 
                 if (date.ToShortDateString() == DateTime.Now.ToShortDateString())
                 {
-                    Pen leGrosPen = new Pen(Color.FromArgb(179, 6, 144), 64);
+                    Pen leGrosPen = new Pen(couleurSurlignementJours, 64);
                     DC.DrawLine(leGrosPen, location, new Point(location.X + (int)(PN_DaysHeader.Width / 7f), location.Y));
                 }
 
@@ -226,7 +226,7 @@ namespace Compact_Agenda
                 if (hour == DateTime.Now.Hour)
                 {
                     int Decalage = PN_Hours.Height / 24 / 2;
-                    Pen leGrosPen = new Pen(Color.FromArgb(179, 6, 144), PN_Hours.Height / 24);
+                    Pen leGrosPen = new Pen(couleurSurlignementHeures, PN_Hours.Height / 24);
                     DC.DrawLine(leGrosPen, new Point(location.X, location.Y + Decalage), new Point(location.X + PN_Hours.Width, location.Y + Decalage));
                 }
 
@@ -464,7 +464,7 @@ namespace Compact_Agenda
                     Event.Starting = LocationToDateTime(firstMouseLocation);
                     Event.Ending = LocationToDateTime(lastMouseLocation);
 
-                    if (Event.Starting > Event.Ending)
+                    if (Event.Starting > Event.Ending && Event.Starting.Date == Event.Starting.Date)
                     {
                         Events.TargetPart = TargetPart.Top;
                         DateTime d = Event.Starting;
@@ -472,6 +472,8 @@ namespace Compact_Agenda
                         Event.Ending = d;
 
                     }
+                    else if (Event.Starting.Date != Event.Ending.Date)
+                        Event.Ending = new DateTime(Event.Ending.Year, Event.Starting.Month, Event.Starting.Day, Event.Ending.Hour, Event.Ending.Minute, Event.Ending.Second);
                     TimeSpan delta = Event.Ending.Subtract(Event.Starting);
                     if (delta.Minutes < 15 && delta.Hours == 0)
                     {
@@ -578,6 +580,11 @@ namespace Compact_Agenda
                         {
                             PN_Content.Height -= 200;
                             PN_Hours.Height -= 200;
+                            if (PN_Content.Height < 600)
+                            {
+                                PN_Content.Height = 600;
+                                PN_Hours.Height = 600;
+                            }
                             uC_Slider1.Value = PN_Content.Height;
                             PN_Content.Refresh();
                             PN_Hours.Refresh();
@@ -698,6 +705,7 @@ namespace Compact_Agenda
             Form_Choisir_Date form = new Form_Choisir_Date();
             if (form.ShowDialog() == DialogResult.OK)
                 CurrentWeek = form.GetDateTime();
+            this.Refresh();
         }
 
         private void effacerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -840,6 +848,39 @@ namespace Compact_Agenda
                 GetWeekEvents();
                 this.Refresh();
             }
+        }
+
+        private void deLaCouleurDeSurlignementToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ChoisirCouleur(ref couleurSurlignementHeures);
+            this.Refresh();
+        }
+
+        private void deLaCouleurDeSurlignementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChoisirCouleur(ref couleurSurlignementJours);
+            this.Refresh();
+        }
+
+        private void PN_Scroll_SizeChanged(object sender, EventArgs e)
+        {
+            if (PN_Scroll.Height > PN_Content.Height)
+            {
+                PN_Content.Height = PN_Scroll.Height;
+                PN_Hours.Height = PN_Scroll.Height;
+                uC_Slider1.Value = PN_Scroll.Height;
+                PN_Content.Refresh();
+                PN_Hours.Refresh();
+            }
+        }
+
+        private void PN_Content_SizeChanged(object sender, EventArgs e)
+        {
+            //if (PN_Content.Height < PN_Scroll.Height)
+            //{
+            //    this.Size = new Size(this.Size.Width, this.Size.Height - (PN_Scroll.Height - PN_Content.Height));
+            //    PN_Scroll.Height = PN_Content.Height;
+            //}
         }
     }
 }
