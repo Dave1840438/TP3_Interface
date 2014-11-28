@@ -464,7 +464,10 @@ namespace Compact_Agenda
                     Event.Starting = LocationToDateTime(firstMouseLocation);
                     Event.Ending = LocationToDateTime(lastMouseLocation);
 
-                    if (Event.Starting > Event.Ending && Event.Starting.Date == Event.Starting.Date)
+                    if (Event.Starting.Date != Event.Ending.Date)
+                        Event.Ending = new DateTime(Event.Ending.Year, Event.Starting.Month, Event.Starting.Day, Event.Ending.Hour, Event.Ending.Minute, Event.Ending.Second);
+
+                    if (Event.Starting > Event.Ending)
                     {
                         Events.TargetPart = TargetPart.Top;
                         DateTime d = Event.Starting;
@@ -472,8 +475,7 @@ namespace Compact_Agenda
                         Event.Ending = d;
 
                     }
-                    else if (Event.Starting.Date != Event.Ending.Date)
-                        Event.Ending = new DateTime(Event.Ending.Year, Event.Starting.Month, Event.Starting.Day, Event.Ending.Hour, Event.Ending.Minute, Event.Ending.Second);
+                   
                     TimeSpan delta = Event.Ending.Subtract(Event.Starting);
                     if (delta.Minutes < 15 && delta.Hours == 0)
                     {
@@ -546,7 +548,7 @@ namespace Compact_Agenda
             if ((Events.TargetEvent != null) && (Events.TargetPart == TargetPart.Inside))
             {
                 DLG_Events dlg = new DLG_Events();
-                dlg.Event = Events.TargetEvent;
+                dlg.Event = Events.TargetEvent.Klone();
                 if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     if (dlg.delete)
@@ -560,6 +562,7 @@ namespace Compact_Agenda
                     {
                         TableEvents tableEvents = new TableEvents(ConnexionString);
                         tableEvents.UpdateEventRecord(dlg.Event);
+                        Events.TargetEvent = null;
                     }
                     GetWeekEvents();
                     PN_Content.Refresh();
