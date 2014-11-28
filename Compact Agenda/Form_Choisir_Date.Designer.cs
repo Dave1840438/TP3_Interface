@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Choisir_Date));
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.FBTN_IncrementWeek = new FlashButton.FlashButton();
             this.FlashButton_Ok = new FlashButton.FlashButton();
+            this.FBTN_IncrementWeek = new FlashButton.FlashButton();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -52,6 +53,21 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Choisir une date: ";
             // 
+            // FlashButton_Ok
+            // 
+            this.FlashButton_Ok.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FlashButton_Ok.BackgroundImage = global::Compact_Agenda.Properties.Resources.Ok_DLG_Neutral_2;
+            this.FlashButton_Ok.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FlashButton_Ok.ImageClick = global::Compact_Agenda.Properties.Resources.Ok_DLG_Click_2;
+            this.FlashButton_Ok.ImageDisable = global::Compact_Agenda.Properties.Resources.ICON_Right_Disable;
+            this.FlashButton_Ok.ImageNeutral = global::Compact_Agenda.Properties.Resources.Ok_DLG_Neutral_2;
+            this.FlashButton_Ok.ImageOver = global::Compact_Agenda.Properties.Resources.Ok_DLG_Over_2;
+            this.FlashButton_Ok.Location = new System.Drawing.Point(179, 115);
+            this.FlashButton_Ok.Name = "FlashButton_Ok";
+            this.FlashButton_Ok.Size = new System.Drawing.Size(80, 25);
+            this.FlashButton_Ok.TabIndex = 60;
+            this.FlashButton_Ok.Click += new System.EventHandler(this.FlashButton_Ok_Click);
+            // 
             // FBTN_IncrementWeek
             // 
             this.FBTN_IncrementWeek.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -67,20 +83,6 @@
             this.FBTN_IncrementWeek.TabIndex = 59;
             this.FBTN_IncrementWeek.Click += new System.EventHandler(this.FBTN_IncrementWeek_Click);
             // 
-            // FlashButton_Ok
-            // 
-            this.FlashButton_Ok.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FlashButton_Ok.BackgroundImage = global::Compact_Agenda.Properties.Resources.Ok_DLG_Neutral_2;
-            this.FlashButton_Ok.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FlashButton_Ok.ImageClick = global::Compact_Agenda.Properties.Resources.Ok_DLG_Click_2;
-            this.FlashButton_Ok.ImageDisable = global::Compact_Agenda.Properties.Resources.ICON_Right_Disable;
-            this.FlashButton_Ok.ImageNeutral = global::Compact_Agenda.Properties.Resources.Ok_DLG_Neutral_2;
-            this.FlashButton_Ok.ImageOver = global::Compact_Agenda.Properties.Resources.Ok_DLG_Over_2;
-            this.FlashButton_Ok.Location = new System.Drawing.Point(179, 115);
-            this.FlashButton_Ok.Name = "FlashButton_Ok";
-            this.FlashButton_Ok.Size = new System.Drawing.Size(80, 25);
-            this.FlashButton_Ok.TabIndex = 60;
-            // 
             // Form_Choisir_Date
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -92,6 +94,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Choisir_Date";
             this.Text = "Form_Choisir_Date";
             this.Load += new System.EventHandler(this.Form_Choisir_Date_Load);

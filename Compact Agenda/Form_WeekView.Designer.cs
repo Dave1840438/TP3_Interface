@@ -385,6 +385,7 @@
             this.Controls.Add(this.uC_Slider1);
             this.Controls.Add(this.PN_Frame);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(600, 500);
             this.Name = "Form_WeekView";

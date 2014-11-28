@@ -30,6 +30,7 @@ namespace Compact_Agenda
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DLG_HLSColorPicker));
             this.TKBR_Hue = new System.Windows.Forms.TrackBar();
             this.PN_ColorPreview = new System.Windows.Forms.Panel();
             this.TKBR_Luminosity = new System.Windows.Forms.TrackBar();
@@ -44,9 +45,9 @@ namespace Compact_Agenda
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.PN_RecentColors = new System.Windows.Forms.Panel();
-            this.PN_Saturation = new DoubleBufferPanel();
-            this.PN_Lightness = new DoubleBufferPanel();
-            this.PN_Hue = new DoubleBufferPanel();
+            this.PN_Saturation = new Compact_Agenda.DoubleBufferPanel();
+            this.PN_Lightness = new Compact_Agenda.DoubleBufferPanel();
+            this.PN_Hue = new Compact_Agenda.DoubleBufferPanel();
             ((System.ComponentModel.ISupportInitialize)(this.TKBR_Hue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TKBR_Luminosity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TKBR_Saturation)).BeginInit();
@@ -230,7 +231,7 @@ namespace Compact_Agenda
             this.PN_Hue.DoubleClick += new System.EventHandler(this.PN_Hue_DoubleClick);
             this.PN_Hue.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PN_Hue_MouseDown);
             // 
-            // FORM_BackColor
+            // DLG_HLSColorPicker
             // 
             this.AcceptButton = this.BTN_Ok;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -253,8 +254,9 @@ namespace Compact_Agenda
             this.Controls.Add(this.PN_ColorPreview);
             this.Controls.Add(this.TKBR_Hue);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "DLG_HLSColorPicker";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Name = "FORM_BackColor";
             this.Text = "Couleur de fond...";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FORM_BackColor_FormClosing);
             this.Load += new System.EventHandler(this.FORM_BackColor_Load);

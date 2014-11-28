@@ -122,6 +122,9 @@
     <EmbeddedResource Include="DLG_Events.resx">
       <DependentUpon>DLG_Events.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DLG_HLSColorPicker.resx">
+      <DependentUpon>DLG_HLSColorPicker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAide.resx">
       <DependentUpon>FormAide.cs</DependentUpon>
     </EmbeddedResource>

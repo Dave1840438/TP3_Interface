@@ -37,5 +37,11 @@ namespace Compact_Agenda
         {
             this.Close();
         }
+
+        private void FlashButton_Ok_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Duplication_Evenement));
             this.NUMUD_Qte = new System.Windows.Forms.NumericUpDown();
             this.CB_Choix_De_Saut = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -139,6 +140,7 @@
             this.Controls.Add(this.CB_Choix_De_Saut);
             this.Controls.Add(this.NUMUD_Qte);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Duplication_Evenement";
             this.Text = "Form_Duplication_Evenement";
             this.Load += new System.EventHandler(this.Form_Duplication_Evenement_Load);
