@@ -37,35 +37,35 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.FBTN_IncrementWeek = new FlashButton.FlashButton();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // Aide
@@ -154,6 +154,101 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Type d\'évènement: ";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(21, 93);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(220, 13);
+            this.label7.TabIndex = 72;
+            this.label7.Text = "Ctrl+Q: Cette commande quitte le programme.";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(84, 126);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(169, 13);
+            this.label8.TabIndex = 75;
+            this.label8.Text = ": Décrémente/Incrémente les mois";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(81, 164);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(153, 13);
+            this.label9.TabIndex = 78;
+            this.label9.Text = ": Semaine Suivant/Précédente";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(130, 199);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(100, 13);
+            this.label10.TabIndex = 80;
+            this.label10.Text = ": Semaine Courante";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(21, 70);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(98, 13);
+            this.label11.TabIndex = 81;
+            this.label11.Text = "+/-:  Zoom+/Zoom-";
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.BackgroundImage = global::Compact_Agenda.Properties.Resources.KeyBoard_Space_Bar_2;
+            this.pictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox11.Location = new System.Drawing.Point(12, 190);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(112, 30);
+            this.pictureBox11.TabIndex = 79;
+            this.pictureBox11.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.BackgroundImage = global::Compact_Agenda.Properties.Resources.KeyBoard_Droite_2;
+            this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox9.Location = new System.Drawing.Point(48, 154);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox9.TabIndex = 77;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.BackgroundImage = global::Compact_Agenda.Properties.Resources.KeyBoard_Gauche_2;
+            this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox10.Location = new System.Drawing.Point(12, 154);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox10.TabIndex = 76;
+            this.pictureBox10.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackgroundImage = global::Compact_Agenda.Properties.Resources.KeyBoard_Down_2;
+            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox8.Location = new System.Drawing.Point(48, 118);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox8.TabIndex = 74;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackgroundImage = global::Compact_Agenda.Properties.Resources.KeyBoard_Up_2;
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox7.Location = new System.Drawing.Point(12, 118);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox7.TabIndex = 73;
+            this.pictureBox7.TabStop = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(230)))));
@@ -208,83 +303,6 @@
             this.pictureBox3.TabIndex = 64;
             this.pictureBox3.TabStop = false;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 93);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(220, 13);
-            this.label7.TabIndex = 72;
-            this.label7.Text = "Ctrl+Q: Cette commande quitte le programme.";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(84, 126);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(169, 13);
-            this.label8.TabIndex = 75;
-            this.label8.Text = ": Décrémente/Incrémente les mois";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(81, 164);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(153, 13);
-            this.label9.TabIndex = 78;
-            this.label9.Text = ": Semaine Suivant/Précédente";
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.BackgroundImage = global::Compact_Agenda.Properties.Resources.KeyBoard_Space_Bar_2;
-            this.pictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox11.Location = new System.Drawing.Point(12, 190);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(112, 30);
-            this.pictureBox11.TabIndex = 79;
-            this.pictureBox11.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.BackgroundImage = global::Compact_Agenda.Properties.Resources.KeyBoard_Droite_2;
-            this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox9.Location = new System.Drawing.Point(48, 154);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox9.TabIndex = 77;
-            this.pictureBox9.TabStop = false;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.BackgroundImage = global::Compact_Agenda.Properties.Resources.KeyBoard_Gauche_2;
-            this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox10.Location = new System.Drawing.Point(12, 154);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox10.TabIndex = 76;
-            this.pictureBox10.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.BackgroundImage = global::Compact_Agenda.Properties.Resources.KeyBoard_Down_2;
-            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox8.Location = new System.Drawing.Point(48, 118);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox8.TabIndex = 74;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.BackgroundImage = global::Compact_Agenda.Properties.Resources.KeyBoard_Up_2;
-            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox7.Location = new System.Drawing.Point(12, 118);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox7.TabIndex = 73;
-            this.pictureBox7.TabStop = false;
-            // 
             // FBTN_IncrementWeek
             // 
             this.FBTN_IncrementWeek.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -299,24 +317,6 @@
             this.FBTN_IncrementWeek.Size = new System.Drawing.Size(22, 22);
             this.FBTN_IncrementWeek.TabIndex = 58;
             this.FBTN_IncrementWeek.Click += new System.EventHandler(this.FBTN_IncrementWeek_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(130, 199);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(100, 13);
-            this.label10.TabIndex = 80;
-            this.label10.Text = ": Semaine Courante";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(21, 70);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(98, 13);
-            this.label11.TabIndex = 81;
-            this.label11.Text = "+/-:  Zoom+/Zoom-";
             // 
             // FormAide
             // 
@@ -340,20 +340,22 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAide";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormAide";
+            this.Load += new System.EventHandler(this.FormAide_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

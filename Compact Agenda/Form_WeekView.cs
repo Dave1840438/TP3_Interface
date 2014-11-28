@@ -81,7 +81,7 @@ namespace Compact_Agenda
             PN_Scroll.Focus();
             GotoCurrentWeek();
         }
-
+        //Load les preference que l'utilisateur a enregistrer
         private void LoadSettings()
         {
 
@@ -112,7 +112,7 @@ namespace Compact_Agenda
 
             this.Location = Properties.Settings.Default.Location;
         }
-
+        //Enregistre les preference de l'utilisateur (couleur,police,etc)
         private void SaveSettings()
         {
             Properties.Settings.Default.lignesDemiHeures = lignesDemiHeures;

@@ -96,6 +96,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Choisir_Date";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form_Choisir_Date";
             this.Load += new System.EventHandler(this.Form_Choisir_Date_Load);
             this.ResumeLayout(false);

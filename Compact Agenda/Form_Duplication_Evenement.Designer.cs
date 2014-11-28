@@ -32,10 +32,10 @@
             this.NUMUD_Qte = new System.Windows.Forms.NumericUpDown();
             this.CB_Choix_De_Saut = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.FBTN_IncrementWeek = new FlashButton.FlashButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.FlashButton_Ok = new FlashButton.FlashButton();
+            this.FBTN_IncrementWeek = new FlashButton.FlashButton();
             ((System.ComponentModel.ISupportInitialize)(this.NUMUD_Qte)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,21 +75,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Choisir la fréquence: ";
             // 
-            // FBTN_IncrementWeek
-            // 
-            this.FBTN_IncrementWeek.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FBTN_IncrementWeek.BackgroundImage = global::Compact_Agenda.Properties.Resources.Exite_Neutral_;
-            this.FBTN_IncrementWeek.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FBTN_IncrementWeek.ImageClick = global::Compact_Agenda.Properties.Resources.Exite_Click;
-            this.FBTN_IncrementWeek.ImageDisable = global::Compact_Agenda.Properties.Resources.ICON_Right_Disable;
-            this.FBTN_IncrementWeek.ImageNeutral = global::Compact_Agenda.Properties.Resources.Exite_Neutral_;
-            this.FBTN_IncrementWeek.ImageOver = global::Compact_Agenda.Properties.Resources.Exite_over;
-            this.FBTN_IncrementWeek.Location = new System.Drawing.Point(262, 0);
-            this.FBTN_IncrementWeek.Name = "FBTN_IncrementWeek";
-            this.FBTN_IncrementWeek.Size = new System.Drawing.Size(22, 22);
-            this.FBTN_IncrementWeek.TabIndex = 60;
-            this.FBTN_IncrementWeek.Click += new System.EventHandler(this.FBTN_IncrementWeek_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -126,6 +111,21 @@
             this.FlashButton_Ok.TabIndex = 63;
             this.FlashButton_Ok.Click += new System.EventHandler(this.FlashButton_Ok_Click);
             // 
+            // FBTN_IncrementWeek
+            // 
+            this.FBTN_IncrementWeek.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FBTN_IncrementWeek.BackgroundImage = global::Compact_Agenda.Properties.Resources.Exite_Neutral_;
+            this.FBTN_IncrementWeek.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FBTN_IncrementWeek.ImageClick = global::Compact_Agenda.Properties.Resources.Exite_Click;
+            this.FBTN_IncrementWeek.ImageDisable = global::Compact_Agenda.Properties.Resources.ICON_Right_Disable;
+            this.FBTN_IncrementWeek.ImageNeutral = global::Compact_Agenda.Properties.Resources.Exite_Neutral_;
+            this.FBTN_IncrementWeek.ImageOver = global::Compact_Agenda.Properties.Resources.Exite_over;
+            this.FBTN_IncrementWeek.Location = new System.Drawing.Point(262, 0);
+            this.FBTN_IncrementWeek.Name = "FBTN_IncrementWeek";
+            this.FBTN_IncrementWeek.Size = new System.Drawing.Size(22, 22);
+            this.FBTN_IncrementWeek.TabIndex = 60;
+            this.FBTN_IncrementWeek.Click += new System.EventHandler(this.FBTN_IncrementWeek_Click);
+            // 
             // Form_Duplication_Evenement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -142,6 +142,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Duplication_Evenement";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form_Duplication_Evenement";
             this.Load += new System.EventHandler(this.Form_Duplication_Evenement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NUMUD_Qte)).EndInit();

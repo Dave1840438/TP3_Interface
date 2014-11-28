@@ -16,6 +16,7 @@ namespace Compact_Agenda
         {
             InitializeComponent();
         }
+        //Cette fonction permet de bouger l'application meme si elle n'a pas de border
         protected override void WndProc(ref Message m)
         {
             switch (m.Msg)

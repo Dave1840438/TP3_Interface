@@ -19,6 +19,7 @@ namespace Compact_Agenda
         {
             InitializeComponent();
         }
+        //Cette fonction permet de bouger l'application meme si elle n'a pas de border
         protected override void WndProc(ref Message m)
         {
             switch (m.Msg)
@@ -31,12 +32,6 @@ namespace Compact_Agenda
             }
             base.WndProc(ref m);
         }
-
-        private void lel(object sender, EventArgs e)
-        {
-            MessageBox.Show("lel");
-        }
-
         private void DLG_Events_Load(object sender, EventArgs e)
         {
             delete = false;
@@ -174,7 +169,7 @@ namespace Compact_Agenda
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
-
+        //Cette fonction enregistre les differents information selectionner
         private void FlashButton_Ok_Click(object sender, EventArgs e)
         {
             if (CSC_FinishingHour.Value < CSC_StartingHour.Value ||
