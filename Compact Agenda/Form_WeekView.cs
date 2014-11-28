@@ -24,6 +24,8 @@ using System.Windows.Forms;
 
 namespace Compact_Agenda
 {
+
+
     public partial class Form_WeekView : Form
     {
         public string ConnexionString;
@@ -32,7 +34,18 @@ namespace Compact_Agenda
         private int minInterval = 5;
 
         #region PRÉFÉRENCES
-        //Met tes préférences ici si t'en met
+        Color lignesDemiHeures;
+        Color lignesHeures;
+        Color fondSemaineCourante;
+        Color fondDaysHeader;
+        Color fondHoursHeader;
+        public static Color couleurPoliceEvenements;
+        Color couleurPoliceEnteteJours;
+        Color couleurPoliceEnteteHeures;
+
+        public static Font policeEvenements;
+        Font policeJours;
+        Font policeHeures;
         #endregion
 
         public DateTime CurrentWeek
@@ -62,16 +75,65 @@ namespace Compact_Agenda
         }
         private void Form_WeekView_Load(object sender, EventArgs e)
         {
+            LoadSettings();
             PN_Scroll.Focus();
             GotoCurrentWeek();
+        }
+
+        private void LoadSettings()
+        {
+
+            lignesDemiHeures = Properties.Settings.Default.lignesDemiHeures;
+            lignesHeures = Properties.Settings.Default.lignesHeures;
+            fondSemaineCourante = Properties.Settings.Default.fondSemaineCourante;
+            fondDaysHeader = Properties.Settings.Default.fondDaysHeader;
+            fondHoursHeader = Properties.Settings.Default.fondHoursHeader;
+            couleurPoliceEvenements = Properties.Settings.Default.couleurPoliceEvenements;
+            couleurPoliceEnteteJours = Properties.Settings.Default.couleurPoliceEnteteJours;
+            couleurPoliceEnteteHeures = Properties.Settings.Default.couleurPoliceEnteteHeures;
+
+
+            if (Properties.Settings.Default.policeEvenements != null)
+            {
+                policeEvenements = Properties.Settings.Default.policeEvenements;
+                policeJours = Properties.Settings.Default.policesJours;
+                policeHeures = Properties.Settings.Default.policeHeures;
+            }
+            else
+            {
+                policeEvenements = new Font("Arial", 8, FontStyle.Regular, GraphicsUnit.Point);
+                policeJours = new Font("Arial", 8, FontStyle.Regular, GraphicsUnit.Point);
+                policeHeures = new Font("Arial", 8, FontStyle.Regular, GraphicsUnit.Point);
+            }
+
+            this.Location = Properties.Settings.Default.Location;
+        }
+
+        private void SaveSettings()
+        {
+            Properties.Settings.Default.lignesDemiHeures = lignesDemiHeures;
+            Properties.Settings.Default.lignesHeures = lignesHeures;
+            Properties.Settings.Default.fondSemaineCourante = fondSemaineCourante;
+            Properties.Settings.Default.fondDaysHeader = fondDaysHeader;
+            Properties.Settings.Default.fondHoursHeader = fondHoursHeader;
+            Properties.Settings.Default.couleurPoliceEvenements = couleurPoliceEvenements;
+            Properties.Settings.Default.couleurPoliceEnteteJours = couleurPoliceEnteteJours;
+            Properties.Settings.Default.couleurPoliceEnteteHeures = couleurPoliceEnteteHeures;
+
+            Properties.Settings.Default.policeEvenements = policeEvenements;
+            Properties.Settings.Default.policesJours = policeJours;
+            Properties.Settings.Default.policeHeures = policeHeures;
+
+            Properties.Settings.Default.Location = this.Location;
+
+            //Écriture du fichier de sauvegarde
+            Properties.Settings.Default.Save();
         }
 
         private void PN_Scroll_MouseEnter(Object sender, EventArgs e)
         {
             // pour s'assurer que le mousewheel event sera intercepté
-
             PN_Scroll.Focus();
-
         }
 
 
@@ -95,9 +157,8 @@ namespace Compact_Agenda
 
         private void Fill_Agenda(Graphics DC)
         {
-            Brush brush = new SolidBrush(Color.Black);
-            Pen pen1 = new Pen(Color.LightGray, 1);
-            Pen pen2 = new Pen(Color.LightGray, 1);
+            Pen pen1 = new Pen(lignesHeures, 1);
+            Pen pen2 = new Pen(lignesDemiHeures, 1);
             pen2.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
             for (int hour = 0; hour < 24; hour++)
             {
@@ -119,13 +180,16 @@ namespace Compact_Agenda
         private void PN_Content_Paint(object sender, PaintEventArgs e)
         {
             Fill_Agenda(e.Graphics);
+            PN_Hours.BackColor = fondHoursHeader;
+            PN_DaysHeader.BackColor = fondDaysHeader;
+            PN_Content.BackColor = fondSemaineCourante;
         }
 
         private void Fill_Days_Header(Graphics DC)
         {
             DateTime date = _CurrentWeek;
-            string[] dayNames = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.DayNames;//[col].Substring(0, 3).ToUpper();
-            Brush brush = new SolidBrush(Color.White);
+            string[] dayNames = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.DayNames;
+            Brush brush = new SolidBrush(couleurPoliceEnteteJours);
             for (int dayNum = 0; dayNum < 7; dayNum++)
             {
                 Point location = new Point((int)Math.Round(PN_DaysHeader.Width / 7f * dayNum), 0);
@@ -139,15 +203,15 @@ namespace Compact_Agenda
                 String headerText = dayNames[dayNum];
                 String headerDate = date.ToShortDateString();
 
-                DC.DrawString(headerText, PN_DaysHeader.Font, brush, location);
-                DC.DrawString(headerDate, PN_DaysHeader.Font, brush, location.X, location.Y + 14);
+                DC.DrawString(headerText, policeJours, brush, location);
+                DC.DrawString(headerDate, policeJours, brush, location.X, location.Y + 14);
                 date = date.AddDays(1);
             }
         }
 
         private void Fill_Hours_Header(Graphics DC)
         {
-            Brush brush = new SolidBrush(Color.Black);
+            Brush brush = new SolidBrush(couleurPoliceEnteteHeures);
             Pen pen = new Pen(Color.LightGray, 1);
             for (int hour = 0; hour <= 24; hour++)
             {
@@ -161,7 +225,7 @@ namespace Compact_Agenda
                 }
 
                 String headerText = (hour < 10 ? "0" : "") + hour.ToString() + ":00";
-                DC.DrawString(headerText, PN_DaysHeader.Font, brush, location);
+                DC.DrawString(headerText, policeHeures, brush, location);
                 DC.DrawLine(pen, 0, Event.HourToPixel(hour + 1, 0, PN_Hours.Height), PN_Hours.Width, Event.HourToPixel(hour + 1, 0, PN_Hours.Height));
             }
         }
@@ -221,21 +285,24 @@ namespace Compact_Agenda
         }
         private void PN_Content_MouseDown(object sender, MouseEventArgs e)
         {
-            mouseIsDown = true;
-            firstMouseLocation = lastMouseLocation = e.Location;
-            if (Events.TargetEvent != null)
+            if (e.Button == MouseButtons.Left)
             {
-                switch (Events.TargetPart)
+                mouseIsDown = true;
+                firstMouseLocation = lastMouseLocation = e.Location;
+                if (Events.TargetEvent != null)
                 {
-                    case TargetPart.Top:
-                        firstMouseLocation.Y =
-                        lastMouseLocation.Y = RoundToMinutes(Event.HourToPixel(Events.TargetEvent.Starting.Hour, Events.TargetEvent.Starting.Minute, PN_Content.Height), minInterval);
-                        break;
-                    case TargetPart.Bottom:
-                        firstMouseLocation.Y =
-                        lastMouseLocation.Y = RoundToMinutes(Event.HourToPixel(Events.TargetEvent.Ending.Hour, Events.TargetEvent.Ending.Minute, PN_Content.Height), minInterval);
-                        break;
-                    default: break;
+                    switch (Events.TargetPart)
+                    {
+                        case TargetPart.Top:
+                            firstMouseLocation.Y =
+                            lastMouseLocation.Y = RoundToMinutes(Event.HourToPixel(Events.TargetEvent.Starting.Hour, Events.TargetEvent.Starting.Minute, PN_Content.Height), minInterval);
+                            break;
+                        case TargetPart.Bottom:
+                            firstMouseLocation.Y =
+                            lastMouseLocation.Y = RoundToMinutes(Event.HourToPixel(Events.TargetEvent.Ending.Hour, Events.TargetEvent.Ending.Minute, PN_Content.Height), minInterval);
+                            break;
+                        default: break;
+                    }
                 }
             }
         }
@@ -419,7 +486,16 @@ namespace Compact_Agenda
 
         private void PN_Content_MouseUp(object sender, MouseEventArgs e)
         {
-            ConludeMouseEvent();
+            if (e.Button == MouseButtons.Left)
+                ConludeMouseEvent();
+            else if (e.Button == MouseButtons.Right)
+            {
+                Events.UpdateTarget(e.Location);
+                if (Events.TargetEvent != null)
+                    CMENU_Evenement.Show(Form_WeekView.MousePosition);
+                else
+                    CMENU_Semaine_courante.Show(Form_WeekView.MousePosition);
+            }
         }
 
         private void Decrement_Week()
@@ -589,15 +665,16 @@ namespace Compact_Agenda
         private void ChoisirCouleur(ref Color couleur)
         {
             DLG_HLSColorPicker dlg = new DLG_HLSColorPicker();
+            dlg.color = couleur;
             if (dlg.ShowDialog() == DialogResult.OK)
                 couleur = dlg.color;
         }
 
-        private void ChoisirFont(Font font)
+        private void ChoisirFont(ref Font font)
         {
             FontDialog dlg = new FontDialog();
             if (dlg.ShowDialog() == DialogResult.OK)
-                font = dlg.Font; 
+                font = dlg.Font;
         }
 
         private void uC_Slider1_Load(object sender, EventArgs e)
@@ -618,6 +695,108 @@ namespace Compact_Agenda
 
         private void effacerToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Events.UpdateTarget(PN_Content.PointToClient(new Point(CMENU_Evenement.Left, CMENU_Evenement.Top)));
+            TableEvents tableEvents = new TableEvents(ConnexionString);
+            tableEvents.DeleteEvent(Events.TargetEvent);
+            Events.TargetEvent = null;
+            mouseIsDown = false;
+            GetWeekEvents();
+            this.Refresh();
+        }
+
+        private void Form_WeekView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SaveSettings();
+        }
+
+        private void duFondToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChoisirCouleur(ref fondSemaineCourante);
+            this.Refresh();
+        }
+
+        private void desLignesPleinesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChoisirCouleur(ref lignesHeures);
+            this.Refresh();
+        }
+
+        private void desLignesPointilléesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChoisirCouleur(ref lignesDemiHeures);
+            this.Refresh();
+        }
+
+        private void couleurDesCaractèresDesÉvènementsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChoisirCouleur(ref couleurPoliceEvenements);
+            this.Refresh();
+        }
+
+        private void policeEtCouleurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChoisirFont(ref policeEvenements);
+            this.Refresh();
+        }
+
+        private void couleurDeFondToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ChoisirCouleur(ref fondDaysHeader);
+            this.Refresh();
+        }
+
+        private void couleurDePoliceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChoisirCouleur(ref couleurPoliceEnteteJours);
+            this.Refresh();
+        }
+
+        private void changerLaPoliceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChoisirFont(ref policeJours);
+            this.Refresh();
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            ChoisirCouleur(ref fondHoursHeader);
+            this.Refresh();
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            ChoisirCouleur(ref couleurPoliceEnteteHeures);
+            this.Refresh();
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            ChoisirFont(ref policeHeures);
+            this.Refresh();
+        }
+
+        private void modifierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PN_Content_MouseDoubleClick(sender, new MouseEventArgs(MouseButtons.None, 0, 0, 0, 0));
+        }
+
+        private void reporterDuneSemaineToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Events.UpdateTarget(PN_Content.PointToClient(new Point(CMENU_Evenement.Left, CMENU_Evenement.Top)));
+            TableEvents tableEvents = new TableEvents(ConnexionString);
+            Event buffer = Events.TargetEvent;
+            buffer.Starting = buffer.Starting.AddDays(7);
+            buffer.Ending = buffer.Ending.AddDays(7);
+            tableEvents.UpdateEventRecord(Events.TargetEvent);
+            Events.TargetEvent = null;
+            mouseIsDown = false;
+            GetWeekEvents();
+            this.Refresh();
+        }
+
+        private void dupliquerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Duplication_Evenement dlg = new Form_Duplication_Evenement();
 
         }
     }

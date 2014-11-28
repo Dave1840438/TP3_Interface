@@ -33,39 +33,42 @@
             this.PN_Frame = new System.Windows.Forms.Panel();
             this.CMENU_Semaine_courante = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.changerLaCouleurDuFondToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changerLaCouleurDesLignesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.duFondToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.desLignesPleinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.desLignesPointilléesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.couleurDesCaractèresDesÉvènementsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.policeEtCouleurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CMENU_Heure = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.paramettreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.couleurDeFonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.policeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.couleurDePoliceToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.CMENU_Heures = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.FBTN_DecrementWeek = new FlashButton.FlashButton();
             this.FBTN_IncrementWeek = new FlashButton.FlashButton();
             this.CMENU_Jour = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.choisirLaJourneeCouranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.couleurDeFondToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.couleurDeFondToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.policeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.couleurDePoliceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changerLaPoliceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.uC_Slider1 = new UC_Slider.UC_Slider();
-            this.PN_Scroll = new Compact_Agenda.DoubleBufferPanel();
-            this.PN_Content = new Compact_Agenda.DoubleBufferPanel();
-            this.PN_Hours = new Compact_Agenda.DoubleBufferPanel();
-            this.PN_DaysHeader = new Compact_Agenda.DoubleBufferPanel();
             this.CMENU_Evenement = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.modifierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.effacerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporterDuneSemaineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dupliquerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PN_Scroll = new Compact_Agenda.DoubleBufferPanel();
+            this.PN_Content = new Compact_Agenda.DoubleBufferPanel();
+            this.PN_Hours = new Compact_Agenda.DoubleBufferPanel();
+            this.PN_DaysHeader = new Compact_Agenda.DoubleBufferPanel();
             this.PN_Frame.SuspendLayout();
             this.CMENU_Semaine_courante.SuspendLayout();
-            this.CMENU_Heure.SuspendLayout();
+            this.CMENU_Heures.SuspendLayout();
             this.CMENU_Jour.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.PN_Scroll.SuspendLayout();
             this.CMENU_Evenement.SuspendLayout();
+            this.PN_Scroll.SuspendLayout();
             this.SuspendLayout();
             // 
             // PN_Frame
@@ -87,63 +90,93 @@
             // 
             this.CMENU_Semaine_courante.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.changerLaCouleurDuFondToolStripMenuItem,
-            this.changerLaCouleurDesLignesToolStripMenuItem,
             this.policeEtCouleurToolStripMenuItem});
             this.CMENU_Semaine_courante.Name = "CMENU_Semaine_courante";
-            this.CMENU_Semaine_courante.Size = new System.Drawing.Size(239, 70);
+            this.CMENU_Semaine_courante.Size = new System.Drawing.Size(317, 48);
             // 
             // changerLaCouleurDuFondToolStripMenuItem
             // 
+            this.changerLaCouleurDuFondToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.duFondToolStripMenuItem,
+            this.desLignesPleinesToolStripMenuItem,
+            this.desLignesPointilléesToolStripMenuItem,
+            this.couleurDesCaractèresDesÉvènementsToolStripMenuItem});
             this.changerLaCouleurDuFondToolStripMenuItem.Name = "changerLaCouleurDuFondToolStripMenuItem";
-            this.changerLaCouleurDuFondToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
-            this.changerLaCouleurDuFondToolStripMenuItem.Text = "Changer la couleur du fond...";
+            this.changerLaCouleurDuFondToolStripMenuItem.Size = new System.Drawing.Size(316, 22);
+            this.changerLaCouleurDuFondToolStripMenuItem.Text = "Changer la couleur";
             // 
-            // changerLaCouleurDesLignesToolStripMenuItem
+            // duFondToolStripMenuItem
             // 
-            this.changerLaCouleurDesLignesToolStripMenuItem.Name = "changerLaCouleurDesLignesToolStripMenuItem";
-            this.changerLaCouleurDesLignesToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
-            this.changerLaCouleurDesLignesToolStripMenuItem.Text = "Changer la couleur des lignes...";
+            this.duFondToolStripMenuItem.Name = "duFondToolStripMenuItem";
+            this.duFondToolStripMenuItem.Size = new System.Drawing.Size(290, 22);
+            this.duFondToolStripMenuItem.Text = "Du fond...";
+            this.duFondToolStripMenuItem.Click += new System.EventHandler(this.duFondToolStripMenuItem_Click);
+            // 
+            // desLignesPleinesToolStripMenuItem
+            // 
+            this.desLignesPleinesToolStripMenuItem.Name = "desLignesPleinesToolStripMenuItem";
+            this.desLignesPleinesToolStripMenuItem.Size = new System.Drawing.Size(290, 22);
+            this.desLignesPleinesToolStripMenuItem.Text = "Des lignes pleines...";
+            this.desLignesPleinesToolStripMenuItem.Click += new System.EventHandler(this.desLignesPleinesToolStripMenuItem_Click);
+            // 
+            // desLignesPointilléesToolStripMenuItem
+            // 
+            this.desLignesPointilléesToolStripMenuItem.Name = "desLignesPointilléesToolStripMenuItem";
+            this.desLignesPointilléesToolStripMenuItem.Size = new System.Drawing.Size(290, 22);
+            this.desLignesPointilléesToolStripMenuItem.Text = "Des lignes pointillées...";
+            this.desLignesPointilléesToolStripMenuItem.Click += new System.EventHandler(this.desLignesPointilléesToolStripMenuItem_Click);
+            // 
+            // couleurDesCaractèresDesÉvènementsToolStripMenuItem
+            // 
+            this.couleurDesCaractèresDesÉvènementsToolStripMenuItem.Name = "couleurDesCaractèresDesÉvènementsToolStripMenuItem";
+            this.couleurDesCaractèresDesÉvènementsToolStripMenuItem.Size = new System.Drawing.Size(290, 22);
+            this.couleurDesCaractèresDesÉvènementsToolStripMenuItem.Text = "Couleur des caractères des évènements...";
+            this.couleurDesCaractèresDesÉvènementsToolStripMenuItem.Click += new System.EventHandler(this.couleurDesCaractèresDesÉvènementsToolStripMenuItem_Click);
             // 
             // policeEtCouleurToolStripMenuItem
             // 
             this.policeEtCouleurToolStripMenuItem.Name = "policeEtCouleurToolStripMenuItem";
-            this.policeEtCouleurToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
-            this.policeEtCouleurToolStripMenuItem.Text = "Police et Couleur...";
+            this.policeEtCouleurToolStripMenuItem.Size = new System.Drawing.Size(316, 22);
+            this.policeEtCouleurToolStripMenuItem.Text = "Changer la police d\'écriture des évènements...";
+            this.policeEtCouleurToolStripMenuItem.Click += new System.EventHandler(this.policeEtCouleurToolStripMenuItem_Click);
             // 
-            // CMENU_Heure
+            // CMENU_Heures
             // 
-            this.CMENU_Heure.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.paramettreToolStripMenuItem});
-            this.CMENU_Heure.Name = "CMENU_Heure";
-            this.CMENU_Heure.Size = new System.Drawing.Size(142, 26);
+            this.CMENU_Heures.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem5});
+            this.CMENU_Heures.Name = "CMENU_Jour";
+            this.CMENU_Heures.Size = new System.Drawing.Size(175, 48);
             // 
-            // paramettreToolStripMenuItem
+            // toolStripMenuItem2
             // 
-            this.paramettreToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.couleurDeFonToolStripMenuItem,
-            this.policeToolStripMenuItem1,
-            this.couleurDePoliceToolStripMenuItem1});
-            this.paramettreToolStripMenuItem.Name = "paramettreToolStripMenuItem";
-            this.paramettreToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
-            this.paramettreToolStripMenuItem.Text = "Paramettre...";
+            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem4});
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(174, 22);
+            this.toolStripMenuItem2.Text = "Changer la couleur";
             // 
-            // couleurDeFonToolStripMenuItem
+            // toolStripMenuItem3
             // 
-            this.couleurDeFonToolStripMenuItem.Name = "couleurDeFonToolStripMenuItem";
-            this.couleurDeFonToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.couleurDeFonToolStripMenuItem.Text = "Couleur de fond...";
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(144, 22);
+            this.toolStripMenuItem3.Text = "De Fond...";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
-            // policeToolStripMenuItem1
+            // toolStripMenuItem4
             // 
-            this.policeToolStripMenuItem1.Name = "policeToolStripMenuItem1";
-            this.policeToolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
-            this.policeToolStripMenuItem1.Text = "Police...";
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(144, 22);
+            this.toolStripMenuItem4.Text = "De la police...";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
-            // couleurDePoliceToolStripMenuItem1
+            // toolStripMenuItem5
             // 
-            this.couleurDePoliceToolStripMenuItem1.Name = "couleurDePoliceToolStripMenuItem1";
-            this.couleurDePoliceToolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
-            this.couleurDePoliceToolStripMenuItem1.Text = "Couleur de police...";
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(174, 22);
+            this.toolStripMenuItem5.Text = "Changer la police";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
             // FBTN_DecrementWeek
             // 
@@ -178,9 +211,10 @@
             // 
             this.CMENU_Jour.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.choisirLaJourneeCouranteToolStripMenuItem,
-            this.couleurDeFondToolStripMenuItem});
+            this.couleurDeFondToolStripMenuItem,
+            this.changerLaPoliceToolStripMenuItem});
             this.CMENU_Jour.Name = "CMENU_Jour";
-            this.CMENU_Jour.Size = new System.Drawing.Size(230, 48);
+            this.CMENU_Jour.Size = new System.Drawing.Size(230, 70);
             // 
             // choisirLaJourneeCouranteToolStripMenuItem
             // 
@@ -193,30 +227,32 @@
             // 
             this.couleurDeFondToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.couleurDeFondToolStripMenuItem1,
-            this.policeToolStripMenuItem,
             this.couleurDePoliceToolStripMenuItem});
             this.couleurDeFondToolStripMenuItem.Name = "couleurDeFondToolStripMenuItem";
             this.couleurDeFondToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
-            this.couleurDeFondToolStripMenuItem.Text = "Paramettre...";
+            this.couleurDeFondToolStripMenuItem.Text = "Changer la couleur";
             this.couleurDeFondToolStripMenuItem.Click += new System.EventHandler(this.couleurDeFondToolStripMenuItem_Click);
             // 
             // couleurDeFondToolStripMenuItem1
             // 
             this.couleurDeFondToolStripMenuItem1.Name = "couleurDeFondToolStripMenuItem1";
-            this.couleurDeFondToolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
-            this.couleurDeFondToolStripMenuItem1.Text = "Couleur de Fond...";
-            // 
-            // policeToolStripMenuItem
-            // 
-            this.policeToolStripMenuItem.Name = "policeToolStripMenuItem";
-            this.policeToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.policeToolStripMenuItem.Text = "Police...";
+            this.couleurDeFondToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
+            this.couleurDeFondToolStripMenuItem1.Text = "De Fond...";
+            this.couleurDeFondToolStripMenuItem1.Click += new System.EventHandler(this.couleurDeFondToolStripMenuItem1_Click);
             // 
             // couleurDePoliceToolStripMenuItem
             // 
             this.couleurDePoliceToolStripMenuItem.Name = "couleurDePoliceToolStripMenuItem";
-            this.couleurDePoliceToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.couleurDePoliceToolStripMenuItem.Text = "Couleur de police...";
+            this.couleurDePoliceToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.couleurDePoliceToolStripMenuItem.Text = "De la police...";
+            this.couleurDePoliceToolStripMenuItem.Click += new System.EventHandler(this.couleurDePoliceToolStripMenuItem_Click);
+            // 
+            // changerLaPoliceToolStripMenuItem
+            // 
+            this.changerLaPoliceToolStripMenuItem.Name = "changerLaPoliceToolStripMenuItem";
+            this.changerLaPoliceToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.changerLaPoliceToolStripMenuItem.Text = "Changer la police";
+            this.changerLaPoliceToolStripMenuItem.Click += new System.EventHandler(this.changerLaPoliceToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
@@ -249,6 +285,44 @@
             this.uC_Slider1.Load += new System.EventHandler(this.uC_Slider1_Load);
             this.uC_Slider1.MouseLeave += new System.EventHandler(this.uC_Slider1_MouseLeave);
             this.uC_Slider1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.uC_Slider1_MouseMove);
+            // 
+            // CMENU_Evenement
+            // 
+            this.CMENU_Evenement.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.modifierToolStripMenuItem,
+            this.effacerToolStripMenuItem,
+            this.reporterDuneSemaineToolStripMenuItem,
+            this.dupliquerToolStripMenuItem});
+            this.CMENU_Evenement.Name = "CMENU_Evenement";
+            this.CMENU_Evenement.Size = new System.Drawing.Size(209, 114);
+            // 
+            // modifierToolStripMenuItem
+            // 
+            this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
+            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.modifierToolStripMenuItem.Text = "Modifier...";
+            this.modifierToolStripMenuItem.Click += new System.EventHandler(this.modifierToolStripMenuItem_Click);
+            // 
+            // effacerToolStripMenuItem
+            // 
+            this.effacerToolStripMenuItem.Name = "effacerToolStripMenuItem";
+            this.effacerToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.effacerToolStripMenuItem.Text = "Effacer...";
+            this.effacerToolStripMenuItem.Click += new System.EventHandler(this.effacerToolStripMenuItem_Click);
+            // 
+            // reporterDuneSemaineToolStripMenuItem
+            // 
+            this.reporterDuneSemaineToolStripMenuItem.Name = "reporterDuneSemaineToolStripMenuItem";
+            this.reporterDuneSemaineToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.reporterDuneSemaineToolStripMenuItem.Text = "Reporter d\'une semaine...";
+            this.reporterDuneSemaineToolStripMenuItem.Click += new System.EventHandler(this.reporterDuneSemaineToolStripMenuItem_Click);
+            // 
+            // dupliquerToolStripMenuItem
+            // 
+            this.dupliquerToolStripMenuItem.Name = "dupliquerToolStripMenuItem";
+            this.dupliquerToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.dupliquerToolStripMenuItem.Text = "Dupliquer...";
+            this.dupliquerToolStripMenuItem.Click += new System.EventHandler(this.dupliquerToolStripMenuItem_Click);
             // 
             // PN_Scroll
             // 
@@ -284,7 +358,7 @@
             // 
             // PN_Hours
             // 
-            this.PN_Hours.ContextMenuStrip = this.CMENU_Heure;
+            this.PN_Hours.ContextMenuStrip = this.CMENU_Heures;
             this.PN_Hours.Location = new System.Drawing.Point(0, -1);
             this.PN_Hours.Name = "PN_Hours";
             this.PN_Hours.Size = new System.Drawing.Size(36, 518);
@@ -302,41 +376,6 @@
             this.PN_DaysHeader.TabIndex = 0;
             this.PN_DaysHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.PN_DaysHeader_Paint);
             // 
-            // CMENU_Evenement
-            // 
-            this.CMENU_Evenement.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.modifierToolStripMenuItem,
-            this.effacerToolStripMenuItem,
-            this.reporterDuneSemaineToolStripMenuItem,
-            this.dupliquerToolStripMenuItem});
-            this.CMENU_Evenement.Name = "CMENU_Evenement";
-            this.CMENU_Evenement.Size = new System.Drawing.Size(209, 114);
-            // 
-            // modifierToolStripMenuItem
-            // 
-            this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
-            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
-            this.modifierToolStripMenuItem.Text = "Modifier...";
-            // 
-            // effacerToolStripMenuItem
-            // 
-            this.effacerToolStripMenuItem.Name = "effacerToolStripMenuItem";
-            this.effacerToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
-            this.effacerToolStripMenuItem.Text = "Effacer...";
-            this.effacerToolStripMenuItem.Click += new System.EventHandler(this.effacerToolStripMenuItem_Click);
-            // 
-            // reporterDuneSemaineToolStripMenuItem
-            // 
-            this.reporterDuneSemaineToolStripMenuItem.Name = "reporterDuneSemaineToolStripMenuItem";
-            this.reporterDuneSemaineToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
-            this.reporterDuneSemaineToolStripMenuItem.Text = "Reporter d\'une semaine...";
-            // 
-            // dupliquerToolStripMenuItem
-            // 
-            this.dupliquerToolStripMenuItem.Name = "dupliquerToolStripMenuItem";
-            this.dupliquerToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
-            this.dupliquerToolStripMenuItem.Text = "Dupliquer...";
-            // 
             // Form_WeekView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -350,14 +389,15 @@
             this.MinimumSize = new System.Drawing.Size(600, 500);
             this.Name = "Form_WeekView";
             this.Text = "Agenda compacte...";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_WeekView_FormClosing);
             this.Load += new System.EventHandler(this.Form_WeekView_Load);
             this.PN_Frame.ResumeLayout(false);
             this.CMENU_Semaine_courante.ResumeLayout(false);
-            this.CMENU_Heure.ResumeLayout(false);
+            this.CMENU_Heures.ResumeLayout(false);
             this.CMENU_Jour.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.PN_Scroll.ResumeLayout(false);
             this.CMENU_Evenement.ResumeLayout(false);
+            this.PN_Scroll.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -373,26 +413,29 @@
         private System.Windows.Forms.Panel PN_Frame;
         private System.Windows.Forms.ContextMenuStrip CMENU_Semaine_courante;
         private System.Windows.Forms.ToolStripMenuItem changerLaCouleurDuFondToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem changerLaCouleurDesLignesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem policeEtCouleurToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip CMENU_Jour;
         private System.Windows.Forms.ToolStripMenuItem choisirLaJourneeCouranteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem couleurDeFondToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private UC_Slider.UC_Slider uC_Slider1;
-        private System.Windows.Forms.ContextMenuStrip CMENU_Heure;
-        private System.Windows.Forms.ToolStripMenuItem paramettreToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem couleurDeFonToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem policeToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem couleurDePoliceToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem couleurDeFondToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem policeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem couleurDePoliceToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip CMENU_Evenement;
         private System.Windows.Forms.ToolStripMenuItem modifierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem effacerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporterDuneSemaineToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dupliquerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem duFondToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem desLignesPleinesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem desLignesPointilléesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem couleurDesCaractèresDesÉvènementsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changerLaPoliceToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip CMENU_Heures;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
 
     }
 }
