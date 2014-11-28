@@ -31,11 +31,6 @@ namespace Compact_Agenda
             base.WndProc(ref m);
         }
 
-        private void Form_Duplication_Evenement_Load(object sender, EventArgs e)
-        {
-
-        }
-
         //Cette Fonction permet de quitter l'application
         private void FBTN_IncrementWeek_Click(object sender, EventArgs e)
         {

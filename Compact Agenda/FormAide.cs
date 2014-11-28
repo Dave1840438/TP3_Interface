@@ -35,10 +35,5 @@ namespace Compact_Agenda
         {
             this.Close();
         }
-
-        private void FormAide_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
