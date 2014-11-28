@@ -797,7 +797,22 @@ namespace Compact_Agenda
         private void dupliquerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form_Duplication_Evenement dlg = new Form_Duplication_Evenement();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                Events.UpdateTarget(PN_Content.PointToClient(new Point(CMENU_Evenement.Left, CMENU_Evenement.Top)));
+                Event clone = Events.TargetEvent.Klone();
 
+                for (int i = 0; i < /*somehting*/; i++)
+                {
+                    switch (dom est beau)
+                    {
+                        
+                    }
+
+
+                    Events.Add(clone);
+                }
+            }
         }
     }
 }
