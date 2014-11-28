@@ -42,6 +42,8 @@ namespace Compact_Agenda
         public static Color couleurPoliceEvenements;
         Color couleurPoliceEnteteJours;
         Color couleurPoliceEnteteHeures;
+        Color couleurSurlignementJours;
+        Color couleurSurlignementHeures;
 
         public static Font policeEvenements;
         Font policeJours;
@@ -91,6 +93,8 @@ namespace Compact_Agenda
             couleurPoliceEvenements = Properties.Settings.Default.couleurPoliceEvenements;
             couleurPoliceEnteteJours = Properties.Settings.Default.couleurPoliceEnteteJours;
             couleurPoliceEnteteHeures = Properties.Settings.Default.couleurPoliceEnteteHeures;
+            couleurSurlignementJours = Properties.Settings.Default.couleurSurlignementJours;
+            couleurSurlignementHeures = Properties.Settings.Default.couleurSurlignementHeures;
 
 
             if (Properties.Settings.Default.policeEvenements != null)
@@ -119,6 +123,8 @@ namespace Compact_Agenda
             Properties.Settings.Default.couleurPoliceEvenements = couleurPoliceEvenements;
             Properties.Settings.Default.couleurPoliceEnteteJours = couleurPoliceEnteteJours;
             Properties.Settings.Default.couleurPoliceEnteteHeures = couleurPoliceEnteteHeures;
+            Properties.Settings.Default.couleurSurlignementHeures = couleurSurlignementHeures;
+            Properties.Settings.Default.couleurSurlignementJours = couleurSurlignementJours;
 
             Properties.Settings.Default.policeEvenements = policeEvenements;
             Properties.Settings.Default.policesJours = policeJours;
@@ -690,7 +696,8 @@ namespace Compact_Agenda
         private void choisirLaJourneeCouranteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form_Choisir_Date form = new Form_Choisir_Date();
-            form.ShowDialog();
+            if (form.ShowDialog() == DialogResult.OK)
+                CurrentWeek = form.GetDateTime();
         }
 
         private void effacerToolStripMenuItem_Click(object sender, EventArgs e)

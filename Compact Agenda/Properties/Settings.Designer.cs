@@ -189,5 +189,29 @@ namespace Compact_Agenda.Properties {
                 this["Location"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("179, 6, 144")]
+        public global::System.Drawing.Color couleurSurlignementJours {
+            get {
+                return ((global::System.Drawing.Color)(this["couleurSurlignementJours"]));
+            }
+            set {
+                this["couleurSurlignementJours"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("179, 6, 144")]
+        public global::System.Drawing.Color couleurSurlignementHeures {
+            get {
+                return ((global::System.Drawing.Color)(this["couleurSurlignementHeures"]));
+            }
+            set {
+                this["couleurSurlignementHeures"] = value;
+            }
+        }
     }
 }
