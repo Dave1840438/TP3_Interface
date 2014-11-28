@@ -609,5 +609,16 @@ namespace Compact_Agenda
         {
 
         }
+
+        private void choisirLaJourneeCouranteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Choisir_Date form = new Form_Choisir_Date();
+            form.ShowDialog();
+        }
+
+        private void effacerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

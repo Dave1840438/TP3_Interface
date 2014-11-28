@@ -34,6 +34,7 @@
             this.FBTN_IncrementWeek = new FlashButton.FlashButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.FlashButton_Ok = new FlashButton.FlashButton();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,12 +104,27 @@
             this.label3.TabIndex = 62;
             this.label3.Text = "Dupliquer: ";
             // 
+            // FlashButton_Ok
+            // 
+            this.FlashButton_Ok.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FlashButton_Ok.BackgroundImage = global::Compact_Agenda.Properties.Resources.Ok_DLG_Neutral_2;
+            this.FlashButton_Ok.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FlashButton_Ok.ImageClick = global::Compact_Agenda.Properties.Resources.Ok_DLG_Click_2;
+            this.FlashButton_Ok.ImageDisable = global::Compact_Agenda.Properties.Resources.ICON_Right_Disable;
+            this.FlashButton_Ok.ImageNeutral = global::Compact_Agenda.Properties.Resources.Ok_DLG_Neutral_2;
+            this.FlashButton_Ok.ImageOver = global::Compact_Agenda.Properties.Resources.Ok_DLG_Over_2;
+            this.FlashButton_Ok.Location = new System.Drawing.Point(192, 128);
+            this.FlashButton_Ok.Name = "FlashButton_Ok";
+            this.FlashButton_Ok.Size = new System.Drawing.Size(80, 25);
+            this.FlashButton_Ok.TabIndex = 63;
+            // 
             // Form_Duplication_Evenement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(284, 143);
+            this.ClientSize = new System.Drawing.Size(284, 165);
+            this.Controls.Add(this.FlashButton_Ok);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.FBTN_IncrementWeek);
@@ -133,6 +149,7 @@
         private FlashButton.FlashButton FBTN_IncrementWeek;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private FlashButton.FlashButton FlashButton_Ok;
 
     }
 }
