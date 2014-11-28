@@ -29,10 +29,6 @@ namespace Compact_Agenda
             }
             base.WndProc(ref m);
         }
-        private void Form_Choisir_Date_Load(object sender, EventArgs e)
-        {
-
-        }
 
         //Cette fonction s'occupe de fermer l'application de choix de semaine
         private void FBTN_IncrementWeek_Click(object sender, EventArgs e)

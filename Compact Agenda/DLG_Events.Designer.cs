@@ -44,10 +44,10 @@
             this.CB_ChoixEvent = new System.Windows.Forms.ComboBox();
             this.FlashButton_Ok = new FlashButton.FlashButton();
             this.FBTN_IncrementWeek = new FlashButton.FlashButton();
-            this.CSC_FinishingMinutes = new Compact_Agenda.CustomSelectControl();
-            this.CSC_FinishingHour = new Compact_Agenda.CustomSelectControl();
-            this.CSC_StartingMinutes = new Compact_Agenda.CustomSelectControl();
             this.CSC_StartingHour = new Compact_Agenda.CustomSelectControl();
+            this.CSC_StartingMinutes = new Compact_Agenda.CustomSelectControl();
+            this.CSC_FinishingHour = new Compact_Agenda.CustomSelectControl();
+            this.CSC_FinishingMinutes = new Compact_Agenda.CustomSelectControl();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,7 +112,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(88, 217);
+            this.label4.Location = new System.Drawing.Point(85, 217);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 13);
             this.label4.TabIndex = 1;
@@ -122,7 +122,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(221, 217);
+            this.label5.Location = new System.Drawing.Point(85, 281);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(27, 13);
             this.label5.TabIndex = 1;
@@ -136,7 +136,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(277, 217);
+            this.label6.Location = new System.Drawing.Point(192, 281);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(13, 13);
             this.label6.TabIndex = 51;
@@ -146,7 +146,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(167, 217);
+            this.label7.Location = new System.Drawing.Point(192, 217);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(13, 13);
             this.label7.TabIndex = 52;
@@ -170,7 +170,7 @@
             this.FlashButton_Ok.ImageDisable = global::Compact_Agenda.Properties.Resources.ICON_Right_Disable;
             this.FlashButton_Ok.ImageNeutral = global::Compact_Agenda.Properties.Resources.Ok_DLG_Neutral_2;
             this.FlashButton_Ok.ImageOver = global::Compact_Agenda.Properties.Resources.Ok_DLG_Over_2;
-            this.FlashButton_Ok.Location = new System.Drawing.Point(283, 281);
+            this.FlashButton_Ok.Location = new System.Drawing.Point(283, 306);
             this.FlashButton_Ok.Name = "FlashButton_Ok";
             this.FlashButton_Ok.Size = new System.Drawing.Size(80, 25);
             this.FlashButton_Ok.TabIndex = 59;
@@ -191,72 +191,73 @@
             this.FBTN_IncrementWeek.TabIndex = 57;
             this.FBTN_IncrementWeek.Click += new System.EventHandler(this.FBTN_IncrementWeek_Click);
             // 
-            // CSC_FinishingMinutes
+            // CSC_StartingHour
             // 
-            this.CSC_FinishingMinutes.Leap = 5;
-            this.CSC_FinishingMinutes.Location = new System.Drawing.Point(296, 184);
-            this.CSC_FinishingMinutes.MaximumValue = 59;
-            this.CSC_FinishingMinutes.MinimumValue = 0;
-            this.CSC_FinishingMinutes.Name = "CSC_FinishingMinutes";
-            this.CSC_FinishingMinutes.Size = new System.Drawing.Size(25, 77);
-            this.CSC_FinishingMinutes.StartValue = 0;
-            this.CSC_FinishingMinutes.TabIndex = 50;
-            this.CSC_FinishingMinutes.Value = 0;
-            this.CSC_FinishingMinutes.ValueChanged += new System.EventHandler(this.DTP_Ending_ValueChanged);
+            this.CSC_StartingHour.Leap = 1;
+            this.CSC_StartingHour.Location = new System.Drawing.Point(128, 195);
+            this.CSC_StartingHour.MaximumValue = 0;
+            this.CSC_StartingHour.MinimumValue = 0;
+            this.CSC_StartingHour.Name = "CSC_StartingHour";
+            this.CSC_StartingHour.Size = new System.Drawing.Size(58, 57);
+            this.CSC_StartingHour.StartValue = 0;
+            this.CSC_StartingHour.TabIndex = 60;
+            this.CSC_StartingHour.Value = 0;
+            this.CSC_StartingHour.ValueChanged += new System.EventHandler(this.DTP_Starting_ValueChanged);
+            // 
+            // CSC_StartingMinutes
+            // 
+            this.CSC_StartingMinutes.Leap = 1;
+            this.CSC_StartingMinutes.Location = new System.Drawing.Point(211, 195);
+            this.CSC_StartingMinutes.MaximumValue = 0;
+            this.CSC_StartingMinutes.MinimumValue = 0;
+            this.CSC_StartingMinutes.Name = "CSC_StartingMinutes";
+            this.CSC_StartingMinutes.Size = new System.Drawing.Size(58, 57);
+            this.CSC_StartingMinutes.StartValue = 0;
+            this.CSC_StartingMinutes.TabIndex = 61;
+            this.CSC_StartingMinutes.Value = 0;
+            this.CSC_StartingMinutes.ValueChanged += new System.EventHandler(this.DTP_Starting_ValueChanged);
             // 
             // CSC_FinishingHour
             // 
             this.CSC_FinishingHour.Leap = 1;
-            this.CSC_FinishingHour.Location = new System.Drawing.Point(249, 184);
-            this.CSC_FinishingHour.MaximumValue = 23;
+            this.CSC_FinishingHour.Location = new System.Drawing.Point(128, 258);
+            this.CSC_FinishingHour.MaximumValue = 0;
             this.CSC_FinishingHour.MinimumValue = 0;
             this.CSC_FinishingHour.Name = "CSC_FinishingHour";
-            this.CSC_FinishingHour.Size = new System.Drawing.Size(25, 77);
+            this.CSC_FinishingHour.Size = new System.Drawing.Size(58, 57);
             this.CSC_FinishingHour.StartValue = 0;
-            this.CSC_FinishingHour.TabIndex = 49;
+            this.CSC_FinishingHour.TabIndex = 62;
             this.CSC_FinishingHour.Value = 0;
             this.CSC_FinishingHour.ValueChanged += new System.EventHandler(this.DTP_Ending_ValueChanged);
             // 
-            // CSC_StartingMinutes
+            // CSC_FinishingMinutes
             // 
-            this.CSC_StartingMinutes.Leap = 5;
-            this.CSC_StartingMinutes.Location = new System.Drawing.Point(186, 184);
-            this.CSC_StartingMinutes.MaximumValue = 59;
-            this.CSC_StartingMinutes.MinimumValue = 0;
-            this.CSC_StartingMinutes.Name = "CSC_StartingMinutes";
-            this.CSC_StartingMinutes.Size = new System.Drawing.Size(25, 77);
-            this.CSC_StartingMinutes.StartValue = 0;
-            this.CSC_StartingMinutes.TabIndex = 48;
-            this.CSC_StartingMinutes.Value = 0;
-            this.CSC_StartingMinutes.ValueChanged += new System.EventHandler(this.DTP_Starting_ValueChanged);
-            // 
-            // CSC_StartingHour
-            // 
-            this.CSC_StartingHour.Leap = 1;
-            this.CSC_StartingHour.Location = new System.Drawing.Point(136, 184);
-            this.CSC_StartingHour.MaximumValue = 23;
-            this.CSC_StartingHour.MinimumValue = 0;
-            this.CSC_StartingHour.Name = "CSC_StartingHour";
-            this.CSC_StartingHour.Size = new System.Drawing.Size(25, 77);
-            this.CSC_StartingHour.StartValue = 0;
-            this.CSC_StartingHour.TabIndex = 47;
-            this.CSC_StartingHour.Value = 0;
-            this.CSC_StartingHour.ValueChanged += new System.EventHandler(this.DTP_Starting_ValueChanged);
+            this.CSC_FinishingMinutes.Leap = 1;
+            this.CSC_FinishingMinutes.Location = new System.Drawing.Point(211, 258);
+            this.CSC_FinishingMinutes.MaximumValue = 0;
+            this.CSC_FinishingMinutes.MinimumValue = 0;
+            this.CSC_FinishingMinutes.Name = "CSC_FinishingMinutes";
+            this.CSC_FinishingMinutes.Size = new System.Drawing.Size(58, 57);
+            this.CSC_FinishingMinutes.StartValue = 0;
+            this.CSC_FinishingMinutes.TabIndex = 63;
+            this.CSC_FinishingMinutes.Value = 0;
+            this.CSC_FinishingMinutes.ValueChanged += new System.EventHandler(this.DTP_Ending_ValueChanged);
             // 
             // DLG_Events
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(83)))), ((int)(((byte)(236)))));
-            this.ClientSize = new System.Drawing.Size(375, 316);
+            this.ClientSize = new System.Drawing.Size(375, 343);
+            this.Controls.Add(this.CSC_FinishingMinutes);
+            this.Controls.Add(this.CSC_FinishingHour);
+            this.Controls.Add(this.CSC_StartingMinutes);
+            this.Controls.Add(this.CSC_StartingHour);
             this.Controls.Add(this.FlashButton_Ok);
             this.Controls.Add(this.FBTN_IncrementWeek);
             this.Controls.Add(this.CB_ChoixEvent);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.CSC_FinishingMinutes);
-            this.Controls.Add(this.CSC_FinishingHour);
-            this.Controls.Add(this.CSC_StartingMinutes);
             this.Controls.Add(this.DTP_Date);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.TBX_Description);
@@ -265,7 +266,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TBX_Title);
-            this.Controls.Add(this.CSC_StartingHour);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DLG_Events";
@@ -289,14 +289,14 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ErrorProvider errorProvider;
-        private Compact_Agenda.CustomSelectControl CSC_StartingHour;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private CustomSelectControl CSC_FinishingMinutes;
-        private CustomSelectControl CSC_FinishingHour;
-        private CustomSelectControl CSC_StartingMinutes;
         private System.Windows.Forms.ComboBox CB_ChoixEvent;
         private FlashButton.FlashButton FBTN_IncrementWeek;
         private FlashButton.FlashButton FlashButton_Ok;
+        private CustomSelectControl CSC_StartingHour;
+        private CustomSelectControl CSC_StartingMinutes;
+        private CustomSelectControl CSC_FinishingMinutes;
+        private CustomSelectControl CSC_FinishingHour;
     }
 }
