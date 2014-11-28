@@ -680,7 +680,7 @@ namespace Compact_Agenda
             pictureBox1.Visible = false;
             uC_Slider1.Focus();
         }
-
+        
         private void ChoisirCouleur(ref Color couleur)
         {
             DLG_HLSColorPicker dlg = new DLG_HLSColorPicker();
@@ -713,7 +713,7 @@ namespace Compact_Agenda
                 CurrentWeek = form.GetDateTime();
             this.Refresh();
         }
-
+        //Effacer un evenement selectionner DC/DS
         private void effacerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (DialogResult.Yes == MessageBox.Show("Êtes-vous sûr?", "Supprimer cet évènement?", MessageBoxButtons.YesNo))
@@ -732,78 +732,78 @@ namespace Compact_Agenda
         {
             SaveSettings();
         }
-
+        //Changer la couleur du fond de la semaine courante DC/DS
         private void duFondToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChoisirCouleur(ref fondSemaineCourante);
             this.Refresh();
         }
-
+        //Changer la couleur des lignes des heures DC/DS
         private void desLignesPleinesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChoisirCouleur(ref lignesHeures);
             this.Refresh();
         }
-
+        //Changer la couleur des lignes des heure et demi DC/DS
         private void desLignesPointilléesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChoisirCouleur(ref lignesDemiHeures);
             this.Refresh();
         }
-
+        //Changer la couleur de police des evenement DC/DS
         private void couleurDesCaractèresDesÉvènementsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChoisirCouleur(ref couleurPoliceEvenements);
             this.Refresh();
         }
-
+        //Chnager la police des evenements DC/DS
         private void policeEtCouleurToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChoisirFont(ref policeEvenements);
             this.Refresh();
         }
-
+        //Changer la couleur de fond pour le daysHeader DC/DS
         private void couleurDeFondToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             ChoisirCouleur(ref fondDaysHeader);
             this.Refresh();
         }
-
+        //Changer la couleur de police de l'entete des jour DC/DS
         private void couleurDePoliceToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChoisirCouleur(ref couleurPoliceEnteteJours);
             this.Refresh();
         }
-
+        //Changer la police pour les jours DC/DS
         private void changerLaPoliceToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChoisirFont(ref policeJours);
             this.Refresh();
         }
-
+        //Changer la couleur du fond des entete des heures DC/DS
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
             ChoisirCouleur(ref fondHoursHeader);
             this.Refresh();
         }
-
+        //Changer la couleur de police des entete des heure DC/DS
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
         {
             ChoisirCouleur(ref couleurPoliceEnteteHeures);
             this.Refresh();
         }
-
+        //Chnager la police des heures DC/DS
         private void toolStripMenuItem5_Click(object sender, EventArgs e)
         {
             ChoisirFont(ref policeHeures);
             this.Refresh();
         }
-
+        //Modifie un evenement selectionner DC/DS
         private void modifierToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PN_Content_MouseDoubleClick(sender, new MouseEventArgs(MouseButtons.None, 0, 0, 0, 0));
         }
-
+        //Reporter d'une semaine un evenement selectionner DC/DS
         private void reporterDuneSemaineToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Events.UpdateTarget(PN_Content.PointToClient(new Point(CMENU_Evenement.Left, CMENU_Evenement.Top)));
@@ -817,7 +817,7 @@ namespace Compact_Agenda
             GetWeekEvents();
             this.Refresh();
         }
-
+        //Dupliquer un evenement selectionner DC/DS
         private void dupliquerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form_Duplication_Evenement dlg = new Form_Duplication_Evenement();
@@ -855,19 +855,19 @@ namespace Compact_Agenda
                 this.Refresh();
             }
         }
-
+        //Changer la couleur des ligne qui surligne les heures DC/DS
         private void deLaCouleurDeSurlignementToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             ChoisirCouleur(ref couleurSurlignementHeures);
             this.Refresh();
         }
-
+        //Changer la couleur des ligne qui surligne les jours DC/DS
         private void deLaCouleurDeSurlignementToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChoisirCouleur(ref couleurSurlignementJours);
             this.Refresh();
         }
-
+        
         private void PN_Scroll_SizeChanged(object sender, EventArgs e)
         {
             if (PN_Scroll.Height > PN_Content.Height)
