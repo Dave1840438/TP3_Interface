@@ -294,7 +294,7 @@
             this.reporterDuneSemaineToolStripMenuItem,
             this.dupliquerToolStripMenuItem});
             this.CMENU_Evenement.Name = "CMENU_Evenement";
-            this.CMENU_Evenement.Size = new System.Drawing.Size(209, 114);
+            this.CMENU_Evenement.Size = new System.Drawing.Size(209, 92);
             // 
             // modifierToolStripMenuItem
             // 
