@@ -460,42 +460,39 @@ namespace Compact_Agenda
                 }
                 else
                 {
-                    if (firstMouseLocation.Y != lastMouseLocation.Y)
+                    DLG_Events dlg = new DLG_Events();
+                    Event Event = new Event();
+
+
+                    Event.Starting = LocationToDateTime(firstMouseLocation);
+                    Event.Ending = LocationToDateTime(lastMouseLocation);
+
+                    if (Event.Starting.Date != Event.Ending.Date)
+                        Event.Ending = new DateTime(Event.Ending.Year, Event.Starting.Month, Event.Starting.Day, Event.Ending.Hour, Event.Ending.Minute, Event.Ending.Second);
+
+                    if (Event.Starting > Event.Ending)
                     {
-                        DLG_Events dlg = new DLG_Events();
-                        Event Event = new Event();
+                        Events.TargetPart = TargetPart.Top;
+                        DateTime d = Event.Starting;
+                        Event.Starting = Event.Ending;
+                        Event.Ending = d;
 
-
-                        Event.Starting = LocationToDateTime(firstMouseLocation);
-                        Event.Ending = LocationToDateTime(lastMouseLocation);
-
-                        if (Event.Starting.Date != Event.Ending.Date)
-                            Event.Ending = new DateTime(Event.Ending.Year, Event.Starting.Month, Event.Starting.Day, Event.Ending.Hour, Event.Ending.Minute, Event.Ending.Second);
-
-                        if (Event.Starting > Event.Ending)
-                        {
-                            Events.TargetPart = TargetPart.Top;
-                            DateTime d = Event.Starting;
-                            Event.Starting = Event.Ending;
-                            Event.Ending = d;
-
-                        }
-
-                        TimeSpan delta = Event.Ending.Subtract(Event.Starting);
-                        if (delta.Minutes < 15 && delta.Hours == 0)
-                        {
-                            Event.Ending = Event.Starting + new TimeSpan(0, 15, 0);
-                        }
-                        dlg.Event = Event.Klone();
-                        if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                        {
-                            TableEvents tableEvents = new TableEvents(ConnexionString);
-                            tableEvents.AddEvent(dlg.Event);
-                        }
                     }
-                    GetWeekEvents();
-                    PN_Content.Refresh();
+                   
+                    TimeSpan delta = Event.Ending.Subtract(Event.Starting);
+                    if (delta.Minutes < 15 && delta.Hours == 0)
+                    {
+                        Event.Ending = Event.Starting + new TimeSpan(0, 15, 0);
+                    }
+                    dlg.Event = Event.Klone();
+                    if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        TableEvents tableEvents = new TableEvents(ConnexionString);
+                        tableEvents.AddEvent(dlg.Event);
+                    }
                 }
+                GetWeekEvents();
+                PN_Content.Refresh();
             }
 
         }
