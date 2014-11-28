@@ -191,15 +191,5 @@ namespace Compact_Agenda
                 this.Close();
             }
         }
-
-        private void FlashButton_Effacer_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Voulez vous vraiment effacer cet événement ?") == System.Windows.Forms.DialogResult.OK)
-            {
-                this.DialogResult = System.Windows.Forms.DialogResult.OK;
-                delete = true;
-                this.Close();
-            }
-        }
     }
 }

@@ -123,6 +123,7 @@
             this.FlashButton_Ok.Name = "FlashButton_Ok";
             this.FlashButton_Ok.Size = new System.Drawing.Size(80, 25);
             this.FlashButton_Ok.TabIndex = 63;
+            this.FlashButton_Ok.Click += new System.EventHandler(this.FlashButton_Ok_Click);
             // 
             // Form_Duplication_Evenement
             // 

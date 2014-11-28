@@ -695,13 +695,16 @@ namespace Compact_Agenda
 
         private void effacerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Events.UpdateTarget(PN_Content.PointToClient(new Point(CMENU_Evenement.Left, CMENU_Evenement.Top)));
-            TableEvents tableEvents = new TableEvents(ConnexionString);
-            tableEvents.DeleteEvent(Events.TargetEvent);
-            Events.TargetEvent = null;
-            mouseIsDown = false;
-            GetWeekEvents();
-            this.Refresh();
+            if (DialogResult.Yes == MessageBox.Show("Êtes-vous sûr?", "Supprimer cet évènement?", MessageBoxButtons.YesNo))
+            {
+                Events.UpdateTarget(PN_Content.PointToClient(new Point(CMENU_Evenement.Left, CMENU_Evenement.Top)));
+                TableEvents tableEvents = new TableEvents(ConnexionString);
+                tableEvents.DeleteEvent(Events.TargetEvent);
+                Events.TargetEvent = null;
+                mouseIsDown = false;
+                GetWeekEvents();
+                this.Refresh();
+            }
         }
 
         private void Form_WeekView_FormClosing(object sender, FormClosingEventArgs e)
@@ -799,19 +802,36 @@ namespace Compact_Agenda
             Form_Duplication_Evenement dlg = new Form_Duplication_Evenement();
             if (dlg.ShowDialog() == DialogResult.OK)
             {
+                TableEvents tableEvents = new TableEvents(ConnexionString);
                 Events.UpdateTarget(PN_Content.PointToClient(new Point(CMENU_Evenement.Left, CMENU_Evenement.Top)));
                 Event clone = Events.TargetEvent.Klone();
 
-                for (int i = 0; i < /*somehting*/; i++)
+                for (int i = 0; i < dlg.GetNbFois(); i++)
                 {
-                    switch (dom est beau)
+                    switch (dlg.GetInterval())
                     {
-                        
+                        case "Jour":
+                            clone.Starting = clone.Starting.AddDays(1);
+                            clone.Ending = clone.Ending.AddDays(1);
+                            break;
+                        case "Semaine":
+                            clone.Starting = clone.Starting.AddDays(7);
+                            clone.Ending = clone.Ending.AddDays(7);
+                            break;
+                        case "Mois":
+                            clone.Starting = clone.Starting.AddMonths(1);
+                            clone.Ending = clone.Ending.AddMonths(1);
+                            break;
+                        case "Année":
+                            clone.Starting = clone.Starting.AddYears(1);
+                            clone.Ending = clone.Ending.AddYears(1);
+                            break;
                     }
+                    tableEvents.AddEvent(clone);
 
-
-                    Events.Add(clone);
                 }
+                GetWeekEvents();
+                this.Refresh();
             }
         }
     }

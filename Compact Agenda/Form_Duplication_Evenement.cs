@@ -39,5 +39,21 @@ namespace Compact_Agenda
         {
             this.Close();
         }
+
+        public string GetInterval()
+        {
+            return CB_Choix_De_Saut.SelectedItem.ToString();
+        }
+
+        public int GetNbFois()
+        {
+            return (int)NUMUD_Qte.Value;
+        }
+
+        private void FlashButton_Ok_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
     }
 }

@@ -42,7 +42,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.CB_ChoixEvent = new System.Windows.Forms.ComboBox();
-            this.FlashButton_Effacer = new FlashButton.FlashButton();
             this.FlashButton_Ok = new FlashButton.FlashButton();
             this.FBTN_IncrementWeek = new FlashButton.FlashButton();
             this.CSC_FinishingMinutes = new Compact_Agenda.CustomSelectControl();
@@ -162,21 +161,6 @@
             this.CB_ChoixEvent.TabIndex = 56;
             this.CB_ChoixEvent.SelectedValueChanged += new System.EventHandler(this.CB_ChoixEvent_SelectedValueChanged);
             // 
-            // FlashButton_Effacer
-            // 
-            this.FlashButton_Effacer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FlashButton_Effacer.BackgroundImage = global::Compact_Agenda.Properties.Resources.Effacer_DLG_Neutre;
-            this.FlashButton_Effacer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FlashButton_Effacer.ImageClick = global::Compact_Agenda.Properties.Resources.Effacer_DLG_Click;
-            this.FlashButton_Effacer.ImageDisable = global::Compact_Agenda.Properties.Resources.ICON_Right_Disable;
-            this.FlashButton_Effacer.ImageNeutral = global::Compact_Agenda.Properties.Resources.Effacer_DLG_Neutre;
-            this.FlashButton_Effacer.ImageOver = global::Compact_Agenda.Properties.Resources.Effacer_DLG;
-            this.FlashButton_Effacer.Location = new System.Drawing.Point(189, 281);
-            this.FlashButton_Effacer.Name = "FlashButton_Effacer";
-            this.FlashButton_Effacer.Size = new System.Drawing.Size(80, 25);
-            this.FlashButton_Effacer.TabIndex = 60;
-            this.FlashButton_Effacer.Click += new System.EventHandler(this.FlashButton_Effacer_Click);
-            // 
             // FlashButton_Ok
             // 
             this.FlashButton_Ok.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -265,7 +249,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(83)))), ((int)(((byte)(236)))));
             this.ClientSize = new System.Drawing.Size(375, 316);
-            this.Controls.Add(this.FlashButton_Effacer);
             this.Controls.Add(this.FlashButton_Ok);
             this.Controls.Add(this.FBTN_IncrementWeek);
             this.Controls.Add(this.CB_ChoixEvent);
@@ -315,6 +298,5 @@
         private System.Windows.Forms.ComboBox CB_ChoixEvent;
         private FlashButton.FlashButton FBTN_IncrementWeek;
         private FlashButton.FlashButton FlashButton_Ok;
-        private FlashButton.FlashButton FlashButton_Effacer;
     }
 }
