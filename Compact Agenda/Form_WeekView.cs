@@ -797,7 +797,7 @@ namespace Compact_Agenda
         private void dupliquerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form_Duplication_Evenement dlg = new Form_Duplication_Evenement();
-
+            dlg.ShowDialog();
         }
     }
 }

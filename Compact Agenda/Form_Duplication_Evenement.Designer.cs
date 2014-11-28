@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.NUMUD_Qte = new System.Windows.Forms.NumericUpDown();
             this.CB_Choix_De_Saut = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.FBTN_IncrementWeek = new FlashButton.FlashButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.FlashButton_Ok = new FlashButton.FlashButton();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUMUD_Qte)).BeginInit();
             this.SuspendLayout();
             // 
-            // numericUpDown1
+            // NUMUD_Qte
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(145, 97);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(73, 20);
-            this.numericUpDown1.TabIndex = 0;
+            this.NUMUD_Qte.Location = new System.Drawing.Point(145, 97);
+            this.NUMUD_Qte.Name = "NUMUD_Qte";
+            this.NUMUD_Qte.Size = new System.Drawing.Size(73, 20);
+            this.NUMUD_Qte.TabIndex = 0;
             // 
             // CB_Choix_De_Saut
             // 
@@ -52,7 +52,13 @@
             "Semaine",
             "Mois",
             "Année"});
+            this.CB_Choix_De_Saut.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CB_Choix_De_Saut.FormattingEnabled = true;
+            this.CB_Choix_De_Saut.Items.AddRange(new object[] {
+            "Jour",
+            "Semaine",
+            "Mois",
+            "Année"});
             this.CB_Choix_De_Saut.Location = new System.Drawing.Point(145, 70);
             this.CB_Choix_De_Saut.Name = "CB_Choix_De_Saut";
             this.CB_Choix_De_Saut.Size = new System.Drawing.Size(108, 21);
@@ -130,12 +136,12 @@
             this.Controls.Add(this.FBTN_IncrementWeek);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CB_Choix_De_Saut);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.NUMUD_Qte);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_Duplication_Evenement";
             this.Text = "Form_Duplication_Evenement";
             this.Load += new System.EventHandler(this.Form_Duplication_Evenement_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUMUD_Qte)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,7 +149,7 @@
 
         #endregion
 
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown NUMUD_Qte;
         private System.Windows.Forms.ComboBox CB_Choix_De_Saut;
         private System.Windows.Forms.Label label1;
         private FlashButton.FlashButton FBTN_IncrementWeek;
