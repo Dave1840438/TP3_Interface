@@ -154,6 +154,7 @@
             this.Name = "Form_Duplication_Evenement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form_Duplication_Evenement";
+            this.Load += new System.EventHandler(this.Form_Duplication_Evenement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NUMUD_Qte)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
