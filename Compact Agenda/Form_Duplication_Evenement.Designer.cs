@@ -42,9 +42,19 @@
             // NUMUD_Qte
             // 
             this.NUMUD_Qte.Location = new System.Drawing.Point(145, 97);
+            this.NUMUD_Qte.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.NUMUD_Qte.Name = "NUMUD_Qte";
             this.NUMUD_Qte.Size = new System.Drawing.Size(73, 20);
             this.NUMUD_Qte.TabIndex = 0;
+            this.NUMUD_Qte.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // CB_Choix_De_Saut
             // 

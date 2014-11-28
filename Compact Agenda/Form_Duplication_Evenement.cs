@@ -15,6 +15,7 @@ namespace Compact_Agenda
         public Form_Duplication_Evenement()
         {
             InitializeComponent();
+            CB_Choix_De_Saut.SelectedIndex = 0;
         }
         //Cette fonction permet de bouger l'application meme si elle n'a pas de border
         protected override void WndProc(ref Message m)

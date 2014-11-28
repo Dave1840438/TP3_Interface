@@ -33,6 +33,7 @@ namespace Compact_Agenda
         private Events Events = new Events();
         private int minInterval = 5;
 
+        //Les variables pour les préférences utilisateurs
         #region PRÉFÉRENCES
         Color lignesDemiHeures;
         Color lignesHeures;
@@ -69,7 +70,7 @@ namespace Compact_Agenda
             string DB_URL = System.IO.Path.GetFullPath(@"DB_AGENDA.MDF");
             ConnexionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='" + DB_URL + "';Integrated Security=True";
             CurrentWeek = DateTime.Now;
-            uC_Slider1.Minimum = 600;
+            uC_Slider1.Minimum = 600; /*DS/DC*/
             uC_Slider1.Maximum = 4600;
             uC_Slider1.Value =
             PN_Hours.Height = PN_Content.Height = 2400;
@@ -77,12 +78,12 @@ namespace Compact_Agenda
         }
         private void Form_WeekView_Load(object sender, EventArgs e)
         {
-            LoadSettings();
+            LoadSettings();/*DS/DC*/
             PN_Scroll.Focus();
             GotoCurrentWeek();
         }
-        //Load les preference que l'utilisateur a enregistrer
-        private void LoadSettings()
+        //Load les preference que l'utilisateur a enregistrer /*DS/DC*/
+        private void LoadSettings() /*DS/DC*/
         {
 
             lignesDemiHeures = Properties.Settings.Default.lignesDemiHeures;
@@ -112,8 +113,8 @@ namespace Compact_Agenda
 
             this.Location = Properties.Settings.Default.Location;
         }
-        //Enregistre les preference de l'utilisateur (couleur,police,etc)
-        private void SaveSettings()
+        //Enregistre les preference de l'utilisateur (couleur,police,etc) 
+        private void SaveSettings()/*DS/DC*/
         {
             Properties.Settings.Default.lignesDemiHeures = lignesDemiHeures;
             Properties.Settings.Default.lignesHeures = lignesHeures;
@@ -163,8 +164,8 @@ namespace Compact_Agenda
 
         private void Fill_Agenda(Graphics DC)
         {
-            Pen pen1 = new Pen(lignesHeures, 1);
-            Pen pen2 = new Pen(lignesDemiHeures, 1);
+            Pen pen1 = new Pen(lignesHeures, 1);/*DS/DC*/
+            Pen pen2 = new Pen(lignesDemiHeures, 1);/*DS/DC*/
             pen2.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
             for (int hour = 0; hour < 24; hour++)
             {
@@ -195,15 +196,15 @@ namespace Compact_Agenda
         {
             DateTime date = _CurrentWeek;
             string[] dayNames = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.DayNames;
-            Brush brush = new SolidBrush(couleurPoliceEnteteJours);
+            Brush brush = new SolidBrush(couleurPoliceEnteteJours);/*DS/DC*/
             for (int dayNum = 0; dayNum < 7; dayNum++)
             {
                 Point location = new Point((int)Math.Round(PN_DaysHeader.Width / 7f * dayNum), 0);
 
                 if (date.ToShortDateString() == DateTime.Now.ToShortDateString())
                 {
-                    Pen leGrosPen = new Pen(couleurSurlignementJours, 64);
-                    DC.DrawLine(leGrosPen, location, new Point(location.X + (int)(PN_DaysHeader.Width / 7f), location.Y));
+                    Pen penSurlignement = new Pen(couleurSurlignementJours, 64);/*DS/DC*/
+                    DC.DrawLine(penSurlignement, location, new Point(location.X + (int)(PN_DaysHeader.Width / 7f), location.Y));
                 }
 
                 String headerText = dayNames[dayNum];
@@ -226,12 +227,12 @@ namespace Compact_Agenda
                 if (hour == DateTime.Now.Hour)
                 {
                     int Decalage = PN_Hours.Height / 24 / 2;
-                    Pen leGrosPen = new Pen(couleurSurlignementHeures, PN_Hours.Height / 24);
-                    DC.DrawLine(leGrosPen, new Point(location.X, location.Y + Decalage), new Point(location.X + PN_Hours.Width, location.Y + Decalage));
+                    Pen penSurlignements = new Pen(couleurSurlignementHeures, PN_Hours.Height / 24); /*DS/DC*/
+                    DC.DrawLine(penSurlignements, new Point(location.X, location.Y + Decalage), new Point(location.X + PN_Hours.Width, location.Y + Decalage));
                 }
 
                 String headerText = (hour < 10 ? "0" : "") + hour.ToString() + ":00";
-                DC.DrawString(headerText, policeHeures, brush, location);
+                DC.DrawString(headerText, policeHeures, brush, location);/*DS/DC*/
                 DC.DrawLine(pen, 0, Event.HourToPixel(hour + 1, 0, PN_Hours.Height), PN_Hours.Width, Event.HourToPixel(hour + 1, 0, PN_Hours.Height));
             }
         }
@@ -252,7 +253,9 @@ namespace Compact_Agenda
             while (Event.HourToPixel(0, minInterval, PN_Content.Height) < 10)
                 minInterval += 10;
         }
-        private void PN_Scroll_Resize(object sender, EventArgs e)
+        
+        //Resize les panels en conséquences du zoom
+        private void PN_Scroll_Resize(object sender, EventArgs e)/*DS/DC*/
         {
             PN_Content.Width = PN_Scroll.Width - 70;
             PN_DaysHeader.Width = PN_Content.Width;
@@ -291,7 +294,7 @@ namespace Compact_Agenda
         }
         private void PN_Content_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left)/*DS/DC*/
             {
                 mouseIsDown = true;
                 firstMouseLocation = lastMouseLocation = e.Location;
@@ -497,7 +500,8 @@ namespace Compact_Agenda
 
         }
 
-        private void PN_Content_MouseUp(object sender, MouseEventArgs e)
+        //Pour gérer le right click
+        private void PN_Content_MouseUp(object sender, MouseEventArgs e)/*DS/DC*/
         {
             if (e.Button == MouseButtons.Left)
                 ConludeMouseEvent();
@@ -579,7 +583,7 @@ namespace Compact_Agenda
             {
                 case Keys.OemMinus: // Incrémenter d'un mois la semaine courrante
 
-                    // Fonction temporaire pour voir comment dézommer
+                    //Gère le zoom négatif
                     if (!mouseIsDown)
                     {
                         if (PN_Content.Height > 600)
@@ -597,14 +601,14 @@ namespace Compact_Agenda
                         }
                     }
                     break;
-                case Keys.Right: // Incrémenter d'une semaine la semaine courrante
+                case Keys.Right:
                     if (!mouseIsDown)
                         Increment_Week();
 
                     break;
                 case Keys.Oemplus: // Décrémenter d'un mois la semaine courrante
 
-                    // Fonction temporaire pour voir comment zommer
+                    // Gère le zoom positif
                     if (!mouseIsDown)
                     {
                         if (PN_Content.Height < 4800)
@@ -623,12 +627,12 @@ namespace Compact_Agenda
                     if (!mouseIsDown)
                         Decrement_Week();
                     break;
-                case Keys.Up:
+                case Keys.Up: //Mois précédent
                     int currentMonth = CurrentWeek.Month;
                     while (currentMonth == CurrentWeek.Month)
                         Decrement_Week();
                     break;
-                case Keys.Down:
+                case Keys.Down: //Mois suivant
                     int month = CurrentWeek.AddDays(6).Month;
                     while (month == CurrentWeek.AddDays(6).Month)
                         Increment_Week();
@@ -640,7 +644,7 @@ namespace Compact_Agenda
                 case Keys.F1:
                     new FormAide().ShowDialog();
                     break;
-                case (Keys.Control | Keys.Q):
+                case (Keys.Control | Keys.Q): //Fermer la fenêtre sur Ctrl+Q
                     this.Close();
                     break;
             }
@@ -655,7 +659,8 @@ namespace Compact_Agenda
             AdjustMinInterval();
         }
 
-        private void updateSliderZoom()
+        //Update la position du slider
+        private void updateSliderZoom() /*DS/DC*/
         {
             PN_Content.Height = uC_Slider1.Value;
             PN_Hours.Height = uC_Slider1.Value;
@@ -663,17 +668,20 @@ namespace Compact_Agenda
             PN_Hours.Refresh();
         }
 
+        //Update le slider
         private void uC_Slider1_MouseMove(object sender, MouseEventArgs e)
         {
             updateSliderZoom();
         }
 
+        //Cache le slider
         private void uC_Slider1_MouseLeave(object sender, EventArgs e)
         {
             uC_Slider1.Hide();
             pictureBox1.Visible = true;
         }
 
+        //Montre le slider quand la loupe est survolée
         private void pictureBox1_MouseEnter(object sender, EventArgs e)
         {
             uC_Slider1.Show();
@@ -681,6 +689,7 @@ namespace Compact_Agenda
             uC_Slider1.Focus();
         }
         
+        //Affiche un dialogue pour choisir une couleur
         private void ChoisirCouleur(ref Color couleur)
         {
             DLG_HLSColorPicker dlg = new DLG_HLSColorPicker();
@@ -689,6 +698,7 @@ namespace Compact_Agenda
                 couleur = dlg.color;
         }
 
+        //Affiche un dialogue pour choisir un Font
         private void ChoisirFont(ref Font font)
         {
             FontDialog dlg = new FontDialog();
@@ -696,16 +706,7 @@ namespace Compact_Agenda
                 font = dlg.Font;
         }
 
-        private void uC_Slider1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void couleurDeFondToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        //Choisi la journer courante
         private void choisirLaJourneeCouranteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form_Choisir_Date form = new Form_Choisir_Date();
@@ -728,6 +729,7 @@ namespace Compact_Agenda
             }
         }
 
+        //Sauvegarde les settings quand le form se ferme
         private void Form_WeekView_FormClosing(object sender, FormClosingEventArgs e)
         {
             SaveSettings();
@@ -817,7 +819,7 @@ namespace Compact_Agenda
             GetWeekEvents();
             this.Refresh();
         }
-        //Dupliquer un evenement selectionner DC/DS
+        //Dupliquer un evenement selectionné DC/DS
         private void dupliquerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form_Duplication_Evenement dlg = new Form_Duplication_Evenement();
@@ -868,6 +870,7 @@ namespace Compact_Agenda
             this.Refresh();
         }
         
+        //Ajuste les panels en fonction du zoom
         private void PN_Scroll_SizeChanged(object sender, EventArgs e)
         {
             if (PN_Scroll.Height > PN_Content.Height)
@@ -878,15 +881,6 @@ namespace Compact_Agenda
                 PN_Content.Refresh();
                 PN_Hours.Refresh();
             }
-        }
-
-        private void PN_Content_SizeChanged(object sender, EventArgs e)
-        {
-            //if (PN_Content.Height < PN_Scroll.Height)
-            //{
-            //    this.Size = new Size(this.Size.Width, this.Size.Height - (PN_Scroll.Height - PN_Content.Height));
-            //    PN_Scroll.Height = PN_Content.Height;
-            //}
         }
     }
 }

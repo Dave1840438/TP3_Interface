@@ -235,7 +235,6 @@
             this.couleurDeFondToolStripMenuItem.Name = "couleurDeFondToolStripMenuItem";
             this.couleurDeFondToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.couleurDeFondToolStripMenuItem.Text = "Changer la couleur";
-            this.couleurDeFondToolStripMenuItem.Click += new System.EventHandler(this.couleurDeFondToolStripMenuItem_Click);
             // 
             // couleurDeFondToolStripMenuItem1
             // 
@@ -286,7 +285,6 @@
             this.uC_Slider1.Size = new System.Drawing.Size(20, 296);
             this.uC_Slider1.TabIndex = 2;
             this.uC_Slider1.Value = 100;
-            this.uC_Slider1.Load += new System.EventHandler(this.uC_Slider1_Load);
             this.uC_Slider1.MouseLeave += new System.EventHandler(this.uC_Slider1_MouseLeave);
             this.uC_Slider1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.uC_Slider1_MouseMove);
             // 
@@ -367,7 +365,6 @@
             this.PN_Content.Name = "PN_Content";
             this.PN_Content.Size = new System.Drawing.Size(628, 522);
             this.PN_Content.TabIndex = 0;
-            this.PN_Content.SizeChanged += new System.EventHandler(this.PN_Content_SizeChanged);
             this.PN_Content.Paint += new System.Windows.Forms.PaintEventHandler(this.PN_Content_Paint);
             this.PN_Content.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PN_Content_MouseDoubleClick);
             this.PN_Content.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PN_Content_MouseDown);

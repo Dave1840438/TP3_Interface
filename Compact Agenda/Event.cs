@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Compact_Agenda
 {
-        public enum choixEvents
-        {
-            Général = 0, Travail, Loisir, Santé, Important, Autre
-        }
+    public enum choixEvents
+    {
+        Général = 0, Travail, Loisir, Santé, Important, Autre
+    }
 
 
     public class Event
@@ -21,7 +21,7 @@ namespace Compact_Agenda
         public DateTime Starting { get; set; }
         public DateTime Ending { get; set; }
         public System.Windows.Forms.Panel ParentPanel { get; set; }
-        public choixEvents typeEvent {get; set;}
+        public choixEvents typeEvent { get; set; }
 
         public Event()
         {
@@ -121,7 +121,7 @@ namespace Compact_Agenda
             switch (typeEvent)
             {
                 case choixEvents.Général:
-                    couleur = Color.FromArgb(107,184,230);
+                    couleur = Color.FromArgb(107, 184, 230);
                     break;
                 case choixEvents.Important:
                     couleur = Color.FromArgb(236, 87, 83);
@@ -150,32 +150,30 @@ namespace Compact_Agenda
             lignePointillee.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
 
             int fontSize = 8;
-            using (Font font = new Font("Arial", fontSize - 1, FontStyle.Regular, GraphicsUnit.Point))
+
+            using (Font font2 = new Font("Arial", fontSize + 1, FontStyle.Bold, GraphicsUnit.Point))
             {
-                using (Font font2 = new Font("Arial", fontSize + 1, FontStyle.Bold, GraphicsUnit.Point))
-                {
-                    System.Windows.Forms.TextFormatFlags flags = System.Windows.Forms.TextFormatFlags.WordEllipsis | System.Windows.Forms.TextFormatFlags.HorizontalCenter | 
-                        System.Windows.Forms.TextFormatFlags.WordBreak;
-                    Rectangle border = GetBorder();
-                    fontSize += 6;
+                System.Windows.Forms.TextFormatFlags flags = System.Windows.Forms.TextFormatFlags.WordEllipsis | System.Windows.Forms.TextFormatFlags.HorizontalCenter |
+                    System.Windows.Forms.TextFormatFlags.WordBreak;
+                Rectangle border = GetBorder();
+                fontSize += 6;
 
-                    System.Windows.Forms.TextRenderer.DrawText(DC, time, font, border, Color.Black, flags);
-                    border = new Rectangle(border.Location.X, border.Location.Y + fontSize, border.Width, border.Height - fontSize);
+                System.Windows.Forms.TextRenderer.DrawText(DC, time, Form_WeekView.policeEvenements, border, Form_WeekView.couleurPoliceEvenements, flags);
+                border = new Rectangle(border.Location.X, border.Location.Y + fontSize, border.Width, border.Height - fontSize);
 
-                    System.Windows.Forms.TextRenderer.DrawText(DC, "---------------------", font2, border, Color.Black, flags);
-                    border = new Rectangle(border.Location.X, border.Location.Y + fontSize, border.Width, border.Height - fontSize);
+                System.Windows.Forms.TextRenderer.DrawText(DC, "---------------------", font2, border, Form_WeekView.couleurPoliceEvenements, flags);
+                border = new Rectangle(border.Location.X, border.Location.Y + fontSize, border.Width, border.Height - fontSize);
 
-                    System.Windows.Forms.TextRenderer.DrawText(DC, Title, font2, border, Color.Black, flags);
-                    border = new Rectangle(border.Location.X, border.Location.Y + (fontSize), border.Width, border.Height - fontSize);
+                System.Windows.Forms.TextRenderer.DrawText(DC, Title, Form_WeekView.policeEvenements, border, Form_WeekView.couleurPoliceEvenements, flags);
+                border = new Rectangle(border.Location.X, border.Location.Y + (fontSize), border.Width, border.Height - fontSize);
 
-                    System.Windows.Forms.TextRenderer.DrawText(DC, "---------------------", font2, border, Color.Black, flags);
-                    border = new Rectangle(border.Location.X, border.Location.Y + (fontSize), border.Width, border.Height - fontSize);
+                System.Windows.Forms.TextRenderer.DrawText(DC, "---------------------", font2, border, Form_WeekView.couleurPoliceEvenements, flags);
+                border = new Rectangle(border.Location.X, border.Location.Y + (fontSize), border.Width, border.Height - fontSize);
 
-                    flags = System.Windows.Forms.TextFormatFlags.WordBreak;
-                    System.Windows.Forms.TextRenderer.DrawText(DC, Description, font, border, Color.Black, flags);
+                flags = System.Windows.Forms.TextFormatFlags.WordBreak;
+                System.Windows.Forms.TextRenderer.DrawText(DC, Description, Form_WeekView.policeEvenements, border, Form_WeekView.couleurPoliceEvenements, flags);
 
-            
-                }
+
             }
         }
     }
